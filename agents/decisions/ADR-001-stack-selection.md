@@ -1,7 +1,25 @@
 # ADR-001: Technology Stack Selection
 
 ## Status
-Proposed
+Approved (Architect Review — 2026-04-03)
+
+## Architect Review Notes
+
+**Verdict: Approved**
+
+The selected stack (Next.js + TypeScript + Chart.js + Tailwind CSS + gray-matter) is well-suited for the project requirements:
+
+1. **Next.js** satisfies both local dev server and static export modes required by constraints C1/C2. The `next export` path eliminates mandatory server infrastructure while preserving full SSR/ISR capability if needed in v2.
+2. **TypeScript** is the correct choice for enforcing parser–UI contracts (ADR-002 core interfaces). Type safety between the parser module and React components reduces integration risk.
+3. **gray-matter** is the de-facto standard for YAML frontmatter in the Node.js ecosystem, aligning with constraint C4 (mandatory YAML frontmatter).
+4. **Chart.js (~60KB gzipped)** is proportionate for the four chart types required (bar, donut, line, time-series). D3 would be over-engineered for v1. Risk R7 is adequately mitigated.
+5. **Tailwind CSS** enables rapid layout iteration without component library lock-in, consistent with ADR-003's no-external-component-library decision.
+6. **react-markdown + remark-gfm** provides XSS-safe markdown rendering for prompt bodies and handoff notes (FR-7).
+
+**Conditions:**
+- The `chokidar` file watcher must respect the 500ms debounce specified in epic E5-S2.
+- Bundle size should be monitored; if total exceeds 500KB gzipped, the team should evaluate code-splitting strategies.
+- `react-markdown` must be configured to sanitize HTML by default (security hardening for E6).
 
 ## Context
 The Project Manager Dashboard needs a frontend framework, a parsing/backend layer, and a chart rendering library. The PRD suggests React or Vue for the SPA, and a local parser that emits normalized JSON. The dashboard must work locally with zero mandatory server infrastructure.

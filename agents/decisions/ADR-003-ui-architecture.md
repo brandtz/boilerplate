@@ -1,7 +1,35 @@
 # ADR-003: UI Architecture and View Layout
 
 ## Status
-Proposed
+Approved (Architect Review — 2026-04-03)
+
+## Architect Review Notes
+
+**Verdict: Approved**
+
+The UI architecture is well-structured and directly maps to the five PRD views (Overview, Epics, Prompt Inventory, Session History, Task Graph). Key strengths:
+
+1. **Application shell** (header, sidebar nav, main content, status bar) provides a clean navigation model consistent with PRD Section 11.
+2. **State management** (React Context + useReducer) is appropriate for v1's single-user, read-only model (Assumption A10). Migration path to Zustand/Redux is acknowledged for v2.
+3. **No external component library** keeps bundle lean and avoids design system lock-in. Tailwind utility classes are sufficient for the dashboard's UI patterns.
+4. **File-based routing** via Next.js maps cleanly to the five views.
+5. **Desktop-first responsive strategy** is correct given the primary workstation use case.
+
+**Observations and recommendations:**
+
+1. **Error boundaries:** Each view should be wrapped in a React error boundary so that a rendering failure in one view (e.g., malformed chart data) does not crash the entire application. This is critical for the graceful degradation principle (ADR-002 Rule 1).
+
+2. **Loading and empty states:** The architecture should specify loading states (during parser execution) and empty states (no data found, new project). These are common UX gaps that surface late in development.
+
+3. **Accessibility:** The sidebar navigation and interactive elements (drawer, expandable rows, copy-to-clipboard) must meet WCAG 2.1 AA. Epic E6-S4 covers this but the architecture should note it as a cross-cutting concern.
+
+4. **Status badge color mapping:** The canonical 8-status model (PRD Section 12) should be centralized as a theme constant rather than hardcoded per component. Recommended: a `STATUS_THEME` map exported from a shared constants module.
+
+5. **Prompt detail drawer:** The slide-in drawer pattern is good for the prompt inventory view but should specify keyboard navigation (Escape to close, focus trap). This supports both accessibility and power-user efficiency.
+
+6. **Chart empty states:** When no sessions exist or an epic has no tasks, charts should display meaningful empty states rather than rendering empty axes. Data contract specifies "gaps produce flat lines, not interpolation."
+
+7. **File watcher integration:** The architecture should specify that the file watcher (chokidar, from ADR-001) triggers a re-parse and state update through the same Context provider, ensuring all views reactively update. The 500ms debounce (E5-S2) should be documented here as a cross-cutting performance constraint.
 
 ## Context
 The dashboard SPA needs a clear view structure, navigation model, and component architecture that supports the five primary views defined in the PRD (Overview, Epics, Prompt Inventory, Session History, Task Graph).
