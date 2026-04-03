@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (27 ready, 3 done, located in prompts/active/)
-- Prompts Completed: 3
+- Prompts: 30 generated (26 ready, 4 done, located in prompts/active/)
+- Prompts Completed: 4
 - Prompts Archived: 0
 - Prompts Blocked: 0
 
@@ -19,21 +19,21 @@ Project Manager Dashboard v1
 - Prompt 1.0.1: PRD Review and Gap Analysis — **DONE**
 - Prompt 2.0.1: Business Rules and Acceptance Criteria — **DONE** (business rules at docs/business-rules.md)
 - Prompt 3.0.1: Dashboard UX Review and Wireframes — **DONE** (wireframes at docs/dashboard-ux-wireframes.md)
-- Prompt 4.0.1: Architecture Review and ADR Approval (next to run)
+- Prompt 4.0.1: Architecture Review and ADR Approval — **DONE** (ADR-001 approved, ADR-002 approved w/ conditions, ADR-003 approved)
+- Prompt 5.0.1: Security Review of Architecture (next to run)
 
 ## Open Blockers
 - None
 
 ## Awaiting Review
-- ADR-001 (Stack Selection) — awaiting formal architect review at prompt 4.0.1
-- ADR-002 (Parser Architecture) — awaiting formal architect review at prompt 4.0.1
-- ADR-003 (UI Architecture) — awaiting formal architect review at prompt 4.0.1
-- GAP-DC-01 — Epic/story/task contract mismatch (must resolve before prompt 4.0.1)
-- GAP-DC-03 — JSON state schema needs formal spec (must resolve before prompt 4.0.1)
-- GAP-FR-08 — Time-series chart data source (must resolve before prompt 4.0.1)
+- ADR-002 Conditions — 6 conditions must be resolved before implementation (prompt 9.0.1)
+- R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
+- R10: ParsedPrompt missing lifecycle fields from data contract
+- R11: Epic/story/task markdown format lacks parsing schema
+- R12: ProjectSummary, SummaryMetrics, NextPromptInfo interfaces undefined
 
 ## Next Suggested Action
-- Run prompt `prompts/active/04.0.1-architect-architecture-review.md`
+- Run prompt `prompts/active/05.0.1-devsecops-security-review.md`
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`

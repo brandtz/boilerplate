@@ -12,8 +12,8 @@
 | Total prompts | 34 |
 | Boilerplate operational prompts | 4 |
 | Dashboard project prompts | 30 |
-| Status: ready | 31 |
-| Status: done | 3 |
+| Status: ready | 30 |
+| Status: done | 4 |
 | Status: archived | 0 |
 | Status: blocked | 0 |
 | Status: superseded | 0 |
@@ -39,7 +39,7 @@
 
 | prompt_id | title | status | phase | epic_id | story_id | task_ids | location | prerequisites | downstream_prompts | session_handoff | created_at | completed_at | archived_at | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 4.0.1 | Architecture Review and ADR Approval | ready | architecture-review | E1 | — | — | prompts/active/04.0.1-architect-architecture-review.md | 2.0.1, 3.0.1 | 5.0.1 | — | 2026-04-03 | — | — | — |
+| 4.0.1 | Architecture Review and ADR Approval | done | architecture-review | E1 | — | — | prompts/active/04.0.1-architect-architecture-review.md | 2.0.1, 3.0.1 | 5.0.1 | agents/handoffs/S-2026-04-03-007-architecture-review.md | 2026-04-03 | 2026-04-03 | — | 3 ADRs reviewed + arch overview rewritten |
 | 5.0.1 | Security Review of Architecture | ready | security-review | E6 | E6-S4 | — | prompts/active/05.0.1-devsecops-security-review.md | 4.0.1 | 6.0.1 | — | 2026-04-03 | — | — | — |
 | 6.0.1 | Operational Review and Local Dev Setup | ready | operational-review | E5 | — | — | prompts/active/06.0.1-devops-operational-review.md | 4.0.1 | 7.0.1 | — | 2026-04-03 | — | — | — |
 | 7.0.1 | Test Strategy and Test Plan | ready | qa-planning | E6 | E6-S1 | — | prompts/active/07.0.1-qa-test-strategy.md | 4.0.1, 5.0.1 | 8.0.1 | — | 2026-04-03 | — | — | — |

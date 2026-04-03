@@ -19,3 +19,8 @@
 | 2026-04-03 | Desktop-first responsive strategy with 3 breakpoints | Primary use case is developer workstation per ADR-003; mobile is functional not optimized | UX Designer | dashboard-ux-wireframes.md |
 | 2026-04-03 | Pagination over infinite scroll for Prompts table | Better keyboard accessibility and deep-linking support for 250+ items | UX Designer | dashboard-ux-wireframes.md, E2-S1 |
 | 2026-04-03 | Canonical status badge color map with WCAG AA compliance | Single source of truth for all 8 statuses ensures visual consistency across views | UX Designer | dashboard-ux-wireframes.md Appendix A |
+| 2026-04-03 | ADR-001 (Stack Selection) Approved | Stack choices well-justified; Next.js satisfies C1/C2, TypeScript enforces contracts, Chart.js proportionate, gray-matter de-facto standard | Solution Architect | ADR-001-stack-selection.md |
+| 2026-04-03 | ADR-002 (Parser Architecture) Approved with 6 Conditions | Pipeline sound but needs: index.md two-phase parsing, ParseWarning interface, lifecycle fields in ParsedPrompt, missing interfaces, derived metrics docs, epic parsing schema | Solution Architect | ADR-002-parser-architecture.md |
+| 2026-04-03 | ADR-003 (UI Architecture) Approved | View structure maps correctly to all 5 PRD views; state management appropriate for v1 scope | Solution Architect | ADR-003-ui-architecture.md |
+| 2026-04-03 | ParseWarning interface shape: { file, line?, code, message, severity } | Provides structured diagnostics for Blockers & Warnings panel | Solution Architect | ADR-002, architecture-overview.md |
+| 2026-04-03 | Bundle size budget <500KB gzipped | Proportionate for local-first dashboard; Chart.js should be lazy-loaded | Solution Architect | architecture-overview.md |
