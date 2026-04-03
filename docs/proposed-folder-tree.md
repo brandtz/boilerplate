@@ -1,0 +1,69 @@
+# Proposed Folder Tree
+
+```text
+.github/
+  copilot-instructions.md
+  workflows/
+  ISSUE_TEMPLATE/
+  PULL_REQUEST_TEMPLATE.md
+
+agents/
+  README.md
+  roles/
+    orchestration/
+    product/
+    architecture/
+    engineering/
+    platform/
+    security/
+    qa/
+    design/
+    docs/
+    customer/
+  workflows/
+    00-operating-model.md
+    01-intake-to-plan.md
+    02-epics-stories-review-approval.md
+    03-build-validate-release.md
+  standards/
+    prompt-builder-standard.md
+    handoff-standard.md
+    review-signoff-standard.md
+    required-reading-standard.md
+    coding-documentation-testing-standard.md
+  templates/
+    role-template.md
+    workflow-template.md
+    prompt-template.md
+    project-charter-template.md
+    epic-template.md
+    story-template.md
+    technical-task-template.md
+    adr-template.md
+    handoff-template.md
+    review-report-template.md
+    risk-register-template.md
+    decision-log-template.md
+    release-readiness-checklist-template.md
+  context/
+    project-charter.md
+    product-brief.md
+    architecture-overview.md
+    assumptions.md
+    constraints.md
+    decision-log.md
+    risk-register.md
+    status-dashboard.md
+  prompts/
+    example-sequential-prompt.md
+  handoffs/
+  reviews/
+
+docs/
+  agentic-ai-team-factory-blueprint.md
+  proposed-folder-tree.md
+prompts/
+  00_FIRST_PROMPT_bootstrap_repo.md
+  01_MASTER_AGENT_PROJECT_INTAKE_PROMPT.md
+  02_MASTER_AGENT_PROMPT_BUILDER_PROMPT.md
+```

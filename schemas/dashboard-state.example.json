@@ -1,0 +1,55 @@
+{
+  "project": {
+    "projectId": "boilerplate-dashboard",
+    "title": "Project Manager Dashboard",
+    "status": "in_progress",
+    "scopeCompletionPercent": 42,
+    "executionCompletionPercent": 36
+  },
+  "summary": {
+    "epicsTotal": 6,
+    "storiesTotal": 21,
+    "tasksTotal": 58,
+    "promptsTotal": 34,
+    "promptsDone": 12,
+    "promptsBlocked": 2,
+    "promptsReady": 5
+  },
+  "nextPrompt": {
+    "promptId": "16.0.2",
+    "title": "Review dependency recalculation after inserted prompt",
+    "reason": "Lowest ready prompt with all prerequisites complete",
+    "sourcePath": "prompts/16.0.2-review-dependency-recalculation.md"
+  },
+  "epics": [
+    {
+      "epicId": "E1",
+      "title": "Repo Data Contracts and Parsing Foundation",
+      "status": "in_progress",
+      "completionPercent": 50
+    }
+  ],
+  "prompts": [
+    {
+      "promptId": "16.0.2",
+      "title": "Review dependency recalculation after inserted prompt",
+      "status": "ready",
+      "epicId": "E1",
+      "storyId": "E1-S5",
+      "taskIds": ["E1-S5-T2"],
+      "prerequisites": ["16.0.1"],
+      "affectedPrompts": ["17.0.1"],
+      "updatedAt": "2026-04-03T12:00:00Z"
+    }
+  ],
+  "sessions": [
+    {
+      "sessionId": "S-2026-04-03-001",
+      "promptId": "16.0.1",
+      "role": "Backend Engineer",
+      "statusOutcome": "complete",
+      "summary": "Implemented prompt parser foundation",
+      "endedAt": "2026-04-03T10:25:00Z"
+    }
+  ]
+}
