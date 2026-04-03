@@ -12,8 +12,8 @@
 | Total prompts | 34 |
 | Boilerplate operational prompts | 4 |
 | Dashboard project prompts | 30 |
-| Status: ready | 33 |
-| Status: done | 1 |
+| Status: ready | 32 |
+| Status: done | 2 |
 | Status: archived | 0 |
 | Status: blocked | 0 |
 | Status: superseded | 0 |
@@ -32,7 +32,7 @@
 | prompt_id | title | status | phase | epic_id | story_id | task_ids | location | prerequisites | downstream_prompts | session_handoff | created_at | completed_at | archived_at | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 1.0.1 | PRD Review and Gap Analysis | done | product-definition | E1 | — | — | prompts/active/01.0.1-pm-prd-review-gap-analysis.md | — | 2.0.1 | agents/handoffs/S-2026-04-03-004-prd-gap-analysis.md | 2026-04-03 | 2026-04-03 | — | Gap analysis produced: docs/prd-gap-analysis.md |
-| 2.0.1 | Business Rules and Acceptance Criteria | ready | product-definition | E1 | — | — | prompts/active/02.0.1-bsa-business-rules-acceptance-criteria.md | 1.0.1 | 3.0.1 | — | 2026-04-03 | — | — | — |
+| 2.0.1 | Business Rules and Acceptance Criteria | done | product-definition | E1 | — | — | prompts/active/02.0.1-bsa-business-rules-acceptance-criteria.md | 1.0.1 | 3.0.1 | agents/handoffs/S-2026-04-03-005-bsa-acceptance-criteria.md | 2026-04-03 | 2026-04-03 | — | Business rules + 24 stories refined |
 | 3.0.1 | Dashboard UX Review and Wireframes | ready | product-definition | E2 | — | — | prompts/active/03.0.1-ux-dashboard-review-wireframes.md | 2.0.1 | 4.0.1 | — | 2026-04-03 | — | — | — |
 
 ### Dashboard Project Prompts — Phase 2: Cross-Functional Review
