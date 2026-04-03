@@ -30,3 +30,11 @@
 | 2026-04-03 | Disable symlink following in file scanner and chokidar | Prevents sandbox escape via filesystem symlinks; set followSymlinks: false | DevSecOps Engineer | docs/security-review-findings.md (MED-002) |
 | 2026-04-03 | Add CSP meta tag to static export | Defense-in-depth against XSS; restrict inline scripts and eval() | DevSecOps Engineer | docs/security-review-findings.md (HIGH-002) |
 | 2026-04-03 | Added risks R15–R18 to risk register | XSS (R15), supply chain (R16), prototype pollution (R17), symlink traversal (R18) | DevSecOps Engineer | agents/context/risk-register.md |
+| 2026-04-03 | Dashboard code in `dashboard/` subdirectory | Separates app code from repo management artifacts (agents/, prompts/, docs/); clean build boundary | DevOps SRE Engineer | docs/operational-review.md |
+| 2026-04-03 | Parser co-located in `src/parser/` within dashboard project | Enables library import by UI and future standalone extraction as separate package | DevOps SRE Engineer | docs/operational-review.md |
+| 2026-04-03 | Next.js App Router preferred over Pages Router | Current standard; native support for layouts, loading states, error boundaries; aligns with ADR-003 | DevOps SRE Engineer | docs/operational-review.md |
+| 2026-04-03 | `npm ci` as standard install command | Reproducible builds from lock file; prevents dependency drift in CI and local dev | DevOps SRE Engineer | docs/operational-review.md |
+| 2026-04-03 | Static export via `output: 'export'` in next.config.js | Modern Next.js static export config; replaces deprecated `next export` command | DevOps SRE Engineer | docs/operational-review.md |
+| 2026-04-03 | `file://` protocol support is best-effort | Browser security restrictions limit parser functionality; primary mode is dev server or `npx serve` | DevOps SRE Engineer | docs/operational-review.md |
+| 2026-04-03 | Node.js >= 18.17 LTS required | Minimum for current Next.js; stable LTS version with wide availability | DevOps SRE Engineer | docs/operational-review.md |
+| 2026-04-03 | Escalating debounce: 500ms single-file, 3s batch | Balances responsiveness for individual edits with stability for batch operations (git checkout) | DevOps SRE Engineer | docs/operational-review.md |
