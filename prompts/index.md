@@ -31,15 +31,15 @@
 
 | prompt_id | title | status | phase | epic_id | story_id | task_ids | location | prerequisites | downstream_prompts | session_handoff | created_at | completed_at | archived_at | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1.0.1 | PRD Review and Gap Analysis | done | product-definition | E1 | — | — | prompts/active/01.0.1-pm-prd-review-gap-analysis.md | — | 2.0.1 | agents/handoffs/S-2026-04-03-004-prd-gap-analysis.md | 2026-04-03 | 2026-04-03 | — | Gap analysis produced: docs/prd-gap-analysis.md |
-| 2.0.1 | Business Rules and Acceptance Criteria | done | product-definition | E1 | — | — | prompts/active/02.0.1-bsa-business-rules-acceptance-criteria.md | 1.0.1 | 3.0.1 | agents/handoffs/S-2026-04-03-005-bsa-acceptance-criteria.md | 2026-04-03 | 2026-04-03 | — | Business rules + 24 stories refined |
-| 3.0.1 | Dashboard UX Review and Wireframes | done | product-definition | E2 | — | — | prompts/active/03.0.1-ux-dashboard-review-wireframes.md | 2.0.1 | 4.0.1 | agents/handoffs/S-2026-04-03-006-ux-wireframes.md | 2026-04-03 | 2026-04-03 | — | UX wireframes for 5 views + accessibility |
+| 1.0.1 | PRD Review and Gap Analysis | done | product-definition | E1 | — | — | prompts/archive/01.0.1-pm-prd-review-gap-analysis.md | — | 2.0.1 | agents/handoffs/S-2026-04-03-004-prd-gap-analysis.md | 2026-04-03 | 2026-04-03 | 2026-04-03 | Gap analysis produced: docs/prd-gap-analysis.md |
+| 2.0.1 | Business Rules and Acceptance Criteria | done | product-definition | E1 | — | — | prompts/archive/02.0.1-bsa-business-rules-acceptance-criteria.md | 1.0.1 | 3.0.1 | agents/handoffs/S-2026-04-03-005-bsa-acceptance-criteria.md | 2026-04-03 | 2026-04-03 | 2026-04-03 | Business rules + 24 stories refined |
+| 3.0.1 | Dashboard UX Review and Wireframes | done | product-definition | E2 | — | — | prompts/archive/03.0.1-ux-dashboard-review-wireframes.md | 2.0.1 | 4.0.1 | agents/handoffs/S-2026-04-03-006-ux-wireframes.md | 2026-04-03 | 2026-04-03 | 2026-04-03 | UX wireframes for 5 views + accessibility |
 
 ### Dashboard Project Prompts — Phase 2: Cross-Functional Review
 
 | prompt_id | title | status | phase | epic_id | story_id | task_ids | location | prerequisites | downstream_prompts | session_handoff | created_at | completed_at | archived_at | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 4.0.1 | Architecture Review and ADR Approval | done | architecture-review | E1 | — | — | prompts/active/04.0.1-architect-architecture-review.md | 2.0.1, 3.0.1 | 5.0.1 | agents/handoffs/S-2026-04-03-007-architecture-review.md | 2026-04-03 | 2026-04-03 | — | 3 ADRs reviewed + arch overview rewritten |
+| 4.0.1 | Architecture Review and ADR Approval | done | architecture-review | E1 | — | — | prompts/archive/04.0.1-architect-architecture-review.md | 2.0.1, 3.0.1 | 5.0.1 | agents/handoffs/S-2026-04-03-007-architecture-review.md | 2026-04-03 | 2026-04-03 | 2026-04-03 | 3 ADRs reviewed + arch overview rewritten |
 | 5.0.1 | Security Review of Architecture | ready | security-review | E6 | E6-S4 | — | prompts/active/05.0.1-devsecops-security-review.md | 4.0.1 | 6.0.1 | — | 2026-04-03 | — | — | — |
 | 6.0.1 | Operational Review and Local Dev Setup | ready | operational-review | E5 | — | — | prompts/active/06.0.1-devops-operational-review.md | 4.0.1 | 7.0.1 | — | 2026-04-03 | — | — | — |
 | 7.0.1 | Test Strategy and Test Plan | ready | qa-planning | E6 | E6-S1 | — | prompts/active/07.0.1-qa-test-strategy.md | 4.0.1, 5.0.1 | 8.0.1 | — | 2026-04-03 | — | — | — |

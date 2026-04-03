@@ -10,9 +10,9 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (26 ready, 4 done, located in prompts/active/)
+- Prompts: 30 generated (26 ready in prompts/active/, 4 done in prompts/archive/)
 - Prompts Completed: 4
-- Prompts Archived: 0
+- Prompts Archived: 4
 - Prompts Blocked: 0
 
 ## Active Work Packets

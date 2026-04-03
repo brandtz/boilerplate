@@ -124,6 +124,9 @@ Allowed prompt statuses:
 - execution completed successfully
 - must have a completed session handoff and updated index entry
 - all changes must be committed and pushed to the remote repository before the prompt is considered complete
+- the executing agent MUST complete the **Session Close-Out Checklist** in the prompt file before committing (see prompt template)
+- the close-out checklist includes: updating prompt frontmatter, `prompts/index.md`, `agents/context/status-dashboard.md`, and `agents/context/decision-log.md`
+- this applies equally to local agents and cloud agents — no close-out step may be skipped
 - after validation, move to `prompts/archive/`
 - when moved, set status to `archived` or keep `done` with `archived_at` populated based on dashboard needs; prefer `done` plus `archived_at`
 
@@ -270,6 +273,16 @@ The dashboard must:
 Any change to prompt sequencing or archival behavior must be reviewed by:
 - Master Agent / Orchestrator
 - Product or Project Management role
+
+## Mandatory Governance References in Prompts
+
+Every prompt's `required_reading` frontmatter MUST include:
+- `agents/standards/prompt-lifecycle-standard.md`
+- `agents/standards/handoff-standard.md`
+
+This ensures that any executing agent — whether local (VS Code) or cloud (GitHub Copilot) — has access to the close-out rules and governance expectations regardless of conversational context.
+
+Every prompt body MUST include a `## Session Close-Out Checklist` section (see `agents/templates/prompt-template.md`) that explicitly enumerates all governance updates required before committing. The old `## Commit and Push` section is deprecated and must not be used.
 - Repo Knowledge Curator or equivalent governance role
 
 ## Implementation Notes
