@@ -66,6 +66,16 @@ agents/README.md
 
 Create handoff notes using `agents/templates/session-handoff-template.md`.
 
+## Commit and Push
+
+After completing all work and creating the session handoff, stage, commit, and push all changes:
+
+```bash
+git add -A
+git commit -m "Complete prompt <prompt_id>: <title> — <one-line summary of work>"
+git push
+```
+
 ## Downstream Consumers
 
 - 

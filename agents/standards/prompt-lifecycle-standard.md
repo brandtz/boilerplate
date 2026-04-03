@@ -123,6 +123,7 @@ Allowed prompt statuses:
 ### Done
 - execution completed successfully
 - must have a completed session handoff and updated index entry
+- all changes must be committed and pushed to the remote repository before the prompt is considered complete
 - after validation, move to `prompts/archive/`
 - when moved, set status to `archived` or keep `done` with `archived_at` populated based on dashboard needs; prefer `done` plus `archived_at`
 

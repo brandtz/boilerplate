@@ -48,8 +48,9 @@ prompts/
 2. Create a session handoff using `agents/templates/session-handoff-template.md`.
 3. Update the prompt frontmatter: set `status: done`, `completed_at`, `session_handoff`.
 4. Update `prompts/index.md` with completion details.
-5. Move the prompt file to `prompts/archive/`.
-6. Set `archived_at` in both the file frontmatter and the index.
+5. Commit and push all changes to the remote repository.
+6. Move the prompt file to `prompts/archive/`.
+7. Set `archived_at` in both the file frontmatter and the index.
 
 ## Key Standards
 
