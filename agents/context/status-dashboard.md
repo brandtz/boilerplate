@@ -10,15 +10,16 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (28 ready, 2 done, located in prompts/active/)
-- Prompts Completed: 2
+- Prompts: 30 generated (27 ready, 3 done, located in prompts/active/)
+- Prompts Completed: 3
 - Prompts Archived: 0
 - Prompts Blocked: 0
 
 ## Active Work Packets
 - Prompt 1.0.1: PRD Review and Gap Analysis — **DONE**
 - Prompt 2.0.1: Business Rules and Acceptance Criteria — **DONE** (business rules at docs/business-rules.md)
-- Prompt 3.0.1: Dashboard UX Review and Wireframes (next to run)
+- Prompt 3.0.1: Dashboard UX Review and Wireframes — **DONE** (wireframes at docs/dashboard-ux-wireframes.md)
+- Prompt 4.0.1: Architecture Review and ADR Approval (next to run)
 
 ## Open Blockers
 - None
@@ -32,11 +33,12 @@ Project Manager Dashboard v1
 - GAP-FR-08 — Time-series chart data source (must resolve before prompt 4.0.1)
 
 ## Next Suggested Action
-- Run prompt `prompts/active/03.0.1-ux-dashboard-review-wireframes.md`
+- Run prompt `prompts/active/04.0.1-architect-architecture-review.md`
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`
 - Data Contract: `docs/project-manager-dashboard-data-contract.md`
+- UX Wireframes: `docs/dashboard-ux-wireframes.md`
 - Epics: `agents/epics/project-manager-dashboard-epics.md`
 - Prompt Inventory: `prompts/index.md`
 - Prompt Lifecycle Standard: `agents/standards/prompt-lifecycle-standard.md`

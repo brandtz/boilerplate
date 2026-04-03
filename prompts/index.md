@@ -12,8 +12,8 @@
 | Total prompts | 34 |
 | Boilerplate operational prompts | 4 |
 | Dashboard project prompts | 30 |
-| Status: ready | 32 |
-| Status: done | 2 |
+| Status: ready | 31 |
+| Status: done | 3 |
 | Status: archived | 0 |
 | Status: blocked | 0 |
 | Status: superseded | 0 |
@@ -33,7 +33,7 @@
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 1.0.1 | PRD Review and Gap Analysis | done | product-definition | E1 | — | — | prompts/active/01.0.1-pm-prd-review-gap-analysis.md | — | 2.0.1 | agents/handoffs/S-2026-04-03-004-prd-gap-analysis.md | 2026-04-03 | 2026-04-03 | — | Gap analysis produced: docs/prd-gap-analysis.md |
 | 2.0.1 | Business Rules and Acceptance Criteria | done | product-definition | E1 | — | — | prompts/active/02.0.1-bsa-business-rules-acceptance-criteria.md | 1.0.1 | 3.0.1 | agents/handoffs/S-2026-04-03-005-bsa-acceptance-criteria.md | 2026-04-03 | 2026-04-03 | — | Business rules + 24 stories refined |
-| 3.0.1 | Dashboard UX Review and Wireframes | ready | product-definition | E2 | — | — | prompts/active/03.0.1-ux-dashboard-review-wireframes.md | 2.0.1 | 4.0.1 | — | 2026-04-03 | — | — | — |
+| 3.0.1 | Dashboard UX Review and Wireframes | done | product-definition | E2 | — | — | prompts/active/03.0.1-ux-dashboard-review-wireframes.md | 2.0.1 | 4.0.1 | agents/handoffs/S-2026-04-03-006-ux-wireframes.md | 2026-04-03 | 2026-04-03 | — | UX wireframes for 5 views + accessibility |
 
 ### Dashboard Project Prompts — Phase 2: Cross-Functional Review
 

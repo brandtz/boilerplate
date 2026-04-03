@@ -14,3 +14,8 @@
 | 2026-04-03 | Superseded/cancelled prompts excluded from completion denominator | Clearer math: 100% means all active work done; aligns with dual-metric model | BSA | business-rules Section 2.5, GAP-DC-04 |
 | 2026-04-03 | Search is metadata-only keyword matching in v1 | Limits implementation scope; full-text search deferred to v2 | BSA | business-rules Section 7, GAP-FR-09 |
 | 2026-04-03 | Multi-repo selector uses local filesystem paths only in v1 | Aligns with C2 local-only constraint; git URL support deferred | BSA | business-rules Section 8, OQ-03 |
+| 2026-04-03 | Drawer pattern for prompt detail view | Keeps table visible for context; avoids full-page navigation for quick glances | UX Designer | dashboard-ux-wireframes.md, E2 stories |
+| 2026-04-03 | Accordion pattern for Epics/Tasks views | Three-level hierarchy fits progressive disclosure; avoids multiple page navigations | UX Designer | dashboard-ux-wireframes.md, E3/E4 stories |
+| 2026-04-03 | Desktop-first responsive strategy with 3 breakpoints | Primary use case is developer workstation per ADR-003; mobile is functional not optimized | UX Designer | dashboard-ux-wireframes.md |
+| 2026-04-03 | Pagination over infinite scroll for Prompts table | Better keyboard accessibility and deep-linking support for 250+ items | UX Designer | dashboard-ux-wireframes.md, E2-S1 |
+| 2026-04-03 | Canonical status badge color map with WCAG AA compliance | Single source of truth for all 8 statuses ensures visual consistency across views | UX Designer | dashboard-ux-wireframes.md Appendix A |
