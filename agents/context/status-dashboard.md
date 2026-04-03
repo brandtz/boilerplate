@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (26 ready in prompts/active/, 4 done in prompts/archive/)
-- Prompts Completed: 4
+- Prompts: 30 generated (25 ready in prompts/active/, 5 done in prompts/archive/)
+- Prompts Completed: 5
 - Prompts Archived: 4
 - Prompts Blocked: 0
 
@@ -20,7 +20,8 @@ Project Manager Dashboard v1
 - Prompt 2.0.1: Business Rules and Acceptance Criteria — **DONE** (business rules at docs/business-rules.md)
 - Prompt 3.0.1: Dashboard UX Review and Wireframes — **DONE** (wireframes at docs/dashboard-ux-wireframes.md)
 - Prompt 4.0.1: Architecture Review and ADR Approval — **DONE** (ADR-001 approved, ADR-002 approved w/ conditions, ADR-003 approved)
-- Prompt 5.0.1: Security Review of Architecture (next to run)
+- Prompt 5.0.1: Security Review of Architecture — **DONE** (0 critical, 2 high, 4 medium, 3 low findings; PROCEED)
+- Prompt 6.0.1: Operational Review and Local Dev Setup (next to run)
 
 ## Open Blockers
 - None
@@ -33,7 +34,7 @@ Project Manager Dashboard v1
 - R12: ProjectSummary, SummaryMetrics, NextPromptInfo interfaces undefined
 
 ## Next Suggested Action
-- Run prompt `prompts/active/05.0.1-devsecops-security-review.md`
+- Run prompt `prompts/active/06.0.1-devops-operational-review.md`
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`

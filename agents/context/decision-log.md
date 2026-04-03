@@ -24,3 +24,9 @@
 | 2026-04-03 | ADR-003 (UI Architecture) Approved | View structure maps correctly to all 5 PRD views; state management appropriate for v1 scope | Solution Architect | ADR-003-ui-architecture.md |
 | 2026-04-03 | ParseWarning interface shape: { file, line?, code, message, severity } | Provides structured diagnostics for Blockers & Warnings panel | Solution Architect | ADR-002, architecture-overview.md |
 | 2026-04-03 | Bundle size budget <500KB gzipped | Proportionate for local-first dashboard; Chart.js should be lazy-loaded | Solution Architect | architecture-overview.md |
+| 2026-04-03 | Security review: PROCEED — no architectural changes required | Local-only, read-only design provides strong baseline; 2 high + 4 medium + 3 low findings all addressable in implementation | DevSecOps Engineer | docs/security-review-findings.md |
+| 2026-04-03 | Never enable rehype-raw in react-markdown | Prevents XSS via raw HTML passthrough; mandatory constraint for all implementation prompts | DevSecOps Engineer | docs/security-review-findings.md (HIGH-002) |
+| 2026-04-03 | Allowlist approach for multi-repo selector path validation | More secure than arbitrary path validation; canonicalize with path.resolve() + prefix check | DevSecOps Engineer | docs/security-review-findings.md (HIGH-001) |
+| 2026-04-03 | Disable symlink following in file scanner and chokidar | Prevents sandbox escape via filesystem symlinks; set followSymlinks: false | DevSecOps Engineer | docs/security-review-findings.md (MED-002) |
+| 2026-04-03 | Add CSP meta tag to static export | Defense-in-depth against XSS; restrict inline scripts and eval() | DevSecOps Engineer | docs/security-review-findings.md (HIGH-002) |
+| 2026-04-03 | Added risks R15–R18 to risk register | XSS (R15), supply chain (R16), prototype pollution (R17), symlink traversal (R18) | DevSecOps Engineer | agents/context/risk-register.md |
