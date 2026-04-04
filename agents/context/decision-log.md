@@ -38,3 +38,9 @@
 | 2026-04-03 | `file://` protocol support is best-effort | Browser security restrictions limit parser functionality; primary mode is dev server or `npx serve` | DevOps SRE Engineer | docs/operational-review.md |
 | 2026-04-03 | Node.js >= 18.17 LTS required | Minimum for current Next.js; stable LTS version with wide availability | DevOps SRE Engineer | docs/operational-review.md |
 | 2026-04-03 | Escalating debounce: 500ms single-file, 3s batch | Balances responsiveness for individual edits with stability for batch operations (git checkout) | DevOps SRE Engineer | docs/operational-review.md |
+| 2026-04-04 | Jest + Testing Library + Playwright as test tooling stack | Industry standard for Next.js/React/TypeScript; Testing Library promotes accessible patterns; Playwright provides reliable cross-browser E2E | QA Test Architect | docs/test-strategy.md |
+| 2026-04-04 | Four test levels: unit, integration, component, E2E | Aligns with testing pyramid; each level catches different defect categories | QA Test Architect | docs/test-strategy.md |
+| 2026-04-04 | ≥90% parser unit test coverage gate; ≥80% component coverage gate | Parser is data integrity foundation requiring high coverage; component tests have diminishing returns above 80% | QA Test Architect | docs/test-strategy.md |
+| 2026-04-04 | Fixture-based testing with 8 categories (valid, malformed, adversarial, edge-case, etc.) | Deterministic, repeatable, version-controlled test inputs; categories map to risk areas | QA Test Architect | docs/test-strategy.md |
+| 2026-04-04 | Performance target: <2s for 250-prompt parse; <500KB bundle | Proportionate for local-first dashboard at maximum expected scale; measurable and enforceable in CI | QA Test Architect | docs/test-strategy.md |
+| 2026-04-04 | Security tests mandatory for all HIGH/MEDIUM findings before release | Aligns with security review findings; prevents known vulnerabilities from shipping | QA Test Architect | docs/test-strategy.md |

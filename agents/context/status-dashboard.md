@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (24 ready in prompts/active/, 6 done in prompts/archive/)
-- Prompts Completed: 6
+- Prompts: 30 generated (23 ready in prompts/active/, 7 done in prompts/archive/)
+- Prompts Completed: 7
 - Prompts Archived: 4
 - Prompts Blocked: 0
 
@@ -22,6 +22,7 @@ Project Manager Dashboard v1
 - Prompt 4.0.1: Architecture Review and ADR Approval — **DONE** (ADR-001 approved, ADR-002 approved w/ conditions, ADR-003 approved)
 - Prompt 5.0.1: Security Review of Architecture — **DONE** (0 critical, 2 high, 4 medium, 3 low findings; PROCEED)
 - Prompt 6.0.1: Operational Review and Local Dev Setup — **DONE** (scaffolding structure, dev workflow, CI/CD recommendations, file watcher config at docs/operational-review.md)
+- Prompt 7.0.1: Test Strategy and Test Plan — **DONE** (test strategy at docs/test-strategy.md: 4 test levels, 8 fixture categories, quality gates, Jest + Testing Library + Playwright)
 
 ## Open Blockers
 - None
@@ -34,7 +35,7 @@ Project Manager Dashboard v1
 - R12: ProjectSummary, SummaryMetrics, NextPromptInfo interfaces undefined
 
 ## Next Suggested Action
-- Run prompt `prompts/active/07.0.1-qa-test-strategy.md`
+- Run prompt `prompts/active/08.0.1-review-gate-pre-implementation.md`
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`
