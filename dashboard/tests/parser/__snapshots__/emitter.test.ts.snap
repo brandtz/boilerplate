@@ -1,0 +1,464 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`parse() snapshot test matches expected structure snapshot 1`] = `
+{
+  "epics": [
+    {
+      "epicId": "E1",
+      "status": "in_progress",
+      "stories": [
+        {
+          "acceptanceCriteria": [
+            "AC-1: All plans documented",
+          ],
+          "epicId": "E1",
+          "status": "done",
+          "storyId": "E1-S1",
+          "tasks": [
+            {
+              "epicId": "E1",
+              "status": "draft",
+              "storyId": "E1-S1",
+              "taskId": "E1-S1-T1",
+              "title": "Define scope",
+            },
+            {
+              "epicId": "E1",
+              "status": "draft",
+              "storyId": "E1-S1",
+              "taskId": "E1-S1-T2",
+              "title": "Create plan",
+            },
+          ],
+          "title": "Planning",
+        },
+        {
+          "acceptanceCriteria": [
+            "AC-1: Code is written",
+            "AC-2: Tests pass",
+          ],
+          "epicId": "E1",
+          "status": "in_progress",
+          "storyId": "E1-S2",
+          "tasks": [
+            {
+              "epicId": "E1",
+              "status": "draft",
+              "storyId": "E1-S2",
+              "taskId": "E1-S2-T1",
+              "title": "Build module A",
+            },
+            {
+              "epicId": "E1",
+              "status": "draft",
+              "storyId": "E1-S2",
+              "taskId": "E1-S2-T2",
+              "title": "Build module B",
+            },
+            {
+              "epicId": "E1",
+              "status": "draft",
+              "storyId": "E1-S2",
+              "taskId": "E1-S2-T3",
+              "title": "Build module C",
+            },
+          ],
+          "title": "Implementation",
+        },
+      ],
+      "title": "Foundation",
+    },
+    {
+      "epicId": "E2",
+      "status": "ready",
+      "stories": [
+        {
+          "acceptanceCriteria": [
+            "AC-1: Wireframes created",
+          ],
+          "epicId": "E2",
+          "status": "ready",
+          "storyId": "E2-S1",
+          "tasks": [
+            {
+              "epicId": "E2",
+              "status": "draft",
+              "storyId": "E2-S1",
+              "taskId": "E2-S1-T1",
+              "title": "Create wireframes",
+            },
+          ],
+          "title": "Design",
+        },
+      ],
+      "title": "UI Layer",
+    },
+  ],
+  "nextPrompt": {
+    "body": "
+# Fourth Prompt
+
+This is the fourth test prompt.
+",
+    "downstreamCount": 0,
+    "eligibleCount": 2,
+    "epicId": "E1",
+    "ownerRole": "Engineer",
+    "prerequisitesMet": 1,
+    "promptId": "4.0.1",
+    "rationale": "Prompt 4.0.1 is next because: all 1 prerequisites are met, it has the lowest sequence number among 2 eligible prompts, and it unblocks 0 downstream prompt(s).",
+    "sourcePath": "prompts/active/4.0.1-fourth.md",
+    "storyId": "E1-S2",
+    "title": "Fourth Prompt",
+    "totalPrerequisites": 1,
+  },
+  "project": {
+    "healthStatus": "on_track",
+    "lastParsedAt": "2026-04-04T00:00:00.000Z",
+    "projectName": "Project Manager Dashboard",
+    "repoPath": "C:\\Projects\\Boilerplate\\dashboard\\tests\\fixtures\\snapshot-repo",
+    "totalEpics": 2,
+    "totalHandoffs": 3,
+    "totalPrompts": 6,
+    "totalStories": 3,
+    "totalTasks": 6,
+  },
+  "prompts": [
+    {
+      "affectsPrompts": [],
+      "archivedAt": "2026-04-01T00:00:00Z",
+      "body": "
+# Archived Bootstrap
+
+This prompt was completed and archived.
+",
+      "completedAt": "2026-04-01T00:00:00Z",
+      "createdAt": "2026-03-31T00:00:00Z",
+      "downstreamPrompts": [
+        "1.0.1",
+      ],
+      "epicId": "",
+      "insertReason": "",
+      "insertedAfter": null,
+      "phase": "bootstrap",
+      "prerequisites": [],
+      "promptId": "0.0.1",
+      "requiredReading": [],
+      "reviewRequired": [],
+      "role": "Engineer",
+      "sessionHandoff": "",
+      "sourcePath": "prompts/archive/0.0.1-bootstrap.md",
+      "status": "done",
+      "storyId": "",
+      "supersededBy": "",
+      "supersedes": "",
+      "taskIds": [],
+      "title": "Archived Bootstrap",
+      "updatedAt": "2026-04-01T00:00:00Z",
+    },
+    {
+      "affectsPrompts": [],
+      "archivedAt": "",
+      "body": "
+# First Prompt
+
+This is the first test prompt.
+",
+      "completedAt": "2026-04-01T10:00:00Z",
+      "createdAt": "2026-04-01T00:00:00Z",
+      "downstreamPrompts": [
+        "2.0.1",
+      ],
+      "epicId": "E1",
+      "insertReason": "",
+      "insertedAfter": null,
+      "phase": "planning",
+      "prerequisites": [],
+      "promptId": "1.0.1",
+      "requiredReading": [],
+      "reviewRequired": [],
+      "role": "Engineer",
+      "sessionHandoff": "agents/handoffs/S-001.md",
+      "sourcePath": "prompts/active/1.0.1-first.md",
+      "status": "done",
+      "storyId": "E1-S1",
+      "supersededBy": "",
+      "supersedes": "",
+      "taskIds": [
+        "E1-S1-T1",
+      ],
+      "title": "First Prompt",
+      "updatedAt": "2026-04-01T00:00:00Z",
+    },
+    {
+      "affectsPrompts": [],
+      "archivedAt": "",
+      "body": "
+# Second Prompt
+
+This is the second test prompt.
+",
+      "completedAt": "2026-04-02T10:00:00Z",
+      "createdAt": "2026-04-01T00:00:00Z",
+      "downstreamPrompts": [
+        "3.0.1",
+      ],
+      "epicId": "E1",
+      "insertReason": "",
+      "insertedAfter": null,
+      "phase": "planning",
+      "prerequisites": [
+        "1.0.1",
+      ],
+      "promptId": "2.0.1",
+      "requiredReading": [],
+      "reviewRequired": [],
+      "role": "Engineer",
+      "sessionHandoff": "agents/handoffs/S-002.md",
+      "sourcePath": "prompts/active/2.0.1-second.md",
+      "status": "done",
+      "storyId": "E1-S1",
+      "supersededBy": "",
+      "supersedes": "",
+      "taskIds": [
+        "E1-S1-T2",
+      ],
+      "title": "Second Prompt",
+      "updatedAt": "2026-04-02T00:00:00Z",
+    },
+    {
+      "affectsPrompts": [],
+      "archivedAt": "",
+      "body": "
+# Third Prompt
+
+This is the third test prompt.
+",
+      "completedAt": "2026-04-03T10:00:00Z",
+      "createdAt": "2026-04-01T00:00:00Z",
+      "downstreamPrompts": [
+        "4.0.1",
+        "5.0.1",
+      ],
+      "epicId": "E1",
+      "insertReason": "",
+      "insertedAfter": null,
+      "phase": "implementation",
+      "prerequisites": [
+        "2.0.1",
+      ],
+      "promptId": "3.0.1",
+      "requiredReading": [],
+      "reviewRequired": [],
+      "role": "Engineer",
+      "sessionHandoff": "agents/handoffs/S-003.md",
+      "sourcePath": "prompts/active/3.0.1-third.md",
+      "status": "done",
+      "storyId": "E1-S2",
+      "supersededBy": "",
+      "supersedes": "",
+      "taskIds": [
+        "E1-S2-T1",
+        "E1-S2-T2",
+      ],
+      "title": "Third Prompt",
+      "updatedAt": "2026-04-03T00:00:00Z",
+    },
+    {
+      "affectsPrompts": [],
+      "archivedAt": "",
+      "body": "
+# Fourth Prompt
+
+This is the fourth test prompt.
+",
+      "completedAt": "",
+      "createdAt": "2026-04-01T00:00:00Z",
+      "downstreamPrompts": [],
+      "epicId": "E1",
+      "insertReason": "",
+      "insertedAfter": null,
+      "phase": "implementation",
+      "prerequisites": [
+        "3.0.1",
+      ],
+      "promptId": "4.0.1",
+      "requiredReading": [],
+      "reviewRequired": [],
+      "role": "Engineer",
+      "sessionHandoff": "",
+      "sourcePath": "prompts/active/4.0.1-fourth.md",
+      "status": "ready",
+      "storyId": "E1-S2",
+      "supersededBy": "",
+      "supersedes": "",
+      "taskIds": [
+        "E1-S2-T3",
+      ],
+      "title": "Fourth Prompt",
+      "updatedAt": "2026-04-01T00:00:00Z",
+    },
+    {
+      "affectsPrompts": [],
+      "archivedAt": "",
+      "body": "
+# Fifth Prompt
+
+This is the fifth test prompt.
+",
+      "completedAt": "",
+      "createdAt": "2026-04-01T00:00:00Z",
+      "downstreamPrompts": [],
+      "epicId": "E2",
+      "insertReason": "",
+      "insertedAfter": null,
+      "phase": "implementation",
+      "prerequisites": [
+        "3.0.1",
+      ],
+      "promptId": "5.0.1",
+      "requiredReading": [],
+      "reviewRequired": [],
+      "role": "Designer",
+      "sessionHandoff": "",
+      "sourcePath": "prompts/active/5.0.1-fifth.md",
+      "status": "ready",
+      "storyId": "E2-S1",
+      "supersededBy": "",
+      "supersedes": "",
+      "taskIds": [
+        "E2-S1-T1",
+      ],
+      "title": "Fifth Prompt",
+      "updatedAt": "2026-04-01T00:00:00Z",
+    },
+  ],
+  "sessions": [
+    {
+      "blockers": [],
+      "changedFiles": [
+        "src/module-a.ts",
+      ],
+      "completionPercent": 100,
+      "endedAt": "2026-04-01T10:00:00Z",
+      "nextRecommendedPrompts": [
+        "2.0.1",
+      ],
+      "promptId": "1.0.1",
+      "role": "Engineer",
+      "sessionId": "S-001",
+      "sourcePath": "agents/handoffs/S-001.md",
+      "startedAt": "2026-04-01T08:00:00Z",
+      "statusOutcome": "complete",
+      "summary": "Completed first prompt",
+    },
+    {
+      "blockers": [],
+      "changedFiles": [
+        "src/module-b.ts",
+      ],
+      "completionPercent": 100,
+      "endedAt": "2026-04-02T10:00:00Z",
+      "nextRecommendedPrompts": [
+        "3.0.1",
+      ],
+      "promptId": "2.0.1",
+      "role": "Engineer",
+      "sessionId": "S-002",
+      "sourcePath": "agents/handoffs/S-002.md",
+      "startedAt": "2026-04-02T08:00:00Z",
+      "statusOutcome": "complete",
+      "summary": "Completed second prompt",
+    },
+    {
+      "blockers": [],
+      "changedFiles": [
+        "src/module-c.ts",
+        "src/module-d.ts",
+      ],
+      "completionPercent": 100,
+      "endedAt": "2026-04-03T10:00:00Z",
+      "nextRecommendedPrompts": [
+        "4.0.1",
+        "5.0.1",
+      ],
+      "promptId": "3.0.1",
+      "role": "Engineer",
+      "sessionId": "S-003",
+      "sourcePath": "agents/handoffs/S-003.md",
+      "startedAt": "2026-04-03T08:00:00Z",
+      "statusOutcome": "complete",
+      "summary": "Completed third prompt",
+    },
+  ],
+  "summary": {
+    "activePrompts": 2,
+    "blockedPrompts": 0,
+    "cancelledPrompts": 0,
+    "completedPrompts": 4,
+    "completionTimeline": [
+      {
+        "cumulativeCompleted": 1,
+        "date": "2026-04-01",
+        "remainingPrompts": 5,
+      },
+      {
+        "cumulativeCompleted": 2,
+        "date": "2026-04-02",
+        "remainingPrompts": 4,
+      },
+      {
+        "cumulativeCompleted": 3,
+        "date": "2026-04-03",
+        "remainingPrompts": 3,
+      },
+    ],
+    "epicCompletionPercents": {
+      "E1": 50,
+      "E2": 0,
+    },
+    "executionCompletionPercent": 67,
+    "noEligibleRationale": null,
+    "promptsByStatus": {
+      "blocked": 0,
+      "cancelled": 0,
+      "done": 4,
+      "draft": 0,
+      "in_progress": 0,
+      "in_review": 0,
+      "ready": 2,
+      "superseded": 0,
+    },
+    "scopeCompletionPercent": 0,
+    "supersededPrompts": 0,
+  },
+  "taskIndex": {
+    "E1-S1-T1": [
+      "1.0.1",
+    ],
+    "E1-S1-T2": [
+      "2.0.1",
+    ],
+    "E1-S2-T1": [
+      "3.0.1",
+    ],
+    "E1-S2-T2": [
+      "3.0.1",
+    ],
+    "E1-S2-T3": [
+      "4.0.1",
+    ],
+    "E2-S1-T1": [
+      "5.0.1",
+    ],
+  },
+  "warnings": [
+    {
+      "code": "W_DONE_NO_HANDOFF",
+      "file": "prompts/archive/0.0.1-bootstrap.md",
+      "message": "Done prompt '0.0.1' has no matching handoff",
+      "severity": "warning",
+    },
+  ],
+}
+`;

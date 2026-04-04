@@ -1,7 +1,7 @@
 # Status Dashboard
 
 ## Current Phase
-Implementation — Sorting and eligibility engine complete; JSON state emitter next
+Implementation — E1 parser complete; code review gate next
 
 ## Project
 Project Manager Dashboard v1
@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (17 ready in prompts/active/, 13 done — 6 in prompts/archive/, 7 in prompts/active/)
-- Prompts Completed: 13
+- Prompts: 30 generated (16 ready in prompts/active/, 14 done — 6 in prompts/archive/, 8 in prompts/active/)
+- Prompts Completed: 14
 - Prompts Archived: 6
 - Prompts Blocked: 0
 
@@ -29,6 +29,7 @@ Project Manager Dashboard v1
 - Prompt 11.0.1: Project Scaffolding and Parser Setup — **DONE** (Next.js + TypeScript project scaffolded in dashboard/; parser module structure created; all core interfaces defined; Jest + Testing Library configured)
 - Prompt 12.0.1: Frontmatter Parser and Validators — **DONE** (7 parser modules implemented: warnings, prompt-schema, handoff-schema, scanner, extractor, epic-parser, graph-builder; 57 tests passing at 97% coverage)
 - Prompt 13.0.1: Prompt Sorting and Dependency Engine — **DONE** (sorting.ts + eligibility.ts; graph-builder integrated; 56 new tests; 113 total tests passing at 97% coverage)
+- Prompt 14.0.1: JSON State Emitter and CLI — **DONE** (parse() orchestrator, parseToJson() serializer, CLI entry point with --repo/--output/--pretty; snapshot repo fixtures; 139 total tests)
 
 ## Open Blockers
 - None
@@ -37,7 +38,7 @@ Project Manager Dashboard v1
 - R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
 
 ## Next Suggested Action
-- Run prompt `prompts/active/14.0.1-engineer-json-emitter-cli.md` (JSON State Emitter and CLI)
+- Run prompt `prompts/active/15.0.1-review-gate-parser.md` (Parser Code Review Gate)
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`
