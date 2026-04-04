@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`PromptStatusChart matches empty snapshot 1`] = `
+<div>
+  <div
+    class="flex h-64 items-center justify-center rounded-lg border border-gray-200 bg-white text-sm text-gray-400"
+    data-testid="prompt-status-chart-empty"
+  >
+    No prompt data available
+  </div>
+</div>
+`;
+
+exports[`PromptStatusChart matches snapshot 1`] = `
+<div>
+  <div
+    class="rounded-lg border border-gray-200 bg-white p-4"
+    data-testid="prompt-status-chart"
+  >
+    <h3
+      class="mb-3 text-sm font-semibold text-gray-700"
+    >
+      Prompt Status Distribution
+    </h3>
+    <div
+      class="h-64"
+    >
+      <div
+        data-chart-data="{"labels":["ready","in progress","in review","done"],"datasets":[{"data":[5,2,1,10],"backgroundColor":["#3B82F6","#F59E0B","#8B5CF6","#10B981"],"borderWidth":1,"borderColor":"#fff"}]}"
+        data-chart-options="{"responsive":true,"maintainAspectRatio":false,"plugins":{"legend":{"position":"bottom","labels":{"padding":12,"usePointStyle":true}}}}"
+        data-testid="mock-doughnut-chart"
+      />
+    </div>
+  </div>
+</div>
+`;

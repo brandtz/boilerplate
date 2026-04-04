@@ -1,7 +1,7 @@
 # Status Dashboard
 
 ## Current Phase
-Implementation — E1 parser approved; E2 UI shell complete; view content next
+Implementation — E1 parser approved; E2 UI shell complete; Overview cards and charts done; Blockers/Next Prompt next
 
 ## Project
 Project Manager Dashboard v1
@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (14 ready in prompts/active/, 16 done — 6 in prompts/archive/, 10 in prompts/active/)
-- Prompts Completed: 16
+- Prompts: 30 generated (13 ready in prompts/active/, 17 done — 6 in prompts/archive/, 11 in prompts/active/)
+- Prompts Completed: 17
 - Prompts Archived: 6
 - Prompts Blocked: 0
 
@@ -32,6 +32,7 @@ Project Manager Dashboard v1
 - Prompt 14.0.1: JSON State Emitter and CLI — **DONE** (parse() orchestrator, parseToJson() serializer, CLI entry point with --repo/--output/--pretty; snapshot repo fixtures; 139 total tests)
 - Prompt 15.0.1: Parser Code Review Gate — **DONE** (Approved by Architect, QA, Security; no rework needed; 139 tests passing at 87.5% coverage)
 - Prompt 16.0.1: App Shell, Layout, Navigation — **DONE** (AppShell + Header + Sidebar + StatusBar + ErrorBoundary; DashboardContext + useDashboard; 5 routes; 31 new tests; 170 total passing)
+- Prompt 17.0.1: Overview: Summary Cards and Charts — **DONE** (SummaryCard, HealthBadge, OverallProgressBar, SummaryCardsGrid, EpicCompletionChart, PromptStatusChart, SessionThroughputChart; 50 new tests; 220 total passing)
 
 ## Open Blockers
 - None
@@ -40,7 +41,7 @@ Project Manager Dashboard v1
 - R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
 
 ## Next Suggested Action
-- Run prompt `prompts/active/17.0.1-engineer-overview-cards-charts.md` (Overview: Summary Cards and Charts)
+- Run prompt `prompts/active/18.0.1-engineer-blockers-next-prompt.md` (Blockers Panel and Next Prompt Widget)
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`
