@@ -12,8 +12,8 @@
 | Total prompts | 34 |
 | Boilerplate operational prompts | 4 |
 | Dashboard project prompts | 30 |
-| Status: ready | 22 |
-| Status: done | 12 |
+| Status: ready | 21 |
+| Status: done | 13 |
 | Status: archived | 0 |
 | Status: blocked | 0 |
 | Status: superseded | 0 |
@@ -58,7 +58,7 @@
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 11.0.1 | Project Scaffolding and Parser Setup | done | implementation | E1 | E1-S1 | E1-S1-T1 | prompts/active/11.0.1-engineer-project-scaffolding.md | 9.0.1 | 12.0.1 | agents/handoffs/S-2026-04-04-014-project-scaffolding.md | 2026-04-03 | 2026-04-04 | — | Scaffolded Next.js + TS project; parser module structure + all interfaces defined |
 | 12.0.1 | Frontmatter Parser and Validators | done | implementation | E1 | E1-S3 | E1-S1-T2,T3;E1-S2-T1–T3;E1-S3-T1–T5 | prompts/active/12.0.1-engineer-frontmatter-parser.md | 11.0.1 | 13.0.1 | agents/handoffs/S-2026-04-04-015-frontmatter-parser.md | 2026-04-03 | 2026-04-04 | — | 7 parser modules, 57 tests, 97% coverage |
-| 13.0.1 | Prompt Sorting and Dependency Engine | ready | implementation | E1 | E1-S4 | E1-S4-T1,T2;E1-S5-T1–T4 | prompts/active/13.0.1-engineer-sorting-dependency-engine.md | 12.0.1 | 14.0.1 | — | 2026-04-03 | — | — | — |
+| 13.0.1 | Prompt Sorting and Dependency Engine | done | implementation | E1 | E1-S4 | E1-S4-T1,T2;E1-S5-T1–T4 | prompts/active/13.0.1-engineer-sorting-dependency-engine.md | 12.0.1 | 14.0.1 | agents/handoffs/S-2026-04-04-016-sorting-dependency-engine.md | 2026-04-03 | 2026-04-04 | — | sorting.ts + eligibility.ts; 56 new tests |
 | 14.0.1 | JSON State Emitter and CLI | ready | implementation | E1 | E1-S6 | E1-S6-T1–T4 | prompts/active/14.0.1-engineer-json-emitter-cli.md | 13.0.1 | 15.0.1 | — | 2026-04-03 | — | — | — |
 | 15.0.1 | Parser Code Review Gate | ready | review-approval | E1 | — | — | prompts/active/15.0.1-review-gate-parser.md | 14.0.1 | 16.0.1 | — | 2026-04-03 | — | — | — |
 

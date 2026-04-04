@@ -10,6 +10,8 @@ import type {
   PromptStatus,
 } from './types';
 import { createWarning } from './warnings';
+import { sortPrompts } from './sorting';
+import { resolvePrerequisites, selectNextPrompt, generateNoEligibleRationale } from './eligibility';
 
 const STATUS_KEYS: PromptStatus[] = [
   'draft', 'ready', 'in_progress', 'in_review',
@@ -187,12 +189,27 @@ export function buildDashboardState(
     noEligibleRationale: null,
   };
 
+  // Sort prompts by natural tuple order
+  const sorted = sortPrompts(deduped);
+
+  // Resolve eligibility and select next prompt
+  const resolved = resolvePrerequisites(promptMap);
+  warnings.push(...resolved.warnings);
+
+  const nextPrompt = selectNextPrompt(resolved.eligible, promptMap);
+  if (!nextPrompt) {
+    summary.noEligibleRationale = generateNoEligibleRationale(
+      resolved.blocked.length,
+      resolved.waiting.length,
+    );
+  }
+
   return {
     project,
     summary,
-    nextPrompt: null, // Deferred to eligibility.ts (prompt 13.0.1)
+    nextPrompt,
     epics,
-    prompts: deduped,
+    prompts: sorted,
     sessions: handoffs,
     warnings,
     taskIndex,

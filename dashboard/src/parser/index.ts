@@ -29,3 +29,15 @@ export { validateHandoffFrontmatter } from './schemas/handoff-schema';
 export { parseEpicFile } from './epic-parser';
 export { buildDashboardState } from './graph-builder';
 export { createWarning, isError, isWarning } from './warnings';
+export { parsePromptIdTuple, comparePromptIds, sortPrompts } from './sorting';
+export type { PromptIdTuple } from './sorting';
+export {
+  checkPrerequisites,
+  resolvePrerequisites,
+  selectNextPrompt,
+  generateRationale,
+  generateNoEligibleRationale,
+  buildDownstreamMap,
+  detectInsertionImpacts,
+} from './eligibility';
+export type { PrerequisiteCheck, ResolvedPrompts } from './eligibility';

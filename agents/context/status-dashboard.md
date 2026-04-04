@@ -1,7 +1,7 @@
 # Status Dashboard
 
 ## Current Phase
-Implementation — Frontmatter parser complete; sorting and dependency engine next
+Implementation — Sorting and eligibility engine complete; JSON state emitter next
 
 ## Project
 Project Manager Dashboard v1
@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (18 ready in prompts/active/, 12 done — 6 in prompts/archive/, 6 in prompts/active/)
-- Prompts Completed: 12
+- Prompts: 30 generated (17 ready in prompts/active/, 13 done — 6 in prompts/archive/, 7 in prompts/active/)
+- Prompts Completed: 13
 - Prompts Archived: 6
 - Prompts Blocked: 0
 
@@ -28,6 +28,7 @@ Project Manager Dashboard v1
 - Prompt 10.0.1: Technical Tasks for UI (E2–E5) — **DONE** (55 tasks specified across 16 stories in 4 epics; component structure, hooks, and test requirements defined; docs/technical-tasks-e2-e5-ui.md)
 - Prompt 11.0.1: Project Scaffolding and Parser Setup — **DONE** (Next.js + TypeScript project scaffolded in dashboard/; parser module structure created; all core interfaces defined; Jest + Testing Library configured)
 - Prompt 12.0.1: Frontmatter Parser and Validators — **DONE** (7 parser modules implemented: warnings, prompt-schema, handoff-schema, scanner, extractor, epic-parser, graph-builder; 57 tests passing at 97% coverage)
+- Prompt 13.0.1: Prompt Sorting and Dependency Engine — **DONE** (sorting.ts + eligibility.ts; graph-builder integrated; 56 new tests; 113 total tests passing at 97% coverage)
 
 ## Open Blockers
 - None
@@ -36,7 +37,7 @@ Project Manager Dashboard v1
 - R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
 
 ## Next Suggested Action
-- Run prompt `prompts/active/13.0.1-engineer-sorting-dependency-engine.md` (Prompt Sorting and Dependency Engine)
+- Run prompt `prompts/active/14.0.1-engineer-json-emitter-cli.md` (JSON State Emitter and CLI)
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`
