@@ -1,7 +1,7 @@
 # Status Dashboard
 
 ## Current Phase
-Technical Task Generation — Parser technical tasks complete, UI technical tasks next
+Technical Task Generation — Parser and UI technical tasks complete; implementation phase next
 
 ## Project
 Project Manager Dashboard v1
@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (21 ready in prompts/active/, 9 done — 6 in prompts/archive/, 3 in prompts/active/)
-- Prompts Completed: 9
+- Prompts: 30 generated (20 ready in prompts/active/, 10 done — 6 in prompts/archive/, 4 in prompts/active/)
+- Prompts Completed: 10
 - Prompts Archived: 6
 - Prompts Blocked: 0
 
@@ -25,6 +25,7 @@ Project Manager Dashboard v1
 - Prompt 7.0.1: Test Strategy and Test Plan — **DONE** (test strategy at docs/test-strategy.md: 4 test levels, 8 fixture categories, quality gates, Jest + Testing Library + Playwright)
 - Prompt 8.0.1: Pre-Implementation Review Gate — **DONE** (GO recommendation: all deliverables verified, 0 critical blockers, ADR-002 conditions to resolve in 9.0.1)
 - Prompt 9.0.1: Technical Tasks for Parser (E1) — **DONE** (21 tasks specified across 6 stories; all 6 ADR-002 conditions resolved; R10/R11/R12 resolved; docs/technical-tasks-e1-parser.md)
+- Prompt 10.0.1: Technical Tasks for UI (E2–E5) — **DONE** (55 tasks specified across 16 stories in 4 epics; component structure, hooks, and test requirements defined; docs/technical-tasks-e2-e5-ui.md)
 
 ## Open Blockers
 - None
@@ -33,7 +34,7 @@ Project Manager Dashboard v1
 - R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
 
 ## Next Suggested Action
-- Run prompt `prompts/active/10.0.1-architect-technical-tasks-ui.md` (Technical Tasks for UI, E2–E5)
+- Run prompt `prompts/active/11.0.1-engineer-project-scaffolding.md` (Project Scaffolding and Parser Setup)
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`
