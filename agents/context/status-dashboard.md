@@ -1,7 +1,7 @@
 # Status Dashboard
 
 ## Current Phase
-Product Definition — Intake complete, prompt lifecycle governance applied, ready to begin sequential prompt execution
+Cross-Functional Review — All pre-implementation reviews complete, review gate passed, ready to begin technical task generation
 
 ## Project
 Project Manager Dashboard v1
@@ -10,9 +10,9 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (23 ready in prompts/active/, 7 done in prompts/archive/)
-- Prompts Completed: 7
-- Prompts Archived: 4
+- Prompts: 30 generated (22 ready in prompts/active/, 8 done in prompts/archive/)
+- Prompts Completed: 8
+- Prompts Archived: 5
 - Prompts Blocked: 0
 
 ## Active Work Packets
@@ -23,6 +23,7 @@ Project Manager Dashboard v1
 - Prompt 5.0.1: Security Review of Architecture — **DONE** (0 critical, 2 high, 4 medium, 3 low findings; PROCEED)
 - Prompt 6.0.1: Operational Review and Local Dev Setup — **DONE** (scaffolding structure, dev workflow, CI/CD recommendations, file watcher config at docs/operational-review.md)
 - Prompt 7.0.1: Test Strategy and Test Plan — **DONE** (test strategy at docs/test-strategy.md: 4 test levels, 8 fixture categories, quality gates, Jest + Testing Library + Playwright)
+- Prompt 8.0.1: Pre-Implementation Review Gate — **DONE** (GO recommendation: all deliverables verified, 0 critical blockers, ADR-002 conditions to resolve in 9.0.1)
 
 ## Open Blockers
 - None
@@ -35,7 +36,7 @@ Project Manager Dashboard v1
 - R12: ProjectSummary, SummaryMetrics, NextPromptInfo interfaces undefined
 
 ## Next Suggested Action
-- Run prompt `prompts/active/08.0.1-review-gate-pre-implementation.md`
+- Run prompt `prompts/active/09.0.1-architect-technical-tasks-parser.md`
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`

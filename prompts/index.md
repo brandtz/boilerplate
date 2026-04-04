@@ -12,8 +12,8 @@
 | Total prompts | 34 |
 | Boilerplate operational prompts | 4 |
 | Dashboard project prompts | 30 |
-| Status: ready | 27 |
-| Status: done | 7 |
+| Status: ready | 26 |
+| Status: done | 8 |
 | Status: archived | 0 |
 | Status: blocked | 0 |
 | Status: superseded | 0 |
@@ -43,7 +43,7 @@
 | 5.0.1 | Security Review of Architecture | done | security-review | E6 | E6-S4 | — | prompts/active/05.0.1-devsecops-security-review.md | 4.0.1 | 6.0.1 | agents/handoffs/S-2026-04-03-008-security-review.md | 2026-04-03 | 2026-04-03 | — | 0 critical, 2 high, 4 medium, 3 low findings; PROCEED |
 | 6.0.1 | Operational Review and Local Dev Setup | done | operational-review | E5 | — | — | prompts/active/06.0.1-devops-operational-review.md | 4.0.1 | 7.0.1 | agents/handoffs/S-2026-04-03-009-operational-review.md | 2026-04-03 | 2026-04-03 | — | Operational review produced: docs/operational-review.md |
 | 7.0.1 | Test Strategy and Test Plan | done | qa-planning | E6 | E6-S1 | — | prompts/active/07.0.1-qa-test-strategy.md | 4.0.1, 5.0.1 | 8.0.1 | agents/handoffs/S-2026-04-04-010-test-strategy.md | 2026-04-03 | 2026-04-04 | — | Test strategy: 4 test levels, 8 fixture categories, quality gates per phase |
-| 8.0.1 | Pre-Implementation Review Gate | ready | review-approval | — | — | — | prompts/active/08.0.1-review-gate-pre-implementation.md | 1.0.1–7.0.1 | 9.0.1 | — | 2026-04-03 | — | — | Requires human sponsor approval |
+| 8.0.1 | Pre-Implementation Review Gate | done | review-approval | — | — | — | prompts/archive/08.0.1-review-gate-pre-implementation.md | 1.0.1–7.0.1 | 9.0.1 | agents/handoffs/S-2026-04-04-011-pre-implementation-review-gate.md | 2026-04-03 | 2026-04-04 | 2026-04-04 | GO: All deliverables verified; proceed with ADR-002 conditions in 9.0.1 |
 
 ### Dashboard Project Prompts — Phase 3: Technical Task Generation
 
