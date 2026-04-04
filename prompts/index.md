@@ -12,8 +12,8 @@
 | Total prompts | 34 |
 | Boilerplate operational prompts | 4 |
 | Dashboard project prompts | 30 |
-| Status: ready | 19 |
-| Status: done | 15 |
+| Status: ready | 18 |
+| Status: done | 16 |
 | Status: archived | 0 |
 | Status: blocked | 0 |
 | Status: superseded | 0 |
@@ -66,7 +66,7 @@
 
 | prompt_id | title | status | phase | epic_id | story_id | task_ids | location | prerequisites | downstream_prompts | session_handoff | created_at | completed_at | archived_at | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 16.0.1 | App Shell, Layout, Navigation | ready | implementation | E2 | E2-S1 | E2-S1-T1 | prompts/active/16.0.1-engineer-app-shell-navigation.md | 10.0.1, 15.0.1 | 17.0.1 | — | 2026-04-03 | — | — | — |
+| 16.0.1 | App Shell, Layout, Navigation | done | implementation | E2 | E2-S1 | E2-S1-T1 | prompts/active/16.0.1-engineer-app-shell-navigation.md | 10.0.1, 15.0.1 | 17.0.1 | agents/handoffs/S-2026-04-04-019-app-shell-navigation.md | 2026-04-03 | 2026-04-04 | — | Shell + sidebar + 5 routes + DashboardContext; 31 new tests |
 | 17.0.1 | Overview: Summary Cards and Charts | ready | implementation | E2 | E2-S1 | E2-S1-T1–T3;E2-S2-T1–T5 | prompts/active/17.0.1-engineer-overview-cards-charts.md | 16.0.1 | 18.0.1 | — | 2026-04-03 | — | — | — |
 | 18.0.1 | Blockers Panel and Next Prompt Widget | ready | implementation | E2 | E2-S3 | E2-S3-T1–T4;E2-S4-T1–T4 | prompts/active/18.0.1-engineer-blockers-next-prompt.md | 17.0.1 | 19.0.1 | — | 2026-04-03 | — | — | — |
 | 19.0.1 | Epics View: Table, Drill-Down, Tasks | ready | implementation | E3 | E3-S1 | All E3 tasks | prompts/active/19.0.1-engineer-epics-view.md | 18.0.1 | 20.0.1 | — | 2026-04-03 | — | — | — |
