@@ -12,8 +12,8 @@
 | Total prompts | 34 |
 | Boilerplate operational prompts | 4 |
 | Dashboard project prompts | 30 |
-| Status: ready | 26 |
-| Status: done | 8 |
+| Status: ready | 25 |
+| Status: done | 9 |
 | Status: archived | 0 |
 | Status: blocked | 0 |
 | Status: superseded | 0 |
@@ -49,7 +49,7 @@
 
 | prompt_id | title | status | phase | epic_id | story_id | task_ids | location | prerequisites | downstream_prompts | session_handoff | created_at | completed_at | archived_at | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 9.0.1 | Technical Tasks for Parser (E1) | ready | technical-task-generation | E1 | — | — | prompts/active/09.0.1-architect-technical-tasks-parser.md | 8.0.1 | 10.0.1, 11.0.1 | — | 2026-04-03 | — | — | — |
+| 9.0.1 | Technical Tasks for Parser (E1) | done | technical-task-generation | E1 | — | — | prompts/archive/09.0.1-architect-technical-tasks-parser.md | 8.0.1 | 10.0.1, 11.0.1 | agents/handoffs/S-2026-04-04-012-technical-tasks-parser.md | 2026-04-03 | 2026-04-04 | 2026-04-04 | 21 tasks specified; all 6 ADR-002 conditions resolved; R10/R11/R12 resolved |
 | 10.0.1 | Technical Tasks for UI (E2–E5) | ready | technical-task-generation | E2 | — | — | prompts/active/10.0.1-architect-technical-tasks-ui.md | 8.0.1 | 16.0.1 | — | 2026-04-03 | — | — | — |
 
 ### Dashboard Project Prompts — Phase 4: Implementation — Parser
