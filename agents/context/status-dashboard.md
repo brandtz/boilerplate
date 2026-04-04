@@ -1,7 +1,7 @@
 # Status Dashboard
 
 ## Current Phase
-Implementation — E1 parser complete; code review gate next
+Implementation — E1 parser approved; UI implementation next
 
 ## Project
 Project Manager Dashboard v1
@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (16 ready in prompts/active/, 14 done — 6 in prompts/archive/, 8 in prompts/active/)
-- Prompts Completed: 14
+- Prompts: 30 generated (15 ready in prompts/active/, 15 done — 6 in prompts/archive/, 9 in prompts/active/)
+- Prompts Completed: 15
 - Prompts Archived: 6
 - Prompts Blocked: 0
 
@@ -30,6 +30,7 @@ Project Manager Dashboard v1
 - Prompt 12.0.1: Frontmatter Parser and Validators — **DONE** (7 parser modules implemented: warnings, prompt-schema, handoff-schema, scanner, extractor, epic-parser, graph-builder; 57 tests passing at 97% coverage)
 - Prompt 13.0.1: Prompt Sorting and Dependency Engine — **DONE** (sorting.ts + eligibility.ts; graph-builder integrated; 56 new tests; 113 total tests passing at 97% coverage)
 - Prompt 14.0.1: JSON State Emitter and CLI — **DONE** (parse() orchestrator, parseToJson() serializer, CLI entry point with --repo/--output/--pretty; snapshot repo fixtures; 139 total tests)
+- Prompt 15.0.1: Parser Code Review Gate — **DONE** (Approved by Architect, QA, Security; no rework needed; 139 tests passing at 87.5% coverage)
 
 ## Open Blockers
 - None
@@ -38,7 +39,7 @@ Project Manager Dashboard v1
 - R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
 
 ## Next Suggested Action
-- Run prompt `prompts/active/15.0.1-review-gate-parser.md` (Parser Code Review Gate)
+- Run prompt `prompts/active/16.0.1-engineer-app-shell-navigation.md` (App Shell, Layout, Navigation)
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`
