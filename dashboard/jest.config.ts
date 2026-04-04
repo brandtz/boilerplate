@@ -14,6 +14,9 @@ const config: Config = {
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^react-chartjs-2$': '<rootDir>/tests/__mocks__/react-chartjs-2.tsx',
+    '^chart\\.js$': '<rootDir>/tests/__mocks__/chart.js.ts',
+    '^chart\\.js/auto$': '<rootDir>/tests/__mocks__/chart.js.ts',
   },
   coverageDirectory: 'coverage',
   coverageThreshold: {
