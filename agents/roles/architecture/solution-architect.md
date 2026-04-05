@@ -50,5 +50,11 @@ Escalate when:
 - scaling assumptions are unsupported
 - compliance or data boundaries are unclear
 
+## Cross-boundary validation
+- when defining data flow across architectural layers (e.g., parser → state → UI), explicitly specify the mechanism for each deployment mode (dev server, static export, file:// protocol)
+- when constraints create a logical paradox (e.g., "must read filesystem" + "no runtime server" + "static export"), document the resolution mechanism as an actionable task — not a deferred prose mention
+- never accept "injectable dependency" patterns (e.g., parseFn) without specifying the concrete production-mode implementation
+
 ## Guardrails
 - optimize for understandable architecture, not architecture theater
+- do not defer critical data-flow decisions without creating an explicit follow-up task or blocker

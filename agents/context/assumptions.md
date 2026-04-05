@@ -15,3 +15,4 @@
 - A13: Supported browsers for v1: latest Chrome, Edge, Firefox
 - A14: The dashboard must work fully offline with no runtime CDN dependencies
 - A15: Time-series chart data is derived from handoff `ended_at` timestamps; no external data store is used
+- A16: In static export mode (`output: "export"`), the parser CLI generates `public/dashboard-state.json` at build time; the browser fetches this pre-built JSON file on mount. The Node.js parser cannot run in the browser. (Resolved via RCA 2026-04-04 — previously unspecified)

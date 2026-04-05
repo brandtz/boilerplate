@@ -6,7 +6,9 @@
     "dashboard-parse": "./bin/dashboard-parse.ts"
   },
   "scripts": {
+    "predev": "tsx bin/dashboard-parse.ts --repo .. --output public/dashboard-state.json --pretty || echo Parse completed with warnings",
     "dev": "next dev",
+    "prebuild": "tsx bin/dashboard-parse.ts --repo .. --output public/dashboard-state.json --pretty || echo Parse completed with warnings",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

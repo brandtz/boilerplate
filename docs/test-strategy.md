@@ -132,6 +132,11 @@ This document defines the test strategy for the Project Manager Dashboard, a loc
 | Epic/story/task extraction | Combined markdown epic file | Correct hierarchy: epic → stories → tasks |
 | File watcher trigger | File change after initial parse | Re-parse triggered; state updated |
 | Batch file changes | `git checkout` changes 20 files at once | Single debounced re-parse (3s batch window) |
+| **Static export data loading** | `npm run build` generates `public/dashboard-state.json`; DashboardProvider fetches it without `parseFn` | DashboardProvider loads state from pre-built JSON; all views render with correct data |
+| **Build pipeline generates JSON** | `predev`/`prebuild` npm scripts run parser CLI | `public/dashboard-state.json` exists and contains valid `DashboardState` |
+| **DashboardProvider without parseFn** | DashboardProvider mounted with no `parseFn` prop | Provider fetches `/dashboard-state.json` and dispatches `PARSE_SUCCESS` |
+
+> **RCA Note (2026-04-04):** The above three scenarios were added after discovering that all 495 existing tests passed via `renderWithProviders()` mock injection, while the actual production data path (no `parseFn`, static JSON fetch) was never tested. See `docs/rca-data-pipeline-gap.md`.
 
 ### 2.3 Component Tests
 

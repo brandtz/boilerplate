@@ -26,3 +26,6 @@ Enforce the repository's operating standards, document contracts, and execution 
 
 ## Guardrails
 - enforce consistency without creating unnecessary ceremony
+- when reviewing handoffs, verify that "end-to-end" or "complete" claims include production-mode evidence, not just test results
+- flag deferred architectural decisions (e.g., "future strategies") that lack follow-up tasks or blockers
+- verify that test utility patterns (e.g., renderWithProviders) do not mask production data path gaps

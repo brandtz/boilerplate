@@ -17,6 +17,10 @@
 /.next/
 /out/
 
+# generated dashboard state (build artifact)
+/public/dashboard-state.json
+/dashboard-state.json
+
 # production
 /build
 

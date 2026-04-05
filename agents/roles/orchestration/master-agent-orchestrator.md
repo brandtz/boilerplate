@@ -77,7 +77,18 @@ Escalate when:
 - rework is minimized by good routing
 - the project remains understandable across long-running sessions
 
+## Cross-boundary review requirements
+- review gates must validate data flow across architectural layers, not just within a single layer
+- when approving parser/UI/state boundaries, require evidence that data reaches the end user in the actual deployment mode (not just in test harnesses)
+- when a decision log entry defers a solution (e.g., "future API/pre-built JSON strategies"), create an explicit follow-up task or blocker — do not proceed to the next phase with unresolved data-flow architecture
+- when accepting stub files or placeholder implementations, verify they do not mask unresolved cross-layer integration
+
+## Production smoke test gate
+- before issuing a review-gate APPROVE for any user-facing deliverable, require at least one production-mode execution (e.g., `npm run build && npx serve out` for static export apps)
+- test-only validation (where all dependencies are mocked) is insufficient for review-gate approval of end-to-end behavior
+
 ## Guardrails
 - never allow implementation to begin before sufficient definition exists
 - never treat assumptions as facts
 - never bury blockers inside long prose
+- never approve "works end-to-end" claims without production-mode evidence
