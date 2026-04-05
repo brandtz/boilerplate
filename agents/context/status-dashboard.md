@@ -1,7 +1,7 @@
 # Status Dashboard
 
 ## Current Phase
-Implementation — E1 parser approved; E2 UI shell complete; Overview cards, charts, blockers panel, and next prompt widget done; Epics view next
+Implementation — E1 parser approved; E2 overview complete; E3 epics view done; Prompt inventory next
 
 ## Project
 Project Manager Dashboard v1
@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (12 ready in prompts/active/, 18 done — 6 in prompts/archive/, 12 in prompts/active/)
-- Prompts Completed: 18
+- Prompts: 30 generated (11 ready in prompts/active/, 19 done — 6 in prompts/archive/, 13 in prompts/active/)
+- Prompts Completed: 19
 - Prompts Archived: 6
 - Prompts Blocked: 0
 
@@ -34,6 +34,7 @@ Project Manager Dashboard v1
 - Prompt 16.0.1: App Shell, Layout, Navigation — **DONE** (AppShell + Header + Sidebar + StatusBar + ErrorBoundary; DashboardContext + useDashboard; 5 routes; 31 new tests; 170 total passing)
 - Prompt 17.0.1: Overview: Summary Cards and Charts — **DONE** (SummaryCard, HealthBadge, OverallProgressBar, SummaryCardsGrid, EpicCompletionChart, PromptStatusChart, SessionThroughputChart; 50 new tests; 220 total passing)
 - Prompt 18.0.1: Blockers Panel and Next Prompt Widget — **DONE** (BlockersWarningsPanel, NextPromptWidget, CopyButton, useCopyToClipboard; 31 new tests; 251 total passing)
+- Prompt 19.0.1: Epics View: Table, Drill-Down, Task Tree — **DONE** (EpicAccordion, EpicCard, StoryRow, TaskList, StatusBadge, FilterBar, UpdateSummary, useAccordion; 59 new tests; 310 total passing)
 
 ## Open Blockers
 - None
@@ -42,7 +43,7 @@ Project Manager Dashboard v1
 - R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
 
 ## Next Suggested Action
-- Run prompt `prompts/active/19.0.1-engineer-epics-view.md` (Epics View: Table, Drill-Down, Tasks)
+- Run prompt `prompts/active/20.0.1-engineer-prompt-inventory.md` (Prompt Inventory Table and Detail Drawer)
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`

@@ -12,8 +12,8 @@
 | Total prompts | 34 |
 | Boilerplate operational prompts | 4 |
 | Dashboard project prompts | 30 |
-| Status: ready | 16 |
-| Status: done | 18 |
+| Status: ready | 15 |
+| Status: done | 19 |
 | Status: archived | 0 |
 | Status: blocked | 0 |
 | Status: superseded | 0 |
@@ -69,7 +69,7 @@
 | 16.0.1 | App Shell, Layout, Navigation | done | implementation | E2 | E2-S1 | E2-S1-T1 | prompts/active/16.0.1-engineer-app-shell-navigation.md | 10.0.1, 15.0.1 | 17.0.1 | agents/handoffs/S-2026-04-04-019-app-shell-navigation.md | 2026-04-03 | 2026-04-04 | — | Shell + sidebar + 5 routes + DashboardContext; 31 new tests |
 | 17.0.1 | Overview: Summary Cards and Charts | done | implementation | E2 | E2-S1 | E2-S1-T1–T3;E2-S2-T1–T5 | prompts/active/17.0.1-engineer-overview-cards-charts.md | 16.0.1 | 18.0.1 | agents/handoffs/S-2026-04-04-020-overview-cards-charts.md | 2026-04-03 | 2026-04-04 | — | Summary cards + 3 charts + 50 tests |
 | 18.0.1 | Blockers Panel and Next Prompt Widget | done | implementation | E2 | E2-S3 | E2-S3-T1–T4;E2-S4-T1–T4 | prompts/active/18.0.1-engineer-blockers-next-prompt.md | 17.0.1 | 19.0.1 | agents/handoffs/S-2026-04-04-021-blockers-next-prompt.md | 2026-04-03 | 2026-04-04 | — | BlockersWarningsPanel + NextPromptWidget + CopyButton + useCopyToClipboard; 31 new tests; 251 total passing |
-| 19.0.1 | Epics View: Table, Drill-Down, Tasks | ready | implementation | E3 | E3-S1 | All E3 tasks | prompts/active/19.0.1-engineer-epics-view.md | 18.0.1 | 20.0.1 | — | 2026-04-03 | — | — | — |
+| 19.0.1 | Epics View: Table, Drill-Down, Tasks | done | implementation | E3 | E3-S1 | All E3 tasks | prompts/active/19.0.1-engineer-epics-view.md | 18.0.1 | 20.0.1 | agents/handoffs/S-2026-04-04-022-epics-view.md | 2026-04-03 | 2026-04-04 | — | EpicAccordion + StoryRow + TaskList + StatusBadge + FilterBar + UpdateSummary; 59 new tests; 310 total passing |
 | 20.0.1 | Prompt Inventory Table and Detail Drawer | ready | implementation | E4 | E4-S1 | E4-S1-T1–T4;E4-S2-T1–T4 | prompts/active/20.0.1-engineer-prompt-inventory.md | 19.0.1 | 21.0.1 | — | 2026-04-03 | — | — | — |
 | 21.0.1 | Session Timeline and Handoff Links | ready | implementation | E4 | E4-S3 | E4-S3-T1–T4;E4-S4-T1–T3 | prompts/active/21.0.1-engineer-session-timeline.md | 20.0.1 | 22.0.1 | — | 2026-04-03 | — | — | — |
 | 22.0.1 | Refresh, File Watch, Repo Selector | ready | implementation | E5 | E5-S1 | All E5 tasks | prompts/active/22.0.1-engineer-refresh-watch-repo-selector.md | 21.0.1 | 23.0.1 | — | 2026-04-03 | — | — | — |
