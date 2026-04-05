@@ -1,5 +1,6 @@
 'use client';
 
+import { useCallback } from 'react';
 import { ErrorBoundary } from '@/components/shared/ErrorBoundary';
 import { useDashboard } from '@/hooks/useDashboard';
 import {
@@ -7,10 +8,20 @@ import {
   EpicCompletionChart,
   PromptStatusChart,
   SessionThroughputChart,
+  BlockersWarningsPanel,
+  NextPromptWidget,
 } from '@/components/overview';
 
 export default function OverviewPage() {
   const { state, isLoading, error } = useDashboard();
+
+  const handlePromptClick = useCallback((promptId: string) => {
+    window.location.href = `/prompts?id=${encodeURIComponent(promptId)}`;
+  }, []);
+
+  const handleViewSource = useCallback((promptId: string) => {
+    window.location.href = `/prompts?id=${encodeURIComponent(promptId)}`;
+  }, []);
 
   return (
     <ErrorBoundary viewName="Overview">
@@ -59,6 +70,24 @@ export default function OverviewPage() {
               />
               <SessionThroughputChart
                 completionTimeline={state.summary.completionTimeline}
+              />
+            </div>
+
+            {/* Blockers & Warnings */}
+            <div className="mt-8">
+              <BlockersWarningsPanel
+                prompts={state.prompts}
+                warnings={state.warnings}
+                onPromptClick={handlePromptClick}
+              />
+            </div>
+
+            {/* Next Prompt */}
+            <div className="mt-8">
+              <NextPromptWidget
+                nextPrompt={state.nextPrompt}
+                noEligibleRationale={state.summary.noEligibleRationale}
+                onViewSource={handleViewSource}
               />
             </div>
           </>

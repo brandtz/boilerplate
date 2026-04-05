@@ -1,7 +1,7 @@
 # Status Dashboard
 
 ## Current Phase
-Implementation — E1 parser approved; E2 UI shell complete; Overview cards and charts done; Blockers/Next Prompt next
+Implementation — E1 parser approved; E2 UI shell complete; Overview cards, charts, blockers panel, and next prompt widget done; Epics view next
 
 ## Project
 Project Manager Dashboard v1
@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (13 ready in prompts/active/, 17 done — 6 in prompts/archive/, 11 in prompts/active/)
-- Prompts Completed: 17
+- Prompts: 30 generated (12 ready in prompts/active/, 18 done — 6 in prompts/archive/, 12 in prompts/active/)
+- Prompts Completed: 18
 - Prompts Archived: 6
 - Prompts Blocked: 0
 
@@ -33,6 +33,7 @@ Project Manager Dashboard v1
 - Prompt 15.0.1: Parser Code Review Gate — **DONE** (Approved by Architect, QA, Security; no rework needed; 139 tests passing at 87.5% coverage)
 - Prompt 16.0.1: App Shell, Layout, Navigation — **DONE** (AppShell + Header + Sidebar + StatusBar + ErrorBoundary; DashboardContext + useDashboard; 5 routes; 31 new tests; 170 total passing)
 - Prompt 17.0.1: Overview: Summary Cards and Charts — **DONE** (SummaryCard, HealthBadge, OverallProgressBar, SummaryCardsGrid, EpicCompletionChart, PromptStatusChart, SessionThroughputChart; 50 new tests; 220 total passing)
+- Prompt 18.0.1: Blockers Panel and Next Prompt Widget — **DONE** (BlockersWarningsPanel, NextPromptWidget, CopyButton, useCopyToClipboard; 31 new tests; 251 total passing)
 
 ## Open Blockers
 - None
@@ -41,7 +42,7 @@ Project Manager Dashboard v1
 - R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
 
 ## Next Suggested Action
-- Run prompt `prompts/active/18.0.1-engineer-blockers-next-prompt.md` (Blockers Panel and Next Prompt Widget)
+- Run prompt `prompts/active/19.0.1-engineer-epics-view.md` (Epics View: Table, Drill-Down, Tasks)
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`
