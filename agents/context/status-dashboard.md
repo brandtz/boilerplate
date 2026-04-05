@@ -1,7 +1,7 @@
 # Status Dashboard
 
 ## Current Phase
-Implementation — E1 parser approved; E2–E5 UI implementation complete; UI code review gate next
+Implementation — E1 parser approved; E2–E5 UI implementation complete; UI code review gate APPROVED; validation/hardening phase next
 
 ## Project
 Project Manager Dashboard v1
@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (8 ready in prompts/active/, 22 done — 6 in prompts/archive/, 16 in prompts/active/)
-- Prompts Completed: 22
+- Prompts: 30 generated (7 ready in prompts/active/, 23 done — 6 in prompts/archive/, 17 in prompts/active/)
+- Prompts Completed: 23
 - Prompts Archived: 6
 - Prompts Blocked: 0
 
@@ -38,6 +38,7 @@ Project Manager Dashboard v1
 - Prompt 20.0.1: Prompt Inventory Table and Detail Drawer — **DONE** (PromptTable, PromptDetailDrawer, PromptFilterBar, MarkdownRenderer, Pagination, useDrawer; 47 new tests; 356 total passing)
 - Prompt 21.0.1: Session Timeline and Handoff Links — **DONE** (SessionTimeline, SessionCard, SessionDetail, SessionFilterBar; enhanced PromptDetailDrawer handoffs; 29 new tests; 385 total passing)
 - Prompt 22.0.1: Refresh, File Watch, Repo Selector — **DONE** (LoadingIndicator, ErrorBanner, RepoSelector, recentProjects, repoDetection, fileWatcher; 53 new tests; 438 total passing)
+- Prompt 23.0.1: UI Code Review Gate — **DONE** (APPROVED by Architect, QA, Security, UX; no rework prompts needed; 438 tests, 88%+ coverage)
 
 ## Open Blockers
 - None
@@ -46,7 +47,7 @@ Project Manager Dashboard v1
 - R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
 
 ## Next Suggested Action
-- Run prompt `prompts/active/23.0.1-review-gate-ui.md` (UI Code Review Gate)
+- Run prompt `prompts/active/24.0.1-qa-validation-tests.md` (Validation Tests for Malformed Metadata)
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`
