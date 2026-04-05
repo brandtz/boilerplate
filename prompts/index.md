@@ -9,11 +9,11 @@
 
 | Metric | Count |
 |---|---|
-| Total prompts | 34 |
+| Total prompts | 36 |
 | Boilerplate operational prompts | 4 |
-| Dashboard project prompts | 30 |
+| Dashboard project prompts | 32 |
 | Status: ready | 9 |
-| Status: done | 25 |
+| Status: done | 26 |
 | Status: archived | 0 |
 | Status: blocked | 0 |
 | Status: superseded | 0 |
@@ -81,7 +81,8 @@
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 24.0.1 | Validation Tests for Malformed Metadata | done | validation | E6 | E6-S1 | E6-S1-T1–T3 | prompts/active/24.0.1-qa-validation-tests.md | 23.0.1 | 25.0.1 | agents/handoffs/S-2026-04-04-027-qa-validation-tests.md | 2026-04-03 | 2026-04-04 | — | Part A: 7 review findings remediated; Part B: 21 parser resilience tests + 6 fixtures; 57 new tests (495 total); coverage 91% |
 | 25.0.1 | Performance Tests for Large Inventories | done | validation | E6 | E6-S2 | E6-S2-T1–T3 | prompts/active/25.0.1-qa-performance-tests.md | 24.0.1 | 26.0.1 | agents/handoffs/S-2026-04-04-028-qa-performance-tests.md | 2026-04-03 | 2026-04-04 | — | 13 perf tests; parser 81ms/310 prompts; UI render 17ms; 6220 prompts/sec |
-| 26.0.1 | Accessibility Review and Keyboard Nav | ready | validation | E6 | E6-S3 | E6-S3-T1–T4 | prompts/active/26.0.1-ux-accessibility-review.md | 23.0.1 | 27.0.1 | — | 2026-04-03 | — | — | — |
+| 26.0.1 | Accessibility Review and Keyboard Nav | done | validation | E6 | E6-S3 | E6-S3-T1–T4 | prompts/active/26.0.1-ux-accessibility-review.md | 23.0.1 | 26.0.2, 27.0.1 | agents/handoffs/S-2026-04-04-029-accessibility-review.md | 2026-04-03 | 2026-04-04 | — | 14 findings (5 HIGH, 6 MEDIUM, 3 LOW); audit report at docs/accessibility-audit-report.md; remediation prompt 26.0.2 created |
+| 26.0.2 | Accessibility Remediation | ready | implementation | E6 | E6-S3 | E6-S3-T1–T4 | prompts/active/26.0.2-ux-accessibility-remediation.md | 26.0.1 | 27.0.1 | — | 2026-04-04 | — | — | Inserted: implement 10 HIGH+MEDIUM accessibility fixes |
 | 27.0.1 | Security Hardening and Path Sanitization | ready | validation | E6 | E6-S4 | E6-S4-T1–T4 | prompts/active/27.0.1-devsecops-security-hardening.md | 23.0.1 | 28.0.1 | — | 2026-04-03 | — | — | — |
 
 ### Dashboard Project Prompts — Phase 7: Release
