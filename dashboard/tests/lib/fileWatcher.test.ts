@@ -6,7 +6,10 @@ jest.mock('chokidar', () => ({
   }),
 }));
 
-import { createDebouncedHandler } from '@/lib/fileWatcher';
+import { createDebouncedHandler, createFileWatcher } from '@/lib/fileWatcher';
+import chokidar from 'chokidar';
+
+const mockWatch = chokidar.watch as jest.Mock;
 
 describe('createDebouncedHandler', () => {
   beforeEach(() => {
@@ -102,5 +105,125 @@ describe('createDebouncedHandler', () => {
     // Still waiting for 3000ms from last event
     jest.advanceTimersByTime(3000);
     expect(callback).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('createFileWatcher', () => {
+  let mockWatcher: {
+    on: jest.Mock;
+    close: jest.Mock;
+  };
+
+  beforeEach(() => {
+    jest.useFakeTimers();
+    mockWatcher = {
+      on: jest.fn().mockReturnThis(),
+      close: jest.fn().mockResolvedValue(undefined),
+    };
+    mockWatch.mockReturnValue(mockWatcher);
+    mockWatch.mockClear();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
+  it('start() creates watcher with correct paths and hooks events', () => {
+    const onChange = jest.fn();
+    const fw = createFileWatcher({
+      repoPath: '/repo',
+      onFileChange: onChange,
+      enabled: true,
+    });
+
+    fw.start();
+
+    expect(mockWatch).toHaveBeenCalledTimes(1);
+    const watchedPaths = mockWatch.mock.calls[0][0] as string[];
+    expect(watchedPaths).toContain('/repo/prompts/active');
+    expect(watchedPaths).toContain('/repo/agents/handoffs');
+
+    // Should register add, change, unlink events
+    const eventNames = mockWatcher.on.mock.calls.map(
+      (c: [string, unknown]) => c[0],
+    );
+    expect(eventNames).toContain('add');
+    expect(eventNames).toContain('change');
+    expect(eventNames).toContain('unlink');
+  });
+
+  it('start() does nothing when enabled is false', () => {
+    const fw = createFileWatcher({
+      repoPath: '/repo',
+      onFileChange: jest.fn(),
+      enabled: false,
+    });
+
+    fw.start();
+
+    expect(mockWatch).not.toHaveBeenCalled();
+  });
+
+  it('start() does nothing if already watching', () => {
+    const fw = createFileWatcher({
+      repoPath: '/repo',
+      onFileChange: jest.fn(),
+      enabled: true,
+    });
+
+    fw.start();
+    fw.start(); // second call
+
+    expect(mockWatch).toHaveBeenCalledTimes(1);
+  });
+
+  it('stop() closes watcher and nullifies it', () => {
+    const fw = createFileWatcher({
+      repoPath: '/repo',
+      onFileChange: jest.fn(),
+      enabled: true,
+    });
+
+    fw.start();
+    fw.stop();
+
+    expect(mockWatcher.close).toHaveBeenCalledTimes(1);
+
+    // Can start again after stop
+    fw.start();
+    expect(mockWatch).toHaveBeenCalledTimes(2);
+  });
+
+  it('stop() is safe to call when no watcher exists', () => {
+    const fw = createFileWatcher({
+      repoPath: '/repo',
+      onFileChange: jest.fn(),
+      enabled: true,
+    });
+
+    // stop without start — should not throw
+    expect(() => fw.stop()).not.toThrow();
+  });
+
+  it('file events trigger debounced callback', () => {
+    const onChange = jest.fn();
+    const fw = createFileWatcher({
+      repoPath: '/repo',
+      onFileChange: onChange,
+      enabled: true,
+    });
+
+    fw.start();
+
+    // Grab the handler registered for 'change' event
+    const changeCall = mockWatcher.on.mock.calls.find(
+      (c: [string, unknown]) => c[0] === 'change',
+    );
+    const changeHandler = changeCall[1] as (path: string) => void;
+
+    changeHandler('/repo/prompts/active/test.md');
+
+    jest.advanceTimersByTime(500);
+    expect(onChange).toHaveBeenCalledTimes(1);
   });
 });

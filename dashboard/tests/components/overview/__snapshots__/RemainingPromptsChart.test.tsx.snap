@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`RemainingPromptsChart matches empty snapshot 1`] = `
+<div>
+  <div
+    class="flex h-64 items-center justify-center rounded-lg border border-gray-200 bg-white text-sm text-gray-400"
+    data-testid="remaining-prompts-chart-empty"
+  >
+    No remaining prompts data available
+  </div>
+</div>
+`;
+
+exports[`RemainingPromptsChart matches snapshot 1`] = `
+<div>
+  <div
+    class="rounded-lg border border-gray-200 bg-white p-4"
+    data-testid="remaining-prompts-chart"
+  >
+    <h3
+      class="mb-3 text-sm font-semibold text-gray-700"
+    >
+      Remaining Prompts Over Time
+    </h3>
+    <div
+      class="h-64"
+    >
+      <div
+        data-chart-data="{"labels":["2026-04-01","2026-04-02","2026-04-03"],"datasets":[{"label":"Remaining Prompts","data":[26,22,14],"borderColor":"#EF4444","backgroundColor":"rgba(239, 68, 68, 0.1)","fill":true,"tension":0.3}]}"
+        data-chart-options="{"responsive":true,"maintainAspectRatio":false,"plugins":{"legend":{"position":"bottom","labels":{"usePointStyle":true}}},"scales":{"y":{"beginAtZero":true}}}"
+        data-testid="mock-line-chart"
+      />
+    </div>
+  </div>
+</div>
+`;

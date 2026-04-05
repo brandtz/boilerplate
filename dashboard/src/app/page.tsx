@@ -8,6 +8,7 @@ import {
   EpicCompletionChart,
   PromptStatusChart,
   SessionThroughputChart,
+  RemainingPromptsChart,
   BlockersWarningsPanel,
   NextPromptWidget,
 } from '@/components/overview';
@@ -69,6 +70,9 @@ export default function OverviewPage() {
                 promptsByStatus={state.summary.promptsByStatus}
               />
               <SessionThroughputChart
+                completionTimeline={state.summary.completionTimeline}
+              />
+              <RemainingPromptsChart
                 completionTimeline={state.summary.completionTimeline}
               />
             </div>

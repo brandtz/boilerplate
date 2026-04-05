@@ -12,8 +12,8 @@
 | Total prompts | 34 |
 | Boilerplate operational prompts | 4 |
 | Dashboard project prompts | 30 |
-| Status: ready | 11 |
-| Status: done | 23 |
+| Status: ready | 10 |
+| Status: done | 24 |
 | Status: archived | 0 |
 | Status: blocked | 0 |
 | Status: superseded | 0 |
@@ -79,7 +79,7 @@
 
 | prompt_id | title | status | phase | epic_id | story_id | task_ids | location | prerequisites | downstream_prompts | session_handoff | created_at | completed_at | archived_at | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 24.0.1 | Validation Tests for Malformed Metadata | ready | validation | E6 | E6-S1 | E6-S1-T1–T3 | prompts/active/24.0.1-qa-validation-tests.md | 23.0.1 | 25.0.1 | — | 2026-04-03 | — | — | — |
+| 24.0.1 | Validation Tests for Malformed Metadata | done | validation | E6 | E6-S1 | E6-S1-T1–T3 | prompts/active/24.0.1-qa-validation-tests.md | 23.0.1 | 25.0.1 | agents/handoffs/S-2026-04-04-027-qa-validation-tests.md | 2026-04-03 | 2026-04-04 | — | Part A: 7 review findings remediated; Part B: 21 parser resilience tests + 6 fixtures; 57 new tests (495 total); coverage 91% |
 | 25.0.1 | Performance Tests for Large Inventories | ready | validation | E6 | E6-S2 | E6-S2-T1–T3 | prompts/active/25.0.1-qa-performance-tests.md | 24.0.1 | 26.0.1 | — | 2026-04-03 | — | — | — |
 | 26.0.1 | Accessibility Review and Keyboard Nav | ready | validation | E6 | E6-S3 | E6-S3-T1–T4 | prompts/active/26.0.1-ux-accessibility-review.md | 23.0.1 | 27.0.1 | — | 2026-04-03 | — | — | — |
 | 27.0.1 | Security Hardening and Path Sanitization | ready | validation | E6 | E6-S4 | E6-S4-T1–T4 | prompts/active/27.0.1-devsecops-security-hardening.md | 23.0.1 | 28.0.1 | — | 2026-04-03 | — | — | — |

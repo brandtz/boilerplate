@@ -8,18 +8,24 @@ export interface SessionFilters {
   search: string;
 }
 
+const DEFAULT_FILTERS: SessionFilters = {
+  status: 'All',
+  role: 'All',
+  search: '',
+};
+
 interface SessionFilterBarProps {
   roles: string[];
   onChange: (filters: SessionFilters) => void;
+  initialFilters?: Partial<SessionFilters>;
 }
 
 const STATUS_OPTIONS = ['All', 'complete', 'partial', 'failed'];
 
-export function SessionFilterBar({ roles, onChange }: SessionFilterBarProps) {
+export function SessionFilterBar({ roles, onChange, initialFilters }: SessionFilterBarProps) {
   const [filters, setFilters] = useState<SessionFilters>({
-    status: 'All',
-    role: 'All',
-    search: '',
+    ...DEFAULT_FILTERS,
+    ...initialFilters,
   });
 
   const update = useCallback(

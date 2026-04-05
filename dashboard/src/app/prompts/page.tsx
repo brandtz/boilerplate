@@ -1,7 +1,7 @@
 'use client';
 
 import { Suspense, useState, useMemo, useCallback, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { ErrorBoundary } from '@/components/shared/ErrorBoundary';
 import {
   PromptTable,
@@ -47,18 +47,22 @@ export default function PromptsPage() {
 function PromptsPageContent() {
   const { state } = useDashboard();
   const searchParams = useSearchParams();
+  const router = useRouter();
   const { isOpen, selectedId, open, close, drawerRef } = useDrawer();
+
+  // Read initial filter state from URL
+  const initialFilters = useMemo<PromptFilters>(() => ({
+    status: searchParams.get('status') || 'All',
+    epic: searchParams.get('epic') || 'All',
+    location: searchParams.get('location') || 'active',
+    role: searchParams.get('role') || 'All',
+    search: searchParams.get('search') || '',
+  }), []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const [sortColumn, setSortColumn] = useState<SortColumn>('promptId');
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
   const [currentPage, setCurrentPage] = useState(1);
-  const [filters, setFilters] = useState<PromptFilters>({
-    status: 'All',
-    epic: 'All',
-    location: 'active',
-    role: 'All',
-    search: '',
-  });
+  const [filters, setFilters] = useState<PromptFilters>(initialFilters);
 
   // Deep-linking: URL ?id=X opens drawer
   useEffect(() => {
@@ -82,7 +86,19 @@ function PromptsPageContent() {
   const handleFilterChange = useCallback((next: PromptFilters) => {
     setFilters(next);
     setCurrentPage(1);
-  }, []);
+
+    // Sync non-default filter values to URL
+    const params = new URLSearchParams();
+    const id = searchParams.get('id');
+    if (id) params.set('id', id);
+    if (next.status !== 'All') params.set('status', next.status);
+    if (next.epic !== 'All') params.set('epic', next.epic);
+    if (next.location !== 'active') params.set('location', next.location);
+    if (next.role !== 'All') params.set('role', next.role);
+    if (next.search) params.set('search', next.search);
+    const qs = params.toString();
+    router.replace(qs ? `?${qs}` : '/prompts');
+  }, [searchParams, router]);
 
   const filteredPrompts = useMemo(
     () => filterPrompts(state?.prompts ?? [], filters),
@@ -130,6 +146,7 @@ function PromptsPageContent() {
           epics={state?.epics ?? []}
           roles={uniqueRoles}
           onChange={handleFilterChange}
+          initialFilters={initialFilters}
         />
 
         <PromptTable

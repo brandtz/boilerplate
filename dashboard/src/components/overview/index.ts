@@ -5,5 +5,6 @@ export { OverallProgressBar } from './OverallProgressBar';
 export { EpicCompletionChart } from './EpicCompletionChart';
 export { PromptStatusChart } from './PromptStatusChart';
 export { SessionThroughputChart } from './SessionThroughputChart';
+export { RemainingPromptsChart } from './RemainingPromptsChart';
 export { BlockersWarningsPanel } from './BlockersWarningsPanel';
 export { NextPromptWidget } from './NextPromptWidget';

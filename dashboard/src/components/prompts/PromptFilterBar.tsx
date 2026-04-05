@@ -29,19 +29,25 @@ export interface PromptFilters {
   search: string;
 }
 
+const DEFAULT_FILTERS: PromptFilters = {
+  status: 'All',
+  epic: 'All',
+  location: 'active',
+  role: 'All',
+  search: '',
+};
+
 interface PromptFilterBarProps {
   epics: ParsedEpic[];
   roles: string[];
   onChange: (filters: PromptFilters) => void;
+  initialFilters?: Partial<PromptFilters>;
 }
 
-export function PromptFilterBar({ epics, roles, onChange }: PromptFilterBarProps) {
+export function PromptFilterBar({ epics, roles, onChange, initialFilters }: PromptFilterBarProps) {
   const [filters, setFilters] = useState<PromptFilters>({
-    status: 'All',
-    epic: 'All',
-    location: 'active',
-    role: 'All',
-    search: '',
+    ...DEFAULT_FILTERS,
+    ...initialFilters,
   });
 
   const update = (partial: Partial<PromptFilters>) => {

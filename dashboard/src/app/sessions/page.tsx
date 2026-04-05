@@ -42,12 +42,15 @@ function SessionsPageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
+  // Read initial filter state from URL
+  const initialFilters = useMemo<SessionFilters>(() => ({
+    status: searchParams.get('status') || 'All',
+    role: searchParams.get('role') || 'All',
+    search: searchParams.get('search') || '',
+  }), []); // eslint-disable-line react-hooks/exhaustive-deps
+
   const [currentPage, setCurrentPage] = useState(1);
-  const [filters, setFilters] = useState<SessionFilters>({
-    status: 'All',
-    role: 'All',
-    search: '',
-  });
+  const [filters, setFilters] = useState<SessionFilters>(initialFilters);
 
   // Deep-linking: URL ?id=S-xxx expands that session
   const expandedSessionId = searchParams.get('id') ?? null;
@@ -62,7 +65,17 @@ function SessionsPageContent() {
   const handleFilterChange = useCallback((next: SessionFilters) => {
     setFilters(next);
     setCurrentPage(1);
-  }, []);
+
+    // Sync non-default filter values to URL
+    const params = new URLSearchParams();
+    const id = searchParams.get('id');
+    if (id) params.set('id', id);
+    if (next.status !== 'All') params.set('status', next.status);
+    if (next.role !== 'All') params.set('role', next.role);
+    if (next.search) params.set('search', next.search);
+    const qs = params.toString();
+    router.replace(qs ? `?${qs}` : '/sessions');
+  }, [searchParams, router]);
 
   const filteredSessions = useMemo(
     () => filterSessions(state?.sessions ?? [], filters),
@@ -82,6 +95,7 @@ function SessionsPageContent() {
         <SessionFilterBar
           roles={uniqueRoles}
           onChange={handleFilterChange}
+          initialFilters={initialFilters}
         />
 
         <SessionTimeline

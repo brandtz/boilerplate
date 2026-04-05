@@ -177,4 +177,31 @@ describe('BlockersWarningsPanel', () => {
     render(<BlockersWarningsPanel prompts={prompts} warnings={warnings} />);
     expect(screen.getByText('(2)')).toBeInTheDocument();
   });
+
+  it('renders all malformed metadata error codes distinctly', () => {
+    const warnings = [
+      makeWarning({ severity: 'error', code: 'E_NO_FRONTMATTER', message: 'File has no YAML frontmatter', file: 'prompts/active/a.md' }),
+      makeWarning({ severity: 'error', code: 'E_MISSING_REQUIRED', message: "Required field 'title' is missing", file: 'prompts/active/b.md' }),
+      makeWarning({ severity: 'error', code: 'E_INVALID_YAML', message: 'Failed to parse YAML frontmatter', file: 'prompts/active/c.md' }),
+    ];
+    render(<BlockersWarningsPanel prompts={[]} warnings={warnings} />);
+
+    expect(screen.getByText(/no YAML frontmatter/i)).toBeInTheDocument();
+    expect(screen.getByText(/title.*missing/i)).toBeInTheDocument();
+    expect(screen.getByText(/Failed to parse YAML/i)).toBeInTheDocument();
+    expect(screen.getByText('(3)')).toBeInTheDocument();
+  });
+
+  it('shows malformed metadata warnings alongside blocked prompts', () => {
+    const prompts = [makePrompt({ promptId: '10.0.1', status: 'blocked' })];
+    const warnings = [
+      makeWarning({ severity: 'error', code: 'E_NO_FRONTMATTER', message: 'No frontmatter', file: 'broken.md' }),
+      makeWarning({ code: 'W_UNKNOWN_STATUS', message: "Unknown status 'bogus'", file: 'other.md' }),
+    ];
+    render(<BlockersWarningsPanel prompts={prompts} warnings={warnings} />);
+
+    const result = aggregateBlockers(prompts, warnings);
+    expect(result).toHaveLength(3);
+    expect(screen.getByTestId('blocker-item-0')).toBeInTheDocument();
+  });
 });
