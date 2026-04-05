@@ -23,5 +23,11 @@ Preserve continuity between agent sessions and phases.
 - do not hide blockers
 - identify any stop conditions encountered
 
+## Review gate finding propagation
+- All review gate findings (low, medium, or info) are pre-approved for implementation
+- The review gate agent MUST update the immediate downstream prompt to include findings as actionable tasks, or create an inserted prompt (N.0.2+) if the scope warrants separation
+- Findings must never be left as untracked recommendations in a handoff — they must appear as explicit scope items in the next prompt
+- The downstream agent should work review findings before or alongside the prompt's original scope
+
 ## Handoff quality test
 The next agent should be able to start with minimal ambiguity after reading the handoff and required files.
