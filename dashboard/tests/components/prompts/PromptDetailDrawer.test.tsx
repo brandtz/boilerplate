@@ -179,7 +179,44 @@ describe('PromptDetailDrawer', () => {
     );
     const handoff = screen.getByTestId('drawer-handoff');
     expect(handoff).toHaveTextContent('Created all wireframes');
-    expect(handoff).toHaveTextContent('Changed files: 2');
+    expect(handoff).toHaveTextContent('Changed files (2):');
+  });
+
+  it('shows changed file paths in handoff card', () => {
+    render(
+      <PromptDetailDrawer
+        {...defaultProps}
+        handoffs={[makeHandoff({ changedFiles: ['src/a.ts', 'src/b.ts', 'src/c.ts'] })]}
+      />,
+    );
+    const filesList = screen.getByTestId('changed-files-S-001');
+    expect(filesList.children).toHaveLength(3);
+    expect(filesList).toHaveTextContent('src/a.ts');
+  });
+
+  it('shows multiple handoffs sorted newest first', () => {
+    const h1 = makeHandoff({ sessionId: 'S-OLD', endedAt: '2026-04-01T12:00:00Z', summary: 'Old session' });
+    const h2 = makeHandoff({ sessionId: 'S-NEW', endedAt: '2026-04-03T12:00:00Z', summary: 'New session' });
+    render(
+      <PromptDetailDrawer
+        {...defaultProps}
+        handoffs={[h1, h2]}
+      />,
+    );
+    expect(screen.getByTestId('drawer-handoff')).toHaveTextContent('Session Handoffs');
+    const cards = screen.getAllByText(/^Session S-/);
+    expect(cards[0]).toHaveTextContent('S-NEW');
+    expect(cards[1]).toHaveTextContent('S-OLD');
+  });
+
+  it('shows handoff source path in handoff card', () => {
+    render(
+      <PromptDetailDrawer
+        {...defaultProps}
+        handoffs={[makeHandoff()]}
+      />,
+    );
+    expect(screen.getByTestId('handoff-card-S-001')).toHaveTextContent('agents/handoffs/S-001.md');
   });
 
   it('shows missing handoff warning for done prompt without handoff', () => {

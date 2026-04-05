@@ -12,8 +12,8 @@
 | Total prompts | 34 |
 | Boilerplate operational prompts | 4 |
 | Dashboard project prompts | 30 |
-| Status: ready | 14 |
-| Status: done | 20 |
+| Status: ready | 13 |
+| Status: done | 21 |
 | Status: archived | 0 |
 | Status: blocked | 0 |
 | Status: superseded | 0 |
@@ -71,7 +71,7 @@
 | 18.0.1 | Blockers Panel and Next Prompt Widget | done | implementation | E2 | E2-S3 | E2-S3-T1–T4;E2-S4-T1–T4 | prompts/active/18.0.1-engineer-blockers-next-prompt.md | 17.0.1 | 19.0.1 | agents/handoffs/S-2026-04-04-021-blockers-next-prompt.md | 2026-04-03 | 2026-04-04 | — | BlockersWarningsPanel + NextPromptWidget + CopyButton + useCopyToClipboard; 31 new tests; 251 total passing |
 | 19.0.1 | Epics View: Table, Drill-Down, Tasks | done | implementation | E3 | E3-S1 | All E3 tasks | prompts/active/19.0.1-engineer-epics-view.md | 18.0.1 | 20.0.1 | agents/handoffs/S-2026-04-04-022-epics-view.md | 2026-04-03 | 2026-04-04 | — | EpicAccordion + StoryRow + TaskList + StatusBadge + FilterBar + UpdateSummary; 59 new tests; 310 total passing |
 | 20.0.1 | Prompt Inventory Table and Detail Drawer | done | implementation | E4 | E4-S1 | E4-S1-T1–T4;E4-S2-T1–T4 | prompts/active/20.0.1-engineer-prompt-inventory.md | 19.0.1 | 21.0.1 | agents/handoffs/S-2026-04-04-023-prompt-inventory.md | 2026-04-03 | 2026-04-04 | — | PromptTable + PromptDetailDrawer + PromptFilterBar + MarkdownRenderer + Pagination + useDrawer; 47 new tests; 356 total passing |
-| 21.0.1 | Session Timeline and Handoff Links | ready | implementation | E4 | E4-S3 | E4-S3-T1–T4;E4-S4-T1–T3 | prompts/active/21.0.1-engineer-session-timeline.md | 20.0.1 | 22.0.1 | — | 2026-04-03 | — | — | — |
+| 21.0.1 | Session Timeline and Handoff Links | done | implementation | E4 | E4-S3 | E4-S3-T1–T4;E4-S4-T1–T3 | prompts/active/21.0.1-engineer-session-timeline.md | 20.0.1 | 22.0.1 | agents/handoffs/S-2026-04-04-024-session-timeline.md | 2026-04-03 | 2026-04-04 | — | SessionTimeline + SessionCard + SessionDetail + SessionFilterBar; enhanced PromptDetailDrawer handoffs; 29 new tests; 385 total passing |
 | 22.0.1 | Refresh, File Watch, Repo Selector | ready | implementation | E5 | E5-S1 | All E5 tasks | prompts/active/22.0.1-engineer-refresh-watch-repo-selector.md | 21.0.1 | 23.0.1 | — | 2026-04-03 | — | — | — |
 | 23.0.1 | UI Code Review Gate | ready | review-approval | E2 | — | — | prompts/active/23.0.1-review-gate-ui.md | 22.0.1 | 24.0.1 | — | 2026-04-03 | — | — | — |
 

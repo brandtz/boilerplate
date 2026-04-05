@@ -35,7 +35,11 @@ export function PromptDetailDrawer({
   const isSuperseded = prompt.status === 'superseded';
   const isDone = prompt.status === 'done';
   const hasHandoff = handoffs.length > 0;
-  const latestHandoff = hasHandoff ? handoffs[handoffs.length - 1] : null;
+
+  // Sort handoffs newest first
+  const sortedHandoffs = [...handoffs].sort((a, b) =>
+    b.endedAt.localeCompare(a.endedAt),
+  );
 
   return (
     <>
@@ -211,25 +215,43 @@ export function PromptDetailDrawer({
             </div>
           </section>
 
-          {/* Session Handoff */}
-          {latestHandoff && (
+          {/* Session Handoffs */}
+          {sortedHandoffs.length > 0 && (
             <section data-testid="drawer-handoff">
               <h3 className="text-sm font-semibold text-gray-700 mb-2">
-                Session Handoff
+                Session Handoff{sortedHandoffs.length > 1 ? 's' : ''}
               </h3>
-              <div className="rounded-md border border-gray-200 bg-gray-50 p-3 text-sm space-y-1">
-                <p>
-                  <span className="text-gray-500">Summary:</span>{' '}
-                  {latestHandoff.summary}
-                </p>
-                <p>
-                  <span className="text-gray-500">Changed files:</span>{' '}
-                  {latestHandoff.changedFiles.length}
-                </p>
-                <p>
-                  <span className="text-gray-500">Session:</span>{' '}
-                  {latestHandoff.sessionId}
-                </p>
+              <div className="space-y-3">
+                {sortedHandoffs.map((handoff) => (
+                  <div
+                    key={handoff.sessionId}
+                    className="rounded-md border border-gray-200 bg-gray-50 p-3 text-sm space-y-2"
+                    data-testid={`handoff-card-${handoff.sessionId}`}
+                  >
+                    <p className="font-medium text-gray-700">
+                      Session {handoff.sessionId} — {handoff.endedAt.slice(0, 10)}
+                    </p>
+                    <p>
+                      <span className="text-gray-500">Summary:</span>{' '}
+                      {handoff.summary}
+                    </p>
+                    <div>
+                      <span className="text-gray-500">Changed files ({handoff.changedFiles.length}):</span>
+                      {handoff.changedFiles.length > 0 ? (
+                        <ul className="mt-1 list-disc list-inside text-xs text-gray-600 font-mono" data-testid={`changed-files-${handoff.sessionId}`}>
+                          {handoff.changedFiles.map((f) => (
+                            <li key={f}>{f}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="text-xs text-gray-400 mt-1">No files changed</p>
+                      )}
+                    </div>
+                    <p className="text-xs text-gray-400">
+                      Handoff: {handoff.sourcePath}
+                    </p>
+                  </div>
+                ))}
               </div>
             </section>
           )}

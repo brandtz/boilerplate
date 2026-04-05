@@ -1,7 +1,7 @@
 # Status Dashboard
 
 ## Current Phase
-Implementation — E1 parser approved; E2 overview complete; E3 epics view done; E4 prompt inventory done; Session timeline next
+Implementation — E1 parser approved; E2 overview complete; E3 epics view done; E4 prompt inventory + session timeline done; Refresh/watch next
 
 ## Project
 Project Manager Dashboard v1
@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (10 ready in prompts/active/, 20 done — 6 in prompts/archive/, 14 in prompts/active/)
-- Prompts Completed: 20
+- Prompts: 30 generated (9 ready in prompts/active/, 21 done — 6 in prompts/archive/, 15 in prompts/active/)
+- Prompts Completed: 21
 - Prompts Archived: 6
 - Prompts Blocked: 0
 
@@ -36,6 +36,7 @@ Project Manager Dashboard v1
 - Prompt 18.0.1: Blockers Panel and Next Prompt Widget — **DONE** (BlockersWarningsPanel, NextPromptWidget, CopyButton, useCopyToClipboard; 31 new tests; 251 total passing)
 - Prompt 19.0.1: Epics View: Table, Drill-Down, Task Tree — **DONE** (EpicAccordion, EpicCard, StoryRow, TaskList, StatusBadge, FilterBar, UpdateSummary, useAccordion; 59 new tests; 310 total passing)
 - Prompt 20.0.1: Prompt Inventory Table and Detail Drawer — **DONE** (PromptTable, PromptDetailDrawer, PromptFilterBar, MarkdownRenderer, Pagination, useDrawer; 47 new tests; 356 total passing)
+- Prompt 21.0.1: Session Timeline and Handoff Links — **DONE** (SessionTimeline, SessionCard, SessionDetail, SessionFilterBar; enhanced PromptDetailDrawer handoffs; 29 new tests; 385 total passing)
 
 ## Open Blockers
 - None
@@ -44,7 +45,7 @@ Project Manager Dashboard v1
 - R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
 
 ## Next Suggested Action
-- Run prompt `prompts/active/21.0.1-engineer-session-timeline.md` (Session Timeline and Handoff Links)
+- Run prompt `prompts/active/22.0.1-engineer-refresh-watch-repo-selector.md` (Refresh, File Watch, Repo Selector)
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`
