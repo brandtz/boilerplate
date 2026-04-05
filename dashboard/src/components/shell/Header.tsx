@@ -1,9 +1,10 @@
 'use client';
 
 import { useDashboard } from '@/hooks/useDashboard';
+import { RepoSelector } from './RepoSelector';
 
 export function Header() {
-  const { state, isLoading, lastParsedAt, refresh } = useDashboard();
+  const { state, isLoading, lastParsedAt, repoPath, refresh, setRepoPath } = useDashboard();
 
   const projectName = state?.project.projectName ?? 'Project Manager Dashboard';
   const formattedTime = lastParsedAt
@@ -16,6 +17,7 @@ export function Header() {
         <h1 className="text-lg font-semibold text-gray-900">{projectName}</h1>
       </div>
       <div className="flex items-center gap-4">
+        <RepoSelector currentPath={repoPath} onSelectPath={setRepoPath} />
         <span className="text-sm text-gray-500" data-testid="last-parsed">
           Last parsed: {formattedTime}
         </span>
@@ -23,7 +25,7 @@ export function Header() {
           onClick={() => void refresh()}
           disabled={isLoading}
           className="inline-flex items-center gap-1.5 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50"
-          aria-label="Refresh dashboard"
+          aria-label="Refresh dashboard data"
           data-testid="refresh-button"
         >
           <span className={isLoading ? 'animate-spin' : ''}>↻</span>
