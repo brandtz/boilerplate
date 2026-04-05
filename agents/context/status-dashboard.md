@@ -1,7 +1,7 @@
 # Status Dashboard
 
 ## Current Phase
-Implementation — E1 parser approved; E2 overview complete; E3 epics view done; Prompt inventory next
+Implementation — E1 parser approved; E2 overview complete; E3 epics view done; E4 prompt inventory done; Session timeline next
 
 ## Project
 Project Manager Dashboard v1
@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (11 ready in prompts/active/, 19 done — 6 in prompts/archive/, 13 in prompts/active/)
-- Prompts Completed: 19
+- Prompts: 30 generated (10 ready in prompts/active/, 20 done — 6 in prompts/archive/, 14 in prompts/active/)
+- Prompts Completed: 20
 - Prompts Archived: 6
 - Prompts Blocked: 0
 
@@ -35,6 +35,7 @@ Project Manager Dashboard v1
 - Prompt 17.0.1: Overview: Summary Cards and Charts — **DONE** (SummaryCard, HealthBadge, OverallProgressBar, SummaryCardsGrid, EpicCompletionChart, PromptStatusChart, SessionThroughputChart; 50 new tests; 220 total passing)
 - Prompt 18.0.1: Blockers Panel and Next Prompt Widget — **DONE** (BlockersWarningsPanel, NextPromptWidget, CopyButton, useCopyToClipboard; 31 new tests; 251 total passing)
 - Prompt 19.0.1: Epics View: Table, Drill-Down, Task Tree — **DONE** (EpicAccordion, EpicCard, StoryRow, TaskList, StatusBadge, FilterBar, UpdateSummary, useAccordion; 59 new tests; 310 total passing)
+- Prompt 20.0.1: Prompt Inventory Table and Detail Drawer — **DONE** (PromptTable, PromptDetailDrawer, PromptFilterBar, MarkdownRenderer, Pagination, useDrawer; 47 new tests; 356 total passing)
 
 ## Open Blockers
 - None
@@ -43,7 +44,7 @@ Project Manager Dashboard v1
 - R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
 
 ## Next Suggested Action
-- Run prompt `prompts/active/20.0.1-engineer-prompt-inventory.md` (Prompt Inventory Table and Detail Drawer)
+- Run prompt `prompts/active/21.0.1-engineer-session-timeline.md` (Session Timeline and Handoff Links)
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`
