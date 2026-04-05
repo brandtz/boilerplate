@@ -61,7 +61,8 @@ export function extractPrompt(filePath: string, content: string): { prompt: Pars
   if (!parsed.data || Object.keys(parsed.data).length === 0) {
     // Check if the file has frontmatter delimiters at all
     if (!content.trimStart().startsWith('---')) {
-      warnings.push(createWarning(filePath, 'E_NO_FRONTMATTER', `File has no YAML frontmatter`, 'error'));
+      // Downgrade to info — template/bootstrap files without frontmatter are expected
+      warnings.push(createWarning(filePath, 'I_NO_FRONTMATTER', `File has no YAML frontmatter (skipped)`, 'info'));
       return { prompt: null, warnings };
     }
   }
@@ -111,7 +112,69 @@ export function extractPrompt(filePath: string, content: string): { prompt: Pars
 }
 
 /**
+ * Extract YAML from a code-fence block (```yaml ... ```) commonly produced by
+ * LLM agents.  Returns the parsed object or null if no fence is found.
+ */
+function extractCodeFenceYaml(content: string): Record<string, unknown> | null {
+  const fenceRe = /```ya?ml\s*\n([\s\S]*?)```/i;
+  const match = fenceRe.exec(content);
+  if (!match) return null;
+
+  try {
+    // Use gray-matter to parse the extracted YAML content wrapped in ---
+    const wrapped = `---\n${match[1]}---\n`;
+    const parsed = matter(wrapped);
+    if (parsed.data && Object.keys(parsed.data).length > 0) {
+      return parsed.data as Record<string, unknown>;
+    }
+  } catch {
+    // Fall through — fence content wasn't valid YAML
+  }
+  return null;
+}
+
+/**
+ * Try parsing the start of the file as raw YAML (no delimiters).
+ * Only succeeds if the first non-blank line looks like a YAML key: value pair.
+ * Stops at the first line that looks like markdown (heading, blank line after
+ * a non-indented block, or horizontal rule).
+ */
+function extractRawYaml(content: string): Record<string, unknown> | null {
+  const trimmed = content.trimStart();
+  // Quick heuristic: first line must look like `key: "value"` or `key: value`
+  if (!/^[a-z_][a-z0-9_]*\s*:/i.test(trimmed)) return null;
+
+  // Extract only the YAML portion: stop at first blank line preceded by a
+  // non-indented line, or at a markdown heading/horizontal rule.
+  const lines = trimmed.split('\n');
+  const yamlLines: string[] = [];
+  for (const line of lines) {
+    // Stop at markdown headings, horizontal rules, or empty line after top-level key
+    if (/^#{1,6}\s/.test(line) || /^---\s*$/.test(line)) break;
+    if (line.trim() === '' && yamlLines.length > 0 && !/^\s/.test(yamlLines[yamlLines.length - 1])) break;
+    yamlLines.push(line);
+  }
+
+  if (yamlLines.length === 0) return null;
+
+  try {
+    const wrapped = `---\n${yamlLines.join('\n')}\n---\n`;
+    const parsed = matter(wrapped);
+    if (parsed.data && Object.keys(parsed.data).length > 0) {
+      return parsed.data as Record<string, unknown>;
+    }
+  } catch {
+    // Fall through
+  }
+  return null;
+}
+
+/**
  * Extract and validate a handoff file's frontmatter.
+ * Supports three formats:
+ *   1. Standard `---` YAML frontmatter (gray-matter native)
+ *   2. Code-fence ```yaml ... ``` frontmatter (common from LLM output)
+ *   3. Raw YAML at top of file without delimiters
  */
 export function extractHandoff(filePath: string, content: string): { handoff: ParsedHandoff | null; warnings: ParseWarning[] } {
   const warnings: ParseWarning[] = [];
@@ -124,8 +187,12 @@ export function extractHandoff(filePath: string, content: string): { handoff: Pa
     return { handoff: null, warnings };
   }
 
+  // If gray-matter found no data, try code-fence or raw YAML fallback
   if (!parsed.data || Object.keys(parsed.data).length === 0) {
-    if (!content.trimStart().startsWith('---')) {
+    const fallback = extractCodeFenceYaml(content) ?? extractRawYaml(content);
+    if (fallback) {
+      parsed = { ...parsed, data: fallback };
+    } else if (!content.trimStart().startsWith('---')) {
       warnings.push(createWarning(filePath, 'E_NO_FRONTMATTER', `File has no YAML frontmatter`, 'error'));
       return { handoff: null, warnings };
     }

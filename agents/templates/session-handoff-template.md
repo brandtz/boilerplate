@@ -44,6 +44,18 @@ summary: ""
 
 ## Required Follow-Up
 
+<!-- For EACH item below, state the action: "created prompt N.0.2" or "added to prompt X.0.1 scope" or "N/A" -->
+
+## Close-Out Checklist
+<!-- Complete ALL items before committing. Any 'NO' or gap must produce a follow-up prompt or scope edit. -->
+- [ ] Scope audit: all prompt scope items and ACs addressed
+- [ ] Warning/error audit: `npm run prebuild` shows 0 errors, 0 actionable warnings
+- [ ] Cross-layer data flow verified (if applicable)
+- [ ] Production smoke test passed (build + serve)
+- [ ] Downstream impact scan: affected prompts/components listed and updated
+- [ ] Findings propagation: all recommendations/risks converted to prompt scope
+- [ ] Handoff frontmatter uses `---` delimiters and correct field names
+
 ## Recommended Next Prompt(s)
 
 ## Notes for Human Sponsor

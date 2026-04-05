@@ -170,13 +170,13 @@ describe('malformed metadata — parser resilience', () => {
       }
     });
 
-    test('E_NO_FRONTMATTER has severity error', () => {
+    test('I_NO_FRONTMATTER has severity info for prompts', () => {
       const content = readFixture('malformed/prompt-no-frontmatter.md');
       const { warnings } = extractPrompt('test.md', content);
 
-      const noFm = warnings.find((w) => w.code === 'E_NO_FRONTMATTER');
+      const noFm = warnings.find((w) => w.code === 'I_NO_FRONTMATTER');
       expect(noFm).toBeDefined();
-      expect(noFm?.severity).toBe('error');
+      expect(noFm?.severity).toBe('info');
     });
 
     test('E_INVALID_YAML has severity error', () => {

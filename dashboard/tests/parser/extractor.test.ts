@@ -52,12 +52,12 @@ describe('extractor - prompt extraction', () => {
     expect(warnings.filter(w => w.severity === 'error')).toHaveLength(0);
   });
 
-  test('no frontmatter returns null with E_NO_FRONTMATTER', () => {
+  test('no frontmatter returns null with I_NO_FRONTMATTER (info)', () => {
     const content = readFixture('malformed/prompt-no-frontmatter.md');
     const { prompt, warnings } = extractPrompt('prompts/active/test.md', content);
 
     expect(prompt).toBeNull();
-    expect(warnings.some(w => w.code === 'E_NO_FRONTMATTER')).toBe(true);
+    expect(warnings.some(w => w.code === 'I_NO_FRONTMATTER' && w.severity === 'info')).toBe(true);
   });
 
   test('bad YAML returns null with E_INVALID_YAML', () => {
@@ -155,6 +155,29 @@ describe('extractor - handoff extraction', () => {
 
     expect(handoff).toBeNull();
     expect(warnings.some(w => w.code === 'E_NO_FRONTMATTER')).toBe(true);
+  });
+
+  test('code-fence YAML handoff extracts correctly', () => {
+    const content = readFixture('valid/handoff-codefence.md');
+    const { handoff, warnings } = extractHandoff('agents/handoffs/S-008.md', content);
+
+    expect(handoff).not.toBeNull();
+    expect(handoff?.sessionId).toBe('S-2026-04-03-008');
+    expect(handoff?.promptId).toBe('5.0.1');
+    expect(handoff?.statusOutcome).toBe('complete');
+    expect(handoff?.completionPercent).toBe(100);
+    expect(warnings.filter(w => w.severity === 'error')).toHaveLength(0);
+  });
+
+  test('raw YAML handoff (no delimiters) extracts correctly', () => {
+    const content = readFixture('valid/handoff-rawyaml.md');
+    const { handoff, warnings } = extractHandoff('agents/handoffs/S-023.md', content);
+
+    expect(handoff).not.toBeNull();
+    expect(handoff?.sessionId).toBe('S-2026-04-04-023');
+    expect(handoff?.promptId).toBe('20.0.1');
+    expect(handoff?.statusOutcome).toBe('complete');
+    expect(warnings.filter(w => w.severity === 'error')).toHaveLength(0);
   });
 });
 

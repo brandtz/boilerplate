@@ -220,4 +220,57 @@ describe('graph-builder', () => {
     // 1 done / (4 - 1 superseded - 1 cancelled) = 1/2 = 50%
     expect(state.summary.executionCompletionPercent).toBe(50);
   });
+
+  test('task status derived from linked prompt status', () => {
+    const prompts = [
+      makePrompt({ promptId: '1.0.1', status: 'done', taskIds: ['E1-S1-T1'], sourcePath: '1.md' }),
+      makePrompt({ promptId: '2.0.1', status: 'in_progress', taskIds: ['E1-S1-T2'], sourcePath: '2.md' }),
+    ];
+    const epic = makeEpic({
+      stories: [{
+        storyId: 'E1-S1', epicId: 'E1', title: 'Story', status: 'draft',
+        acceptanceCriteria: [],
+        tasks: [
+          { taskId: 'E1-S1-T1', storyId: 'E1-S1', epicId: 'E1', title: 'Task 1', status: 'draft' },
+          { taskId: 'E1-S1-T2', storyId: 'E1-S1', epicId: 'E1', title: 'Task 2', status: 'draft' },
+          { taskId: 'E1-S1-T3', storyId: 'E1-S1', epicId: 'E1', title: 'Task 3', status: 'draft' },
+        ],
+      }],
+    });
+
+    const state = buildDashboardState(prompts, [], [epic], '/repo');
+
+    // T1 linked to done prompt → done; T2 linked to in_progress → in_progress; T3 unlinked → draft
+    const tasks = state.epics[0].stories[0].tasks;
+    expect(tasks[0].status).toBe('done');
+    expect(tasks[1].status).toBe('in_progress');
+    expect(tasks[2].status).toBe('draft');
+
+    // Story has mix of done + in_progress + draft → in_progress
+    expect(state.epics[0].stories[0].status).toBe('in_progress');
+  });
+
+  test('story and epic status derived as done when all tasks done', () => {
+    const prompts = [
+      makePrompt({ promptId: '1.0.1', status: 'done', taskIds: ['E1-S1-T1'], sourcePath: '1.md' }),
+      makePrompt({ promptId: '2.0.1', status: 'done', taskIds: ['E1-S1-T2'], sourcePath: '2.md' }),
+    ];
+    const epic = makeEpic({
+      stories: [{
+        storyId: 'E1-S1', epicId: 'E1', title: 'Story', status: 'draft',
+        acceptanceCriteria: [],
+        tasks: [
+          { taskId: 'E1-S1-T1', storyId: 'E1-S1', epicId: 'E1', title: 'Task 1', status: 'draft' },
+          { taskId: 'E1-S1-T2', storyId: 'E1-S1', epicId: 'E1', title: 'Task 2', status: 'draft' },
+        ],
+      }],
+    });
+
+    const state = buildDashboardState(prompts, [], [epic], '/repo');
+
+    expect(state.epics[0].stories[0].tasks[0].status).toBe('done');
+    expect(state.epics[0].stories[0].tasks[1].status).toBe('done');
+    expect(state.epics[0].stories[0].status).toBe('done');
+    expect(state.epics[0].status).toBe('done');
+  });
 });

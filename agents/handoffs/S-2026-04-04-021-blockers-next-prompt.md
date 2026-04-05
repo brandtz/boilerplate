@@ -1,9 +1,9 @@
 ---
 session_id: "S-2026-04-04-021"
 prompt_id: "18.0.1"
-title: "Blockers Panel and Next Prompt Widget"
-agent_role: "Senior Software Engineer"
-status: "completed"
+role: "Senior Software Engineer"
+status_outcome: "complete"
+completion_percent: 100
 started_at: "2026-04-04T00:00:00Z"
 ended_at: "2026-04-04T00:00:00Z"
 ---

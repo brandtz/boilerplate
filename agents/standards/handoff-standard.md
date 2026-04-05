@@ -40,5 +40,31 @@ Preserve continuity between agent sessions and phases.
 - Test-only validation (where all dependencies are mocked) is insufficient for claiming "works end-to-end"
 - The validation section of the handoff must distinguish between "tests pass" and "production behavior verified"
 
+## Close-out checklist (mandatory before commit)
+Every session MUST complete this checklist before the final commit. Each item that
+surfaces rework or open issues MUST produce a concrete follow-up action (new prompt
+or edit to the next downstream prompt). Untracked findings are a defect.
+
+1. **Scope audit** — Compare work delivered against every scope item and acceptance
+   criterion in the prompt.  Any gap → create a rework prompt (N.0.2+) or add missing
+   scope to the next downstream prompt.
+2. **Warning/error audit** — Run the parser (`npm run prebuild`) and verify zero
+   errors and zero actionable warnings.  Any new warnings → fix immediately or create
+   a follow-up prompt describing the fix.
+3. **Cross-layer data flow** — If the change touches data across layers (parser →
+   context → UI, or backend → API → frontend), verify real data flows through to the
+   final output.  Evidence must appear in the Validation Results section.
+4. **Production smoke test** — Build the production artifact and verify expected
+   output in the target runtime (e.g., `npm run build && npx serve out` for static
+   export).  Test-only results do not satisfy this item.
+5. **Downstream impact scan** — List every downstream prompt or component affected.
+   If any need scope adjustment, edit them before closing.
+6. **Findings propagation** — Copy any recommendations, risks, or findings into the
+   `Required Follow-Up` section.  For each item decide: (a) create a new prompt, or
+   (b) add it as explicit scope to an existing prompt.  Note the action taken.
+7. **Handoff frontmatter validation** — Ensure the YAML frontmatter uses exact field
+   names from the template: `session_id`, `prompt_id`, `role`, `status_outcome`,
+   `completion_percent`, `started_at`, `ended_at`.  Use `---` delimiters.
+
 ## Handoff quality test
 The next agent should be able to start with minimal ambiguity after reading the handoff and required files.

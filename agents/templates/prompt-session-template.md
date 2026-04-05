@@ -66,6 +66,13 @@ agents/README.md
 
 Create handoff notes using `agents/templates/session-handoff-template.md`.
 
+**Close-out requirements (mandatory):**
+1. Complete every item in the Close-Out Checklist in the handoff template.
+2. Any findings, gaps, or rework identified during close-out MUST either:
+   - Create a new prompt (N.0.2+) with the finding as explicit scope, OR
+   - Edit the next downstream prompt to include the finding as a scope item.
+3. Untracked findings left only as prose in the handoff are a close-out defect.
+
 ## Commit and Push
 
 After completing all work and creating the session handoff, stage, commit, and push all changes:

@@ -93,6 +93,74 @@ export function buildDashboardState(
     }
   }
 
+  // Derive task statuses from prompt statuses via the reverse task index.
+  // Priority order (highest wins): done > in_review > in_progress > blocked > ready > draft
+  const STATUS_PRIORITY: Record<string, number> = {
+    draft: 0, ready: 1, blocked: 2, in_progress: 3,
+    in_review: 4, done: 5, superseded: -1, cancelled: -1,
+  };
+
+  for (const epic of epics) {
+    for (const story of epic.stories) {
+      for (const task of story.tasks) {
+        const linkedPromptIds = taskIndex[task.taskId];
+        if (!linkedPromptIds || linkedPromptIds.length === 0) continue;
+
+        const linkedPrompts = linkedPromptIds
+          .map(pid => promptMap.get(pid))
+          .filter((p): p is ParsedPrompt => p !== undefined);
+
+        if (linkedPrompts.length === 0) continue;
+
+        // All linked prompts done → task done; all cancelled → cancelled;
+        // otherwise take the highest-priority active status.
+        const active = linkedPrompts.filter(p =>
+          p.status !== 'superseded' && p.status !== 'cancelled');
+
+        if (active.length === 0) {
+          task.status = 'cancelled';
+        } else if (active.every(p => p.status === 'done')) {
+          task.status = 'done';
+        } else {
+          let best = 'draft';
+          for (const p of active) {
+            if ((STATUS_PRIORITY[p.status] ?? 0) > (STATUS_PRIORITY[best] ?? 0)) {
+              best = p.status;
+            }
+          }
+          task.status = best;
+        }
+      }
+
+      // Derive story status from its tasks
+      const taskStatuses = story.tasks.map(t => t.status);
+      const activeTasks = taskStatuses.filter(s => s !== 'cancelled');
+      if (activeTasks.length === 0) {
+        story.status = 'cancelled';
+      } else if (activeTasks.every(s => s === 'done')) {
+        story.status = 'done';
+      } else if (activeTasks.some(s => s === 'in_progress' || s === 'in_review' || s === 'blocked')) {
+        story.status = 'in_progress';
+      } else if (activeTasks.some(s => s === 'ready')) {
+        story.status = 'ready';
+      }
+      // else stays as-is (draft)
+    }
+
+    // Derive epic status from its stories
+    const storyStatuses = epic.stories.map(s => s.status);
+    const activeStories = storyStatuses.filter(s => s !== 'cancelled');
+    if (activeStories.length === 0) {
+      epic.status = 'cancelled';
+    } else if (activeStories.every(s => s === 'done')) {
+      epic.status = 'done';
+    } else if (activeStories.some(s => s === 'in_progress' || s === 'in_review' || s === 'blocked')) {
+      epic.status = 'in_progress';
+    } else if (activeStories.some(s => s === 'ready')) {
+      epic.status = 'ready';
+    }
+  }
+
   // Compute metrics
   const promptsByStatus = {} as Record<PromptStatus, number>;
   for (const s of STATUS_KEYS) {

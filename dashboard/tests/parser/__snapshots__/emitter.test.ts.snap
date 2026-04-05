@@ -5,7 +5,7 @@ exports[`parse() snapshot test matches expected structure snapshot 1`] = `
   "epics": [
     {
       "epicId": "E1",
-      "status": "in_progress",
+      "status": "ready",
       "stories": [
         {
           "acceptanceCriteria": [
@@ -17,14 +17,14 @@ exports[`parse() snapshot test matches expected structure snapshot 1`] = `
           "tasks": [
             {
               "epicId": "E1",
-              "status": "draft",
+              "status": "done",
               "storyId": "E1-S1",
               "taskId": "E1-S1-T1",
               "title": "Define scope",
             },
             {
               "epicId": "E1",
-              "status": "draft",
+              "status": "done",
               "storyId": "E1-S1",
               "taskId": "E1-S1-T2",
               "title": "Create plan",
@@ -38,26 +38,26 @@ exports[`parse() snapshot test matches expected structure snapshot 1`] = `
             "AC-2: Tests pass",
           ],
           "epicId": "E1",
-          "status": "in_progress",
+          "status": "ready",
           "storyId": "E1-S2",
           "tasks": [
             {
               "epicId": "E1",
-              "status": "draft",
+              "status": "done",
               "storyId": "E1-S2",
               "taskId": "E1-S2-T1",
               "title": "Build module A",
             },
             {
               "epicId": "E1",
-              "status": "draft",
+              "status": "done",
               "storyId": "E1-S2",
               "taskId": "E1-S2-T2",
               "title": "Build module B",
             },
             {
               "epicId": "E1",
-              "status": "draft",
+              "status": "ready",
               "storyId": "E1-S2",
               "taskId": "E1-S2-T3",
               "title": "Build module C",
@@ -82,7 +82,7 @@ exports[`parse() snapshot test matches expected structure snapshot 1`] = `
           "tasks": [
             {
               "epicId": "E2",
-              "status": "draft",
+              "status": "ready",
               "storyId": "E2-S1",
               "taskId": "E2-S1-T1",
               "title": "Create wireframes",
@@ -429,7 +429,7 @@ This is the fifth test prompt.
       "ready": 2,
       "superseded": 0,
     },
-    "scopeCompletionPercent": 0,
+    "scopeCompletionPercent": 67,
     "supersededPrompts": 0,
   },
   "taskIndex": {
