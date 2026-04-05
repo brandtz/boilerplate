@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 30 generated (10 ready in prompts/active/, 24 done — 6 in prompts/archive/, 18 in prompts/active/)
-- Prompts Completed: 24
+- Prompts: 30 generated (9 ready in prompts/active/, 25 done — 6 in prompts/archive/, 19 in prompts/active/)
+- Prompts Completed: 25
 - Prompts Archived: 6
 - Prompts Blocked: 0
 
@@ -40,6 +40,7 @@ Project Manager Dashboard v1
 - Prompt 22.0.1: Refresh, File Watch, Repo Selector — **DONE** (LoadingIndicator, ErrorBanner, RepoSelector, recentProjects, repoDetection, fileWatcher; 53 new tests; 438 total passing)
 - Prompt 23.0.1: UI Code Review Gate — **DONE** (APPROVED by Architect, QA, Security, UX; no rework prompts needed; 438 tests, 88%+ coverage)
 - Prompt 24.0.1: QA Validation Tests for Malformed Metadata — **DONE** (Part A: 7 review gate findings remediated; Part B: 21 parser resilience tests; 57 new tests added; 495 total passing; 91% coverage)
+- Prompt 25.0.1: Performance Tests for Large Inventories — **DONE** (13 perf tests; parser 81ms/310 prompts; UI render 17ms; 6220 prompts/sec; fixture generator + benchmarks)
 
 ## Open Blockers
 - None
@@ -48,7 +49,7 @@ Project Manager Dashboard v1
 - R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
 
 ## Next Suggested Action
-- Run prompt `prompts/active/25.0.1-qa-performance-tests.md` (Performance Tests for Large Inventories)
+- Run prompt `prompts/active/26.0.1-ux-accessibility-review.md` (Accessibility Review and Keyboard Nav)
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`

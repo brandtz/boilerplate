@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# generated performance test fixtures
+/tests/fixtures/large-scale/
+
 # next.js
 /.next/
 /out/
