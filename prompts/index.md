@@ -17,13 +17,13 @@ These prompts ship with the boilerplate and are reused for every new project.
 
 > 11 prompts across 2 phases (implementation + review). Execution order per sponsor decision: Rec 10 first, then Recs 1→2→4→3→5→7→8→6, review gate, then prompt consolidation.
 >
-> **Summary:** ready 9 | done 2 | total 11
+> **Summary:** ready 8 | done 3 | total 11
 
 | prompt_id | title | status | phase | location | prerequisites | downstream_prompts | session_handoff | created_at | completed_at | archived_at | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | 3.0.1 | Boilerplate Self-Test Script | done | implementation | prompts/active/3.0.1-self-test-script.md | 01_intake | 4.0.1 | agents/handoffs/S-2026-04-06-001-self-test-script.md | 2026-04-06 | 2026-04-06 | — | Rec 10 — 65/65 checks pass, smoke fixture created, Standards Guardian updated |
 | 4.0.1 | Stack Conventions Context Layer | done | implementation | prompts/active/4.0.1-conventions-layer.md | 3.0.1 | 5.0.1 | agents/handoffs/S-2026-04-06-002-conventions-layer.md | 2026-04-06 | 2026-04-06 | — | Rec 1 — conventions template + context file + intake/standards updated |
-| 5.0.1 | AGENTS.md and Copilot Instructions | ready | implementation | prompts/active/5.0.1-agents-md.md | 4.0.1 | 6.0.1 | — | 2026-04-06 | — | — | Rec 2 — AGENTS.md + .github/copilot-instructions.md |
+| 5.0.1 | AGENTS.md and Copilot Instructions | done | implementation | prompts/active/5.0.1-agents-md.md | 4.0.1 | 6.0.1 | agents/handoffs/S-2026-04-06-003-agents-md.md | 2026-04-06 | 2026-04-06 | — | Rec 2 — AGENTS.md + copilot-instructions.md + template + bootstrap updated |
 | 6.0.1 | Skills and Capabilities Registry | ready | implementation | prompts/active/6.0.1-skills-registry.md | 5.0.1 | 7.0.1 | — | 2026-04-06 | — | — | Rec 4 — skills.md (separate from conventions per C5) |
 | 7.0.1 | Persistent Memory System | ready | implementation | prompts/active/7.0.1-memory-system.md | 6.0.1 | 8.0.1 | — | 2026-04-06 | — | — | Rec 3 — memory.md + handoff template update |
 | 8.0.1 | Third-Party Integrations Map | ready | implementation | prompts/active/8.0.1-integrations-map.md | 7.0.1 | 9.0.1 | — | 2026-04-06 | — | — | Rec 5 — integrations.md + template |

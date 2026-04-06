@@ -28,7 +28,8 @@ Your goals in order:
 5. Create a README that explains how a single human sponsor should operate the system.
 
 Required top-level areas:
-- `.github/`
+- `.github/` (including `copilot-instructions.md` — repo-wide agent behavioral rules)
+- `AGENTS.md` at repo root (agent system overview, role index, quick-start — use `agents/templates/agents-md-template.md`)
 - `agents/roles/`
 - `agents/workflows/`
 - `agents/standards/`
