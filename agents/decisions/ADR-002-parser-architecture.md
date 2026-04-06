@@ -1,7 +1,7 @@
 # ADR-002: Parser Architecture
 
 ## Status
-Approved with Conditions (Architect Review — 2026-04-03)
+Accepted (Architect Review — 2026-04-03; all 6 conditions resolved in prompts 9.0.1–14.0.1)
 
 ## Architect Review Notes
 

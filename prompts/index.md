@@ -12,8 +12,8 @@
 | Total prompts | 36 |
 | Boilerplate operational prompts | 4 |
 | Dashboard project prompts | 32 |
-| Status: ready | 6 |
-| Status: done | 29 |
+| Status: ready | 5 |
+| Status: done | 30 |
 | Status: archived | 0 |
 | Status: blocked | 0 |
 | Status: superseded | 0 |
@@ -90,7 +90,7 @@
 | prompt_id | title | status | phase | epic_id | story_id | task_ids | location | prerequisites | downstream_prompts | session_handoff | created_at | completed_at | archived_at | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 28.0.1 | Final Review Gate — Release Readiness | done | review-approval | E6 | E6-S5 | — | prompts/active/28.0.1-review-gate-release-readiness.md | 24.0.1–27.0.1 | 29.0.1 | agents/handoffs/S-2026-04-06-032-review-gate-release-readiness.md | 2026-04-03 | 2026-04-06 | — | GO recommendation: all criteria met; 558 tests, 0 vulns, WCAG AA, all security mitigated; 4 findings → 29.0.1 |
-| 29.0.1 | Release Documentation and README | ready | release | E6 | E6-S5 | E6-S5-T1,T2 | prompts/active/29.0.1-writer-release-documentation.md | 28.0.1 | 30.0.1 | — | 2026-04-03 | — | — | — |
+| 29.0.1 | Release Documentation and README | done | release | E6 | E6-S5 | E6-S5-T1,T2 | prompts/active/29.0.1-writer-release-documentation.md | 28.0.1 | 30.0.1 | agents/handoffs/S-2026-04-06-033-release-documentation.md | 2026-04-03 | 2026-04-06 | — | Dashboard README, root README, architecture-overview, 3 ADRs finalized to Accepted; 4 review gate findings documented |
 | 30.0.1 | Release Handoff — Dashboard v1 Complete | ready | release | — | — | E6-S5-T3,T4 | prompts/active/30.0.1-release-handoff.md | 29.0.1 | — | — | 2026-04-03 | — | — | Final prompt |
 
 ### Dependency Graph

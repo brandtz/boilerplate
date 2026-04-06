@@ -75,7 +75,19 @@ Every agent should always know:
 
 The first project seeded in this repo is the **Human Master Dashboard** — a repo-native dashboard that gives the human sponsor a consistent, repo-driven view of project state.
 
-Key spec files:
+### Quick Start
+
+```bash
+cd dashboard
+npm ci
+npm run dev     # Dev server at http://localhost:3000
+npm run build   # Static export to out/
+```
+
+See [dashboard/README.md](dashboard/README.md) for full documentation.
+
+### Key Spec Files
+
 - `docs/project-manager-dashboard-prd.md` — product requirements document
 - `docs/project-manager-dashboard-data-contract.md` — repo data model and derived metrics rules
 - `agents/epics/project-manager-dashboard-epics.md` — epic and story breakdown

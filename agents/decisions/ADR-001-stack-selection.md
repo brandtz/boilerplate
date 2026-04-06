@@ -1,7 +1,7 @@
 # ADR-001: Technology Stack Selection
 
 ## Status
-Approved (Architect Review — 2026-04-03)
+Accepted (Architect Review — 2026-04-03)
 
 ## Architect Review Notes
 

@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 32 generated (6 ready in prompts/active/, 29 done — 6 in prompts/archive/, 23 in prompts/active/)
-- Prompts Completed: 29
+- Prompts: 32 generated (5 ready in prompts/active/, 30 done — 6 in prompts/archive/, 24 in prompts/active/)
+- Prompts Completed: 30
 - Prompts Archived: 6
 - Prompts Blocked: 0
 
@@ -45,6 +45,7 @@ Project Manager Dashboard v1
 - Prompt 26.0.2: Accessibility Remediation — **DONE** (12 a11y fixes: focus-visible, skip link, keyboard sort, chart alt text, listbox fix, search label, aria-labels, contrast, live region, accordion roles, h1 headings; 13 new tests; 512 total passing)
 - Prompt 27.0.1: Security Hardening and Path Sanitization — **DONE** (Security audit: 2 fixes — protocol-relative URL bypass in MarkdownRenderer, CSP frame-ancestors; 46 new security tests; 558 total passing; 0 npm vulnerabilities; R6/R15/R17/R18 mitigated)
 - Prompt 28.0.1: Final Review Gate — Release Readiness — **DONE** (GO recommendation: all 7 PRD acceptance criteria met; 558 tests, 0 vulnerabilities, WCAG AA, all security findings resolved; risk register fully updated; 4 non-blocking findings propagated to 29.0.1)
+- Prompt 29.0.1: Release Documentation and README — **DONE** (Dashboard README comprehensive rewrite; root README quick-start; architecture-overview updated; 3 ADRs finalized to Accepted; 4 review gate findings documented)
 
 ## Open Blockers
 - None
@@ -53,7 +54,7 @@ Project Manager Dashboard v1
 - R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
 
 ## Next Suggested Action
-- Run prompt `prompts/active/29.0.1-writer-release-documentation.md` (Technical Writer — Release Documentation and README)
+- Run prompt `prompts/active/30.0.1-release-handoff.md` (Release Handoff — Dashboard v1 Complete)
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`
