@@ -32,14 +32,26 @@ Required reading:
 - agents/context/constraints.md
 - agents/context/decision-log.md
 - agents/context/risk-register.md
+- agents/context/conventions.md
 - docs/agentic-ai-team-factory-blueprint.md
+
+Conventions interview — ask the sponsor:
+- What is the tech stack? (language, framework, runtime, versions)
+- What database and storage will be used?
+- What is the deployment target? (platform, build output, CI/CD)
+- Are there coding conventions? (naming, file structure, linting)
+- What testing framework and coverage expectations apply?
+- Is there a design system or component library?
+- What API style will be used? (REST/GraphQL, auth pattern, error format)
+Populate `agents/context/conventions.md` from the answers using the template at `agents/templates/conventions-template.md`.
 
 Your outputs:
 1. update or create the project charter
 2. update assumptions, constraints, and risk register
-3. define the recommended phases for this project
-4. identify which specialist roles must be involved
-5. generate the first batch of sequential prompts for those roles
+3. populate `agents/context/conventions.md` with stack decisions
+4. define the recommended phases for this project
+5. identify which specialist roles must be involved
+6. generate the first batch of sequential prompts for those roles
 
 Do not begin code implementation. This is an intake and planning phase only.
 

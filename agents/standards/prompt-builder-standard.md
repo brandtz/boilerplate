@@ -52,6 +52,7 @@ Implementation prompts should require:
 - test expectations
 - code quality expectations
 - handoff note requirements
+- `agents/context/conventions.md` in required reading (for stack-aware implementation)
 
 ## Anti-patterns
 Avoid prompts that:

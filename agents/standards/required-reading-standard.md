@@ -14,6 +14,7 @@ Files every major session should review:
 - constraints
 - decision log
 - risk register
+- conventions (`agents/context/conventions.md`)
 
 ### Role-specific
 Files required because of the current role:
