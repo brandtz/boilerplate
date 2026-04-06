@@ -290,6 +290,39 @@ No agent role may both:
 
 Review gates that evaluate scope completeness MUST include at least one reviewer who was not involved in the scope-setting decision. This prevents self-approval of scope cuts.
 
+## Review Gate Session Isolation Rule
+
+Review gate prompts (any prompt whose primary purpose is to evaluate, approve, or reject work produced by other prompts) MUST be executed in a **separate conversation session** from:
+1. The implementation work being reviewed
+2. The scope-setting or routing decisions being evaluated
+3. Any prior review gate in the same phase
+
+**Why this matters for AI agents:** Within a single conversation, the agent accumulates context that biases it toward approval:
+- It has "seen" the work being built and forms attachment to it
+- It experiences session-completion pressure — wanting to conclude the session cleanly rather than request rework that would extend it
+- It anchors on the framing provided by earlier messages rather than forming independent judgments
+- Sycophancy (the tendency to agree with the implied expectation) compounds across turns
+
+**Enforcement:**
+- Every review gate handoff MUST include a `## Session Context` section declaring: (a) whether this review was conducted in an isolated session, (b) if not, why not, and what compensating controls were used
+- The Standards Guardian MUST audit review gate session isolation during release gates
+
+## Review Gate Structural Requirements
+
+Every review gate prompt MUST include the following in its body:
+
+1. **Mandatory challenger questions** — A list of specific questions the reviewer must answer, including:
+   - "What tasks in the epics file are NOT covered by implementation prompts?"
+   - "What routes/pages render placeholder or stub content?"
+   - "What findings from prior gates were accepted without re-evaluation?"
+   - "What would the sponsor say if they saw this in production today?"
+
+2. **Required specialist sign-offs** — Each sign-off must be a separately produced artifact (even if brief), not a section written by the Orchestrator on the specialist's behalf. The Orchestrator summarizing what it thinks a specialist would say is NOT a valid sign-off.
+
+3. **Standards Guardian participation** — The Standards Guardian MUST be a mandatory reviewer at every review gate, operating from a separate session, with specific mandate to detect process violations.
+
+4. **Minimum finding threshold** — Reviews that produce zero findings must include a `## Zero-Finding Justification` section explaining what was examined and why no issues were found. This section is itself subject to review.
+
 ## Mandatory Governance References in Prompts
 
 Every prompt's `required_reading` frontmatter MUST include:

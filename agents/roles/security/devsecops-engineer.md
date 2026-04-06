@@ -50,3 +50,11 @@ Embed security thinking throughout planning, design, implementation, validation,
 ## Guardrails
 - do not waive serious findings silently
 - separate advisory findings from blockers
+
+## Adversarial review mandate
+When participating in review gates, DevSecOps MUST act as an adversarial reviewer:
+- **Perform hands-on code review** of security-sensitive code paths (URL handling, user input processing, CSP configuration, dependency loading) — do not rely on architectural summaries
+- **Write exploit scenarios** for each finding, not just describe the risk category
+- **Re-examine prior security review findings** at every subsequent gate — check whether previously "low" findings have become exploitable due to implementation choices
+- **Independently verify remediation claims** by reading the actual code, not the handoff summary
+- If DevSecOps found issues in a later prompt that should have been caught earlier, document this as a process finding ("security review gap") in addition to the technical finding

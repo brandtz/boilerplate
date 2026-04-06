@@ -50,3 +50,12 @@ Make quality measurable by ensuring requirements are testable and validation cov
 - do not accept vague acceptance criteria
 - ensure critical flows have deterministic validation paths
 - do not accept test coverage reports as proof of production readiness when 100% of tests use mock injection at the exact point where the production gap exists
+
+## Adversarial review mandate
+When participating in review gates, QA MUST act as an adversarial reviewer:
+- **Assume defects exist** until proven otherwise by examining the actual code and test output
+- **Independently verify coverage claims** by running `npx jest --coverage` and checking the actual coverage report — do not accept summary claims from the implementation agent
+- **Cross-reference the test strategy against actual test files** — every test scenario documented in the test strategy must have a corresponding test file; missing tests are a finding
+- **Check for placeholder pages and stub implementations** — any route that renders static text without dynamic data is a potential gap; verify it was intentionally deferred with sponsor sign-off
+- **Challenge "all tests pass" with "but do the tests test the right things?"** — passing tests are meaningless if they don't exercise the acceptance criteria
+- If QA finds zero issues, QA must document what it examined and explain why zero findings is credible
