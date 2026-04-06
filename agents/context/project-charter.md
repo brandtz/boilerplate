@@ -51,4 +51,4 @@ In an agentic workflow, work is distributed across many prompt sessions, role id
 6. Switch between at least two compatible repos
 
 ## Status
-Active — Intake complete, entering epic/story refinement
+Complete — v1 released 2026-04-06. All 6 epics delivered (E3-S3 task tree deferred to v2). 32 prompts executed across 7 phases. See `dashboard/README.md` for usage.

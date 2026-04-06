@@ -1,7 +1,7 @@
 # Status Dashboard
 
 ## Current Phase
-Implementation — E1 parser approved; E2–E5 UI implementation complete; UI code review gate APPROVED; validation/hardening in progress
+Complete — Dashboard v1 released 2026-04-06
 
 ## Project
 Project Manager Dashboard v1
@@ -10,8 +10,8 @@ Project Manager Dashboard v1
 - Epics: 6 defined
 - Stories: 24 defined (with acceptance criteria)
 - Technical Tasks: 87 defined
-- Prompts: 32 generated (5 ready in prompts/active/, 30 done — 6 in prompts/archive/, 24 in prompts/active/)
-- Prompts Completed: 30
+- Prompts: 32 generated (4 ready in prompts/active/, 31 done — 6 in prompts/archive/, 25 in prompts/active/)
+- Prompts Completed: 31
 - Prompts Archived: 6
 - Prompts Blocked: 0
 
@@ -46,15 +46,16 @@ Project Manager Dashboard v1
 - Prompt 27.0.1: Security Hardening and Path Sanitization — **DONE** (Security audit: 2 fixes — protocol-relative URL bypass in MarkdownRenderer, CSP frame-ancestors; 46 new security tests; 558 total passing; 0 npm vulnerabilities; R6/R15/R17/R18 mitigated)
 - Prompt 28.0.1: Final Review Gate — Release Readiness — **DONE** (GO recommendation: all 7 PRD acceptance criteria met; 558 tests, 0 vulnerabilities, WCAG AA, all security findings resolved; risk register fully updated; 4 non-blocking findings propagated to 29.0.1)
 - Prompt 29.0.1: Release Documentation and README — **DONE** (Dashboard README comprehensive rewrite; root README quick-start; architecture-overview updated; 3 ADRs finalized to Accepted; 4 review gate findings documented)
+- Prompt 30.0.1: Release Handoff — Dashboard v1 Complete — **DONE** (Final release handoff; project charter marked Complete; all sign-offs collected; 558 tests, 0 vulnerabilities)
 
 ## Open Blockers
 - None
 
 ## Awaiting Review
-- R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
+- None — all items resolved
 
 ## Next Suggested Action
-- Run prompt `prompts/active/30.0.1-release-handoff.md` (Release Handoff — Dashboard v1 Complete)
+- Project complete. No further dashboard v1 prompts remain. For v2 work, create new epics and prompts.
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`
