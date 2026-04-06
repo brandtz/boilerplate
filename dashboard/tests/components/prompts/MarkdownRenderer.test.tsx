@@ -77,6 +77,30 @@ describe('MarkdownRenderer', () => {
     expect(link).not.toHaveAttribute('href');
   });
 
+  it('blocks protocol-relative URLs (//evil.com)', () => {
+    render(
+      <MarkdownRenderer content="[click](//evil.com/malware)" />,
+    );
+    const link = screen.getByText('click');
+    expect(link).not.toHaveAttribute('href');
+  });
+
+  it('blocks vbscript: URIs in links', () => {
+    render(
+      <MarkdownRenderer content='[click](vbscript:MsgBox("XSS"))' />,
+    );
+    const link = screen.getByText('click');
+    expect(link).not.toHaveAttribute('href');
+  });
+
+  it('allows relative path links', () => {
+    render(
+      <MarkdownRenderer content="[click](/prompts?id=1.0.1)" />,
+    );
+    const link = screen.getByText('click');
+    expect(link).toHaveAttribute('href', '/prompts?id=1.0.1');
+  });
+
   it('has prose styling wrapper', () => {
     render(<MarkdownRenderer content="test" />);
     expect(screen.getByTestId('markdown-renderer').className).toContain('prose');

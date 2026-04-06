@@ -20,16 +20,15 @@ export function MarkdownRenderer({ content }: MarkdownRendererProps) {
         remarkPlugins={[remarkGfm]}
         components={{
           a: ({ href, children, ...props }) => {
-            // Only allow safe protocols
-            const safeHref =
-              href &&
-              /^(https?:|mailto:|#|\/)/i.test(href)
-                ? href
-                : undefined;
+            // Only allow safe protocols; reject protocol-relative URLs (//evil.com)
+            const isSafe =
+              !!href &&
+              (/^(https?:|mailto:|#)/i.test(href) ||
+               (href.startsWith('/') && !href.startsWith('//')));
             return (
               <a
                 {...props}
-                href={safeHref}
+                href={isSafe ? href : undefined}
                 rel="noopener noreferrer"
               >
                 {children}
