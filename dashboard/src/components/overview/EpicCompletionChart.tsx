@@ -38,16 +38,27 @@ export function EpicCompletionChart({
   };
 
   return (
-    <div
+    <figure
+      role="img"
+      aria-label={`Epic completion bar chart. ${labels.map((l, i) => `${l}: ${values[i]}%`).join(', ')}`}
       className="rounded-lg border border-gray-200 bg-white p-4"
       data-testid="epic-completion-chart"
     >
       <h3 className="mb-3 text-sm font-semibold text-gray-700">
         Epic Completion
       </h3>
-      <div className="h-64">
+      <div className="h-64" aria-hidden="true">
         <Bar data={data} options={defaultBarOptions} />
       </div>
-    </div>
+      <table className="sr-only">
+        <caption>Epic completion percentages</caption>
+        <thead><tr><th>Epic</th><th>Completion %</th></tr></thead>
+        <tbody>
+          {labels.map((l, i) => (
+            <tr key={l}><td>{l}</td><td>{values[i]}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </figure>
   );
 }

@@ -13,9 +13,11 @@ exports[`EpicCompletionChart matches empty snapshot 1`] = `
 
 exports[`EpicCompletionChart matches snapshot 1`] = `
 <div>
-  <div
+  <figure
+    aria-label="Epic completion bar chart. E1: 100%, E2: 50%"
     class="rounded-lg border border-gray-200 bg-white p-4"
     data-testid="epic-completion-chart"
+    role="img"
   >
     <h3
       class="mb-3 text-sm font-semibold text-gray-700"
@@ -23,6 +25,7 @@ exports[`EpicCompletionChart matches snapshot 1`] = `
       Epic Completion
     </h3>
     <div
+      aria-hidden="true"
       class="h-64"
     >
       <div
@@ -31,6 +34,41 @@ exports[`EpicCompletionChart matches snapshot 1`] = `
         data-testid="mock-bar-chart"
       />
     </div>
-  </div>
+    <table
+      class="sr-only"
+    >
+      <caption>
+        Epic completion percentages
+      </caption>
+      <thead>
+        <tr>
+          <th>
+            Epic
+          </th>
+          <th>
+            Completion %
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            E1
+          </td>
+          <td>
+            100
+          </td>
+        </tr>
+        <tr>
+          <td>
+            E2
+          </td>
+          <td>
+            50
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </figure>
 </div>
 `;

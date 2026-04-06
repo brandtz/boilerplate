@@ -140,7 +140,7 @@ function PromptsPageContent() {
   return (
     <ErrorBoundary viewName="Prompts">
       <div data-testid="view-prompts" className="space-y-4">
-        <h2 className="text-2xl font-bold text-gray-900">Prompts</h2>
+        <h1 className="text-2xl font-bold text-gray-900">Prompts</h1>
 
         <PromptFilterBar
           epics={state?.epics ?? []}

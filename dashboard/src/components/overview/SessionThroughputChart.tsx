@@ -48,16 +48,27 @@ export function SessionThroughputChart({
   };
 
   return (
-    <div
+    <figure
+      role="img"
+      aria-label="Session throughput line chart showing cumulative completed and remaining prompts over time"
       className="rounded-lg border border-gray-200 bg-white p-4"
       data-testid="session-throughput-chart"
     >
       <h3 className="mb-3 text-sm font-semibold text-gray-700">
         Session Throughput
       </h3>
-      <div className="h-64">
+      <div className="h-64" aria-hidden="true">
         <Line data={data} options={defaultLineOptions} />
       </div>
-    </div>
+      <table className="sr-only">
+        <caption>Session throughput data</caption>
+        <thead><tr><th>Date</th><th>Cumulative Completed</th><th>Remaining</th></tr></thead>
+        <tbody>
+          {completionTimeline.map((dp) => (
+            <tr key={dp.date}><td>{dp.date}</td><td>{dp.cumulativeCompleted}</td><td>{dp.remainingPrompts}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </figure>
   );
 }

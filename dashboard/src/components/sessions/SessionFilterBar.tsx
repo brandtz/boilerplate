@@ -88,6 +88,7 @@ export function SessionFilterBar({ roles, onChange, initialFilters }: SessionFil
           value={filters.search}
           onChange={(e) => update({ search: e.target.value })}
           className="rounded border border-gray-300 px-2 py-1 text-sm w-48"
+          aria-label="Search sessions"
           data-testid="filter-search"
         />
       </label>

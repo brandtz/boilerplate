@@ -70,12 +70,6 @@ export function SessionCard({
 
         <button
           onClick={onToggle}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              onToggle();
-            }
-          }}
           aria-expanded={isExpanded}
           className="shrink-0 rounded px-2 py-1 text-xs text-gray-500 hover:bg-gray-100"
           data-testid="session-toggle"

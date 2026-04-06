@@ -90,7 +90,7 @@ function SessionsPageContent() {
   return (
     <ErrorBoundary viewName="Sessions">
       <div data-testid="view-sessions" className="space-y-4">
-        <h2 className="text-2xl font-bold text-gray-900">Sessions</h2>
+        <h1 className="text-2xl font-bold text-gray-900">Sessions</h1>
 
         <SessionFilterBar
           roles={uniqueRoles}

@@ -137,7 +137,16 @@ export function PromptTable({
                   key={col.key}
                   className="px-4 py-3 text-left font-medium text-gray-600 cursor-pointer hover:bg-gray-100 select-none"
                   onClick={() => onSort(col.key)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      onSort(col.key);
+                    }
+                  }}
+                  tabIndex={0}
+                  role="columnheader"
                   aria-sort={ariaSort(col.key)}
+                  aria-label={`Sort by ${col.label}`}
                   data-testid={`sort-header-${col.key}`}
                 >
                   {col.label}

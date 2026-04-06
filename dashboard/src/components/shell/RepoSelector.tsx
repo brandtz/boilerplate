@@ -144,7 +144,7 @@ export function RepoSelector({ currentPath, onSelectPath }: RepoSelectorProps) {
           )}
 
           {/* Recent projects list */}
-          <div className="max-h-60 overflow-y-auto" role="listbox" aria-label="Recent repositories">
+          <div className="max-h-60 overflow-y-auto" role="group" aria-label="Recent repositories">
             {recentPaths.length === 0 ? (
               <p className="px-3 py-3 text-xs text-gray-400" data-testid="no-recent">
                 No recent projects
@@ -158,8 +158,6 @@ export function RepoSelector({ currentPath, onSelectPath }: RepoSelectorProps) {
                     className={`flex items-center justify-between px-3 py-2 hover:bg-gray-50 ${
                       p === currentPath ? 'bg-blue-50' : ''
                     }`}
-                    role="option"
-                    aria-selected={p === currentPath}
                     data-testid={`recent-item-${basename(p)}`}
                   >
                     <button

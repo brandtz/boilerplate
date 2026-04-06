@@ -27,7 +27,7 @@ export default function OverviewPage() {
   return (
     <ErrorBoundary viewName="Overview">
       <div data-testid="view-overview">
-        <h2 className="text-2xl font-bold text-gray-900">Overview</h2>
+        <h1 className="text-2xl font-bold text-gray-900">Overview</h1>
 
         {isLoading && (
           <div

@@ -40,16 +40,27 @@ export function RemainingPromptsChart({
   };
 
   return (
-    <div
+    <figure
+      role="img"
+      aria-label="Remaining prompts line chart showing remaining work over time"
       className="rounded-lg border border-gray-200 bg-white p-4"
       data-testid="remaining-prompts-chart"
     >
       <h3 className="mb-3 text-sm font-semibold text-gray-700">
         Remaining Prompts Over Time
       </h3>
-      <div className="h-64">
+      <div className="h-64" aria-hidden="true">
         <Line data={data} options={defaultLineOptions} />
       </div>
-    </div>
+      <table className="sr-only">
+        <caption>Remaining prompts over time</caption>
+        <thead><tr><th>Date</th><th>Remaining</th></tr></thead>
+        <tbody>
+          {completionTimeline.map((dp) => (
+            <tr key={dp.date}><td>{dp.date}</td><td>{dp.remainingPrompts}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </figure>
   );
 }

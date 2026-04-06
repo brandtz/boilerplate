@@ -61,14 +61,9 @@ export function EpicCard({
       {/* Epic header — clickable */}
       <button
         onClick={onToggle}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            onToggle();
-          }
-        }}
         aria-expanded={isExpanded}
         aria-controls={epicContentId}
+        id={`epic-trigger-${epic.epicId}`}
         className="flex w-full items-center gap-3 p-4 text-left hover:bg-gray-50 rounded-t-lg transition-colors"
         data-testid={`epic-toggle-${epic.epicId}`}
       >
@@ -120,6 +115,8 @@ export function EpicCard({
       {isExpanded && (
         <div
           id={epicContentId}
+          role="region"
+          aria-labelledby={`epic-trigger-${epic.epicId}`}
           className="border-t border-gray-100 px-4 pb-4 pt-2"
           data-testid={`epic-content-${epic.epicId}`}
         >

@@ -17,6 +17,6 @@ export const STATUS_THEME: Record<PromptStatus, StatusTheme> = {
   in_review: { bg: 'bg-violet-100', text: 'text-violet-800', label: 'In Review' },
   blocked: { bg: 'bg-red-100', text: 'text-red-800', label: 'Blocked' },
   done: { bg: 'bg-green-100', text: 'text-green-800', label: 'Done' },
-  superseded: { bg: 'bg-gray-100', text: 'text-gray-400', label: 'Superseded' },
-  cancelled: { bg: 'bg-gray-100', text: 'text-gray-400', label: 'Cancelled' },
+  superseded: { bg: 'bg-gray-100', text: 'text-gray-500', label: 'Superseded' },
+  cancelled: { bg: 'bg-gray-100', text: 'text-gray-500', label: 'Cancelled' },
 };

@@ -46,6 +46,7 @@ export function SessionDetail({ session, onPromptClick }: SessionDetailProps) {
                 key={pid}
                 onClick={() => onPromptClick(pid)}
                 className="text-blue-600 hover:underline text-xs"
+                aria-label={`Navigate to prompt ${pid}`}
                 data-testid={`next-prompt-link-${pid}`}
               >
                 → {pid}
@@ -63,6 +64,7 @@ export function SessionDetail({ session, onPromptClick }: SessionDetailProps) {
         <button
           onClick={() => onPromptClick(session.promptId)}
           className="text-xs text-blue-600 hover:underline"
+          aria-label={`View prompt ${session.promptId}`}
           data-testid="view-prompt-link"
         >
           View Prompt →

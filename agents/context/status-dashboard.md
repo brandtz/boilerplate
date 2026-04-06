@@ -42,6 +42,7 @@ Project Manager Dashboard v1
 - Prompt 24.0.1: QA Validation Tests for Malformed Metadata — **DONE** (Part A: 7 review gate findings remediated; Part B: 21 parser resilience tests; 57 new tests added; 495 total passing; 91% coverage)
 - Prompt 25.0.1: Performance Tests for Large Inventories — **DONE** (13 perf tests; parser 81ms/310 prompts; UI render 17ms; 6220 prompts/sec; fixture generator + benchmarks)
 - Prompt 26.0.1: Accessibility Review and Keyboard Nav — **DONE** (14 findings: 5 HIGH, 6 MEDIUM, 3 LOW; audit report at docs/accessibility-audit-report.md; remediation prompt 26.0.2 created)
+- Prompt 26.0.2: Accessibility Remediation — **DONE** (12 a11y fixes: focus-visible, skip link, keyboard sort, chart alt text, listbox fix, search label, aria-labels, contrast, live region, accordion roles, h1 headings; 13 new tests; 512 total passing)
 
 ## Open Blockers
 - None
@@ -50,7 +51,7 @@ Project Manager Dashboard v1
 - R9: docs/business-rules.md referenced by epics but flagged as missing by cloud agent (note: file exists locally)
 
 ## Next Suggested Action
-- Run prompt `prompts/active/26.0.2-ux-accessibility-remediation.md` (Accessibility Remediation — inserted after 26.0.1)
+- Run prompt `prompts/active/27.0.1-devsecops-security-hardening.md` (Security Hardening and Path Sanitization)
 
 ## Key Documents
 - PRD: `docs/project-manager-dashboard-prd.md`

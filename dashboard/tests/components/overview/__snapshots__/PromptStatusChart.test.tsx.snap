@@ -13,9 +13,11 @@ exports[`PromptStatusChart matches empty snapshot 1`] = `
 
 exports[`PromptStatusChart matches snapshot 1`] = `
 <div>
-  <div
+  <figure
+    aria-label="Prompt status doughnut chart. ready: 5, in progress: 2, in review: 1, done: 10"
     class="rounded-lg border border-gray-200 bg-white p-4"
     data-testid="prompt-status-chart"
+    role="img"
   >
     <h3
       class="mb-3 text-sm font-semibold text-gray-700"
@@ -23,6 +25,7 @@ exports[`PromptStatusChart matches snapshot 1`] = `
       Prompt Status Distribution
     </h3>
     <div
+      aria-hidden="true"
       class="h-64"
     >
       <div
@@ -31,6 +34,57 @@ exports[`PromptStatusChart matches snapshot 1`] = `
         data-testid="mock-doughnut-chart"
       />
     </div>
-  </div>
+    <table
+      class="sr-only"
+    >
+      <caption>
+        Prompt status distribution
+      </caption>
+      <thead>
+        <tr>
+          <th>
+            Status
+          </th>
+          <th>
+            Count
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            ready
+          </td>
+          <td>
+            5
+          </td>
+        </tr>
+        <tr>
+          <td>
+            in progress
+          </td>
+          <td>
+            2
+          </td>
+        </tr>
+        <tr>
+          <td>
+            in review
+          </td>
+          <td>
+            1
+          </td>
+        </tr>
+        <tr>
+          <td>
+            done
+          </td>
+          <td>
+            10
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </figure>
 </div>
 `;

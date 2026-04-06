@@ -44,16 +44,27 @@ export function PromptStatusChart({
   };
 
   return (
-    <div
+    <figure
+      role="img"
+      aria-label={`Prompt status doughnut chart. ${labels.map((l, i) => `${l}: ${values[i]}`).join(', ')}`}
       className="rounded-lg border border-gray-200 bg-white p-4"
       data-testid="prompt-status-chart"
     >
       <h3 className="mb-3 text-sm font-semibold text-gray-700">
         Prompt Status Distribution
       </h3>
-      <div className="h-64">
+      <div className="h-64" aria-hidden="true">
         <Doughnut data={data} options={defaultDoughnutOptions} />
       </div>
-    </div>
+      <table className="sr-only">
+        <caption>Prompt status distribution</caption>
+        <thead><tr><th>Status</th><th>Count</th></tr></thead>
+        <tbody>
+          {labels.map((l, i) => (
+            <tr key={l}><td>{l}</td><td>{values[i]}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </figure>
   );
 }

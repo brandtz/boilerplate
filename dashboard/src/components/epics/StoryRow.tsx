@@ -50,14 +50,9 @@ export function StoryRow({
     >
       <button
         onClick={onToggle}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            onToggle();
-          }
-        }}
         aria-expanded={isExpanded}
         aria-controls={storyContentId}
+        id={`story-trigger-${story.storyId}`}
         className="flex w-full items-center gap-3 py-2 text-left text-sm hover:bg-gray-50 rounded transition-colors"
         data-testid={`story-toggle-${story.storyId}`}
       >
@@ -93,7 +88,12 @@ export function StoryRow({
 
       {/* Expanded content */}
       {isExpanded && (
-        <div id={storyContentId} data-testid={`story-content-${story.storyId}`}>
+        <div
+          id={storyContentId}
+          role="region"
+          aria-labelledby={`story-trigger-${story.storyId}`}
+          data-testid={`story-content-${story.storyId}`}
+        >
           <TaskList
             tasks={story.tasks}
             taskIndex={taskIndex}
