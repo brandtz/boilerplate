@@ -1,4 +1,4 @@
-# Agentic SaaS Team Factory
+﻿# Agentic SaaS Team Factory
 
 This repository is the canonical operating system for building software projects with an AI-led delivery team.
 
@@ -28,24 +28,50 @@ The operating model is built around:
 ```
 agents/
   context/         shared living documents (charter, assumptions, risks, etc.)
+  decisions/       architecture decision records (ADRs)
   epics/           epic and story breakdowns per project
-  prompts/         example agent prompts
+  handoffs/        session handoff files from completed prompts
   roles/           AI role identity files
   standards/       contracts and operating standards
   templates/       templates for artifacts and handoffs
   workflows/       SDLC workflow definitions
+archive/           completed project artifacts (prompts, handoffs, docs)
+dashboard/         built-in project management dashboard (Next.js)
 docs/              high-level blueprints and product documents
-prompts/           numbered master prompts for bootstrapping and execution
+prompts/
+  active/          prompts ready for execution
+  archive/         completed prompts
+  templates/       prompt authoring templates
 schemas/           machine-readable schema examples
 ```
 
 ## Getting Started
 
 1. Clone or fork this repository.
-2. Commit it as your "AI operating system" baseline.
-3. Start with `prompts/00_FIRST_PROMPT_bootstrap_repo.md`.
-4. Have the Master Agent scaffold the repo, standards, and role expansion.
-5. Use the Master Agent to intake each project idea and route it through the defined phases.
+2. Install the dashboard: `cd dashboard && npm ci`
+3. Start with `prompts/active/01_MASTER_AGENT_PROJECT_INTAKE_PROMPT.md` to kick off a new project.
+4. The Master Agent will interview you, create a project charter, and generate the prompt sequence.
+5. Execute prompts in order. The dashboard tracks progress automatically.
+
+## Built-In Dashboard
+
+This boilerplate includes a **project management dashboard** that automatically parses your repo's prompts, epics, handoffs, and session artifacts to give you a real-time view of project progress.
+
+```bash
+cd dashboard
+npm ci
+npm run dev     # Dev server at http://localhost:3000
+npm run build   # Static export to out/
+```
+
+The dashboard reads `prompts/index.md`, `agents/epics/`, `agents/handoffs/`, and prompt frontmatter to derive:
+- Overall project health and completion metrics
+- Epic > Story > Task hierarchy with status badges
+- Prompt inventory with dependency graph
+- Session timeline with handoff summaries
+- Next-prompt recommendation with copy-to-clipboard
+
+See [dashboard/README.md](dashboard/README.md) for full documentation.
 
 ## Core Principle
 
@@ -71,30 +97,20 @@ Every agent should always know:
 9. Release readiness
 10. Post-release handoff
 
-## Included Project: Project Manager Dashboard
+## Key Reference Files
 
-The first project seeded in this repo is the **Human Master Dashboard** — a repo-native dashboard that gives the human sponsor a consistent, repo-driven view of project state.
+- `agents/README.md` — operating model and agent rules
+- `prompts/README.md` — prompt lifecycle and authoring guide
+- `agents/workflows/00-operating-model.md` — full SDLC workflow definition
+- `agents/standards/` — all operating standards (handoff, review, prompt lifecycle, etc.)
+- `agents/templates/` — templates for prompts, handoffs, ADRs, epics, stories, tasks
+- `docs/agentic-ai-team-factory-blueprint.md` — conceptual blueprint for the operating model
 
-### Quick Start
+## Archived Projects
 
-```bash
-cd dashboard
-npm ci
-npm run dev     # Dev server at http://localhost:3000
-npm run build   # Static export to out/
-```
+### Dashboard v1 (2026-04-03 → 2026-04-06)
 
-See [dashboard/README.md](dashboard/README.md) for full documentation.
-
-### Key Spec Files
-
-- `docs/project-manager-dashboard-prd.md` — product requirements document
-- `docs/project-manager-dashboard-data-contract.md` — repo data model and derived metrics rules
-- `agents/epics/project-manager-dashboard-epics.md` — epic and story breakdown
-- `agents/standards/prompt-numbering-standard.md` — numbering and prerequisite update rules
-- `agents/templates/prompt-session-template.md` — required frontmatter and body shape for prompts
-- `agents/templates/session-handoff-template.md` — required handoff output for every agent session
-- `prompts/00_kickoff_project_manager_dashboard.md` — first Master Agent prompt for the swarm
-- `schemas/dashboard-state.example.json` — example normalized output for dashboard ingestion
-
-The dashboard must be **repo-native**: it derives project state from committed markdown files, prompt files, handoffs, and normalized machine-readable status files rather than depending on human memory or chat history.
+The dashboard itself was the first project built using this boilerplate. All build artifacts are preserved in `archive/dashboard-v1/` for reference:
+- 32 prompts across 7 phases
+- 558 tests, 0 vulnerabilities
+- 34 session handoffs documenting every decision

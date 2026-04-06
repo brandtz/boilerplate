@@ -1,67 +1,25 @@
-# Status Dashboard
+﻿# Status Dashboard
+
+> This file is maintained by the Orchestrator throughout project execution.
 
 ## Current Phase
-Complete — Dashboard v1 released 2026-04-06
+Not started — awaiting project intake
 
 ## Project
-Project Manager Dashboard v1
+(Populated during intake)
 
 ## Metrics
-- Epics: 6 defined
-- Stories: 24 defined (with acceptance criteria)
-- Technical Tasks: 87 defined
-- Prompts: 32 generated (4 ready in prompts/active/, 31 done — 6 in prompts/archive/, 25 in prompts/active/)
-- Prompts Completed: 31
-- Prompts Archived: 6
-- Prompts Blocked: 0
+- Epics: 0
+- Stories: 0
+- Technical Tasks: 0
+- Prompts: 0
+- Prompts Completed: 0
 
 ## Active Work Packets
-- Prompt 1.0.1: PRD Review and Gap Analysis — **DONE**
-- Prompt 2.0.1: Business Rules and Acceptance Criteria — **DONE** (business rules at docs/business-rules.md)
-- Prompt 3.0.1: Dashboard UX Review and Wireframes — **DONE** (wireframes at docs/dashboard-ux-wireframes.md)
-- Prompt 4.0.1: Architecture Review and ADR Approval — **DONE** (ADR-001 approved, ADR-002 approved w/ conditions, ADR-003 approved)
-- Prompt 5.0.1: Security Review of Architecture — **DONE** (0 critical, 2 high, 4 medium, 3 low findings; PROCEED)
-- Prompt 6.0.1: Operational Review and Local Dev Setup — **DONE** (scaffolding structure, dev workflow, CI/CD recommendations, file watcher config at docs/operational-review.md)
-- Prompt 7.0.1: Test Strategy and Test Plan — **DONE** (test strategy at docs/test-strategy.md: 4 test levels, 8 fixture categories, quality gates, Jest + Testing Library + Playwright)
-- Prompt 8.0.1: Pre-Implementation Review Gate — **DONE** (GO recommendation: all deliverables verified, 0 critical blockers, ADR-002 conditions to resolve in 9.0.1)
-- Prompt 9.0.1: Technical Tasks for Parser (E1) — **DONE** (21 tasks specified across 6 stories; all 6 ADR-002 conditions resolved; R10/R11/R12 resolved; docs/technical-tasks-e1-parser.md)
-- Prompt 10.0.1: Technical Tasks for UI (E2–E5) — **DONE** (55 tasks specified across 16 stories in 4 epics; component structure, hooks, and test requirements defined; docs/technical-tasks-e2-e5-ui.md)
-- Prompt 11.0.1: Project Scaffolding and Parser Setup — **DONE** (Next.js + TypeScript project scaffolded in dashboard/; parser module structure created; all core interfaces defined; Jest + Testing Library configured)
-- Prompt 12.0.1: Frontmatter Parser and Validators — **DONE** (7 parser modules implemented: warnings, prompt-schema, handoff-schema, scanner, extractor, epic-parser, graph-builder; 57 tests passing at 97% coverage)
-- Prompt 13.0.1: Prompt Sorting and Dependency Engine — **DONE** (sorting.ts + eligibility.ts; graph-builder integrated; 56 new tests; 113 total tests passing at 97% coverage)
-- Prompt 14.0.1: JSON State Emitter and CLI — **DONE** (parse() orchestrator, parseToJson() serializer, CLI entry point with --repo/--output/--pretty; snapshot repo fixtures; 139 total tests)
-- Prompt 15.0.1: Parser Code Review Gate — **DONE** (Approved by Architect, QA, Security; no rework needed; 139 tests passing at 87.5% coverage)
-- Prompt 16.0.1: App Shell, Layout, Navigation — **DONE** (AppShell + Header + Sidebar + StatusBar + ErrorBoundary; DashboardContext + useDashboard; 5 routes; 31 new tests; 170 total passing)
-- Prompt 17.0.1: Overview: Summary Cards and Charts — **DONE** (SummaryCard, HealthBadge, OverallProgressBar, SummaryCardsGrid, EpicCompletionChart, PromptStatusChart, SessionThroughputChart; 50 new tests; 220 total passing)
-- Prompt 18.0.1: Blockers Panel and Next Prompt Widget — **DONE** (BlockersWarningsPanel, NextPromptWidget, CopyButton, useCopyToClipboard; 31 new tests; 251 total passing)
-- Prompt 19.0.1: Epics View: Table, Drill-Down, Task Tree — **DONE** (EpicAccordion, EpicCard, StoryRow, TaskList, StatusBadge, FilterBar, UpdateSummary, useAccordion; 59 new tests; 310 total passing)
-- Prompt 20.0.1: Prompt Inventory Table and Detail Drawer — **DONE** (PromptTable, PromptDetailDrawer, PromptFilterBar, MarkdownRenderer, Pagination, useDrawer; 47 new tests; 356 total passing)
-- Prompt 21.0.1: Session Timeline and Handoff Links — **DONE** (SessionTimeline, SessionCard, SessionDetail, SessionFilterBar; enhanced PromptDetailDrawer handoffs; 29 new tests; 385 total passing)
-- Prompt 22.0.1: Refresh, File Watch, Repo Selector — **DONE** (LoadingIndicator, ErrorBanner, RepoSelector, recentProjects, repoDetection, fileWatcher; 53 new tests; 438 total passing)
-- Prompt 23.0.1: UI Code Review Gate — **DONE** (APPROVED by Architect, QA, Security, UX; no rework prompts needed; 438 tests, 88%+ coverage)
-- Prompt 24.0.1: QA Validation Tests for Malformed Metadata — **DONE** (Part A: 7 review gate findings remediated; Part B: 21 parser resilience tests; 57 new tests added; 495 total passing; 91% coverage)
-- Prompt 25.0.1: Performance Tests for Large Inventories — **DONE** (13 perf tests; parser 81ms/310 prompts; UI render 17ms; 6220 prompts/sec; fixture generator + benchmarks)
-- Prompt 26.0.1: Accessibility Review and Keyboard Nav — **DONE** (14 findings: 5 HIGH, 6 MEDIUM, 3 LOW; audit report at docs/accessibility-audit-report.md; remediation prompt 26.0.2 created)
-- Prompt 26.0.2: Accessibility Remediation — **DONE** (12 a11y fixes: focus-visible, skip link, keyboard sort, chart alt text, listbox fix, search label, aria-labels, contrast, live region, accordion roles, h1 headings; 13 new tests; 512 total passing)
-- Prompt 27.0.1: Security Hardening and Path Sanitization — **DONE** (Security audit: 2 fixes — protocol-relative URL bypass in MarkdownRenderer, CSP frame-ancestors; 46 new security tests; 558 total passing; 0 npm vulnerabilities; R6/R15/R17/R18 mitigated)
-- Prompt 28.0.1: Final Review Gate — Release Readiness — **DONE** (GO recommendation: all 7 PRD acceptance criteria met; 558 tests, 0 vulnerabilities, WCAG AA, all security findings resolved; risk register fully updated; 4 non-blocking findings propagated to 29.0.1)
-- Prompt 29.0.1: Release Documentation and README — **DONE** (Dashboard README comprehensive rewrite; root README quick-start; architecture-overview updated; 3 ADRs finalized to Accepted; 4 review gate findings documented)
-- Prompt 30.0.1: Release Handoff — Dashboard v1 Complete — **DONE** (Final release handoff; project charter marked Complete; all sign-offs collected; 558 tests, 0 vulnerabilities)
-
-## Open Blockers
-- None
+(None)
 
 ## Awaiting Review
-- None — all items resolved
+(None)
 
 ## Next Suggested Action
-- Project complete. No further dashboard v1 prompts remain. For v2 work, create new epics and prompts.
-
-## Key Documents
-- PRD: `docs/project-manager-dashboard-prd.md`
-- Data Contract: `docs/project-manager-dashboard-data-contract.md`
-- UX Wireframes: `docs/dashboard-ux-wireframes.md`
-- Epics: `agents/epics/project-manager-dashboard-epics.md`
-- Prompt Inventory: `prompts/index.md`
-- Prompt Lifecycle Standard: `agents/standards/prompt-lifecycle-standard.md`
-- Architecture Overview: `agents/context/architecture-overview.md`
+Run `00_FIRST_PROMPT_bootstrap_repo.md` if this is a fresh repo, or `01_MASTER_AGENT_PROJECT_INTAKE_PROMPT.md` if scaffolding is already in place.
