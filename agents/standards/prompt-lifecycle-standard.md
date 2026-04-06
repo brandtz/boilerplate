@@ -274,6 +274,22 @@ Any change to prompt sequencing or archival behavior must be reviewed by:
 - Master Agent / Orchestrator
 - Product or Project Management role
 
+## Task Coverage Verification Rule
+
+When the Orchestrator generates implementation prompts from technical task specifications:
+1. **Every task ID** in the epics file MUST map to at least one implementation prompt's `task_ids` field
+2. If a task is intentionally excluded, the Orchestrator MUST create a deferral record **at the time of exclusion** (not retroactively at a review gate) containing: task ID, justification, and required sponsor acknowledgment
+3. A **different role** than the Orchestrator must verify task-to-prompt coverage before the first implementation prompt begins execution
+4. Placeholder pages are not acceptable substitutes for deferred-task documentation — a route that renders stub content without a tracked deferral is a defect, not a design choice
+
+## Review Gate Independence Rule
+
+No agent role may both:
+- Make a scope exclusion or deferral decision, AND
+- Approve that same decision at a review gate
+
+Review gates that evaluate scope completeness MUST include at least one reviewer who was not involved in the scope-setting decision. This prevents self-approval of scope cuts.
+
 ## Mandatory Governance References in Prompts
 
 Every prompt's `required_reading` frontmatter MUST include:

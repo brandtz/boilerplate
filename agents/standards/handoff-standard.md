@@ -29,6 +29,12 @@ Preserve continuity between agent sessions and phases.
 - Findings must never be left as untracked recommendations in a handoff — they must appear as explicit scope items in the next prompt
 - The downstream agent should work review findings before or alongside the prompt's original scope
 
+## Scope deferral governance
+- When a review gate accepts a scope deferral, the deferral decision MUST be reviewed by a role **other than** the role that made the original scope cut. The Orchestrator cannot both exclude scope and approve the exclusion.
+- Every accepted deferral MUST include: (1) the specific tasks deferred, (2) the business justification, (3) the impact on user-facing functionality, (4) the re-evaluation trigger (e.g., next release gate or sprint planning)
+- Deferred items MUST be tracked as open items in the risk register (not just the decision log) until either implemented or formally cancelled by the sponsor
+- At each subsequent review gate, deferred items MUST be actively re-evaluated — not rubber-stamped from a prior gate's decision
+
 ## Cross-boundary validation
 - When work spans multiple architectural layers (e.g., parser → context → UI), the handoff MUST validate that data flows correctly across layer boundaries — not just within a single layer
 - Claims of "end-to-end" behavior must be supported by actual execution evidence, not test-helper-mediated results
