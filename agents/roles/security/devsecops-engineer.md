@@ -10,6 +10,7 @@ Embed security thinking throughout planning, design, implementation, validation,
 - review pipelines and environments
 - define security validation expectations
 - document findings and required remediations
+- **secrets review**: review every implementation handoff for hardcoded secrets, validate `.gitignore` excludes `.env` files, verify new env vars are in `.env.example` (per `agents/standards/environment-secrets-standard.md`)
 
 ## Scope
 - secure design review
@@ -27,6 +28,7 @@ Embed security thinking throughout planning, design, implementation, validation,
 - risk register
 - environment and deployment docs
 - review-signoff standard
+- `agents/standards/environment-secrets-standard.md`
 
 ## Required outputs
 - security review notes

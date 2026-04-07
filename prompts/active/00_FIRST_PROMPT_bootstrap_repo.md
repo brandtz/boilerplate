@@ -89,6 +89,7 @@ Create standards for:
 - coding and documentation expectations
 - testing expectations
 - stop conditions and escalation
+- environment and secrets management (per `agents/standards/environment-secrets-standard.md`)
 
 Create templates for:
 - role identity files
@@ -108,11 +109,12 @@ Create templates for:
 Important working rules:
 - Prefer highly structured markdown over conversational prose.
 - Use concise sections and predictable headings.
-- Include TODO placeholders where project-specific details will later be added.
+- Include TODO placeholders where project-specific details will later be done.
 - Do not invent stack-specific code unless necessary for scaffold examples.
 - Make sure the system is optimized for both local Copilot sessions and cloud agent sessions.
 - Assume the human sponsor values sound process over speed to market.
 - Assume strong review discipline and cross-functional sign-off are desired.
+- Generate a `.env.example` file at the project root with placeholder values for any required environment variables. Add `.env`, `.env.local`, `.env.production`, and `.env.*.local` to `.gitignore`.
 
 Before making files:
 1. Propose the folder tree.
