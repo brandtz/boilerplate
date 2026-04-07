@@ -28,6 +28,13 @@ A review gate handoff that was produced in the same session as the implementatio
 2. **No self-resolution** — A role that sets conditions, open risks, or action items cannot be the role that resolves and closes them. A different role must verify resolution.
 3. **Reviewer independence verification** — Every review gate handoff must include a `## Reviewer Independence Declaration` section stating: (a) which role executed the review, (b) which roles produced the work under review, (c) confirmation that reviewer and author roles are different for each finding area.
 
+## Human approval routing
+
+Review gates that require human approval MUST specify which human by domain authority, referencing `agents/context/team.md`:
+- The Orchestrator MUST route domain-specific approvals to the appropriate team member based on the Approval Routing table in team.md
+- If team.md is not yet populated, route all approvals to the default sponsor
+- Never auto-approve when a human approval is required but no human is available — block the gate instead
+
 ## Review output structure
 - scope reviewed
 - files reviewed

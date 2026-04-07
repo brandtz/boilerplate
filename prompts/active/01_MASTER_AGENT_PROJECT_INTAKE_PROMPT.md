@@ -35,6 +35,7 @@ Required reading:
 - agents/context/conventions.md
 - agents/context/skills.md
 - agents/context/integrations.md
+- agents/context/team.md
 - docs/agentic-ai-team-factory-blueprint.md
 
 Conventions interview — ask the sponsor:
@@ -65,15 +66,22 @@ Integrations interview — ask the sponsor:
 Not all integrations will be known at intake — the Solution Architect populates the rest during architecture review.
 Populate `agents/context/integrations.md` from the answers using the template at `agents/templates/integrations-template.md`.
 
+Team composition interview — ask the sponsor:
+- How many humans are involved in this project?
+- What is each person's domain expertise and authority scope? (technical, product, business, security)
+- Who approves what? (architecture decisions, product scope, security sign-off, release readiness)
+- Are there availability constraints? (timezone, working hours, field time)
+
 Your outputs:
 1. update or create the project charter
 2. update assumptions, constraints, and risk register
 3. populate `agents/context/conventions.md` with stack decisions
 4. populate `agents/context/skills.md` with available tooling and capabilities
 5. populate `agents/context/integrations.md` with known external service dependencies
-6. define the recommended phases for this project
-7. identify which specialist roles must be involved
-8. generate the first batch of sequential prompts for those roles
+6. populate `agents/context/team.md` with team composition and approval routing
+7. define the recommended phases for this project
+8. identify which specialist roles must be involved
+9. generate the first batch of sequential prompts for those roles
 
 Do not begin code implementation. This is an intake and planning phase only.
 
