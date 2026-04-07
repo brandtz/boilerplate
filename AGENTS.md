@@ -39,6 +39,7 @@ See `agents/context/status-dashboard.md` for live status.
 | Prompts | `prompts/active/` | Current prompt files ready for execution |
 | Prompt Index | `prompts/index.md` | Canonical prompt inventory (source of truth) |
 | Dashboard | `dashboard/` | Built-in PM dashboard (Next.js) |
+| Intake Package | `docs/intake-package.md` | Pre-filled sponsor input (created from `agents/templates/intake-package-template.md`) |
 | Docs | `docs/` | Project-specific documentation |
 
 ## Role Index

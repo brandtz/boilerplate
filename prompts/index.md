@@ -13,6 +13,12 @@ These prompts ship with the boilerplate and are reused for every new project.
 | 01_intake | Master Agent Project Intake | ready | intake | prompts/active/01_MASTER_AGENT_PROJECT_INTAKE_PROMPT.md | 00_bootstrap | 02_prompt_builder | — | 2026-04-03 | — | — | Interviews sponsor, creates charter, product brief, risks |
 | 02_prompt_builder | Master Agent Prompt Builder | ready | prompt-building | prompts/active/02_MASTER_AGENT_PROMPT_BUILDER_PROMPT.md | 01_intake | — | — | 2026-04-03 | — | — | Generates sequenced specialist prompts from phase + role inputs |
 
+## Maintenance Prompts
+
+| prompt_id | title | status | phase | location | prerequisites | downstream_prompts | session_handoff | created_at | completed_at | archived_at | notes |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 14.0.1-cleanup | Pre-Bulwark Cleanup and Intake Package | done | maintenance | prompts/active/14.0.1-cleanup-pre-bulwark.md | 13.0.1 | — | agents/handoffs/S-2026-04-06-013-pre-bulwark-cleanup.md | 2026-04-06 | 2026-04-06 | — | S1-S4: fixed prompt 02 stale ref, removed schemas/, reset dashboard state, intake package mechanism |
+
 ## Active Project: Boilerplate Process Upgrade v2
 
 > 11 prompts across 2 phases (implementation + review). Execution order per sponsor decision: Rec 10 first, then Recs 1→2→4→3→5→7→8→6, review gate, then prompt consolidation.

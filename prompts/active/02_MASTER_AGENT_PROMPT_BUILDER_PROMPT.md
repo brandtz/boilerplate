@@ -17,12 +17,13 @@ Required reading:
 - agents/templates/prompt-template.md
 - agents/context/project-charter.md
 - agents/context/product-brief.md
-- agents/context/architecture-overview.md
 - agents/context/assumptions.md
 - agents/context/constraints.md
 - agents/context/decision-log.md
 - agents/context/risk-register.md
+- agents/context/conventions.md
 - agents/context/status-dashboard.md
+- docs/architecture-overview.md (if it exists for the current project)
 
 Current phase:
 <REPLACE_WITH_PHASE>

@@ -17,6 +17,11 @@ A new project idea is being introduced. Your job is to:
 Project idea:
 <PASTE_IDEA_HERE>
 
+Intake package check:
+Before starting the interview sections below, check if `docs/intake-package.md` exists.
+If it does, read it and pre-populate your outputs from its contents. Skip interview questions that are already answered in the package. Only ask follow-up questions for sections that are blank or ambiguous.
+If it does not exist, proceed with the full interview as written below.
+
 Human sponsor preferences:
 - sound process is more important than speed
 - multiple reviewer roles should inspect high-impact work

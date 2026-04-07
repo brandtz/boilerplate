@@ -42,7 +42,7 @@ prompts/
   active/          prompts ready for execution
   archive/         completed prompts
   templates/       prompt authoring templates
-schemas/           machine-readable schema examples
+scripts/           shell scripts (self-test, utilities)
 ```
 
 ## Getting Started

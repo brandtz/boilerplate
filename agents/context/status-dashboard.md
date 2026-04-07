@@ -33,4 +33,7 @@ Boilerplate Process Upgrade v2
 (None)
 
 ## Next Suggested Action
-Project complete. Begin Bulwark intake using prompt 01.
+Project complete. Begin Bulwark intake using prompt 01. Optionally pre-fill `docs/intake-package.md` from `agents/templates/intake-package-template.md` first.
+
+## Maintenance Log
+- 14.0.1-cleanup — **DONE** (fixed prompt 02 stale ref, removed schemas/, reset dashboard state, created intake package mechanism — 90/90 self-test)
