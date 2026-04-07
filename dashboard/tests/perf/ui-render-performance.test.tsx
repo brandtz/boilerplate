@@ -150,7 +150,7 @@ function generateLargeState(promptCount: number): DashboardState {
       lastParsedAt: '2026-04-04T12:00:00Z',
       totalEpics: epics.length,
       totalStories: epics.reduce((sum, e) => sum + e.stories.length, 0),
-      totalTasks: epics.reduce((sum, e) => sum + e.stories.reduce((s, st) => s + st.tasks.length, 0), 0),
+      totalTasks: epics.reduce((sum, e) => sum + e.stories.reduce((s: number, st: ParsedStory) => s + st.tasks.length, 0), 0),
       totalPrompts: prompts.length,
       totalHandoffs: sessions.length,
       healthStatus: 'on_track',
