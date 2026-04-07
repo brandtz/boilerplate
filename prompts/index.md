@@ -17,7 +17,7 @@ These prompts ship with the boilerplate and are reused for every new project.
 
 > 11 prompts across 2 phases (implementation + review). Execution order per sponsor decision: Rec 10 first, then Recs 1→2→4→3→5→7→8→6, review gate, then prompt consolidation.
 >
-> **Summary:** ready 1 | done 11 | total 13
+> **Summary:** done 13 | total 13 — PROJECT COMPLETE
 
 | prompt_id | title | status | phase | location | prerequisites | downstream_prompts | session_handoff | created_at | completed_at | archived_at | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -32,7 +32,7 @@ These prompts ship with the boilerplate and are reused for every new project.
 | 11.0.1 | Complexity Scoring in Prompts | done | implementation | prompts/active/11.0.1-complexity-scoring.md | 10.0.1 | 12.0.1 | agents/handoffs/S-2026-04-06-009-complexity-scoring.md | 2026-04-06 | 2026-04-06 | — | Rec 6 — complexity field in templates + standard + all prompts scored, 79/79 |
 | 12.0.1 | Upgrade Review Gate | done | review | prompts/active/12.0.1-upgrade-review-gate.md | 11.0.1 | 12.0.2 | agents/handoffs/S-2026-04-06-010-upgrade-review.md | 2026-04-06 | 2026-04-06 | — | APPROVED WITH CONDITIONS — 8 findings (2 major, 3 minor, 3 advisory) |
 | 12.0.2 | Review Gate Rework | done | implementation | prompts/active/12.0.2-upgrade-review-gate-remediation.md | 12.0.1 | 13.0.1 | agents/handoffs/S-2026-04-06-011-review-rework.md | 2026-04-06 | 2026-04-06 | — | 8 findings fixed, 86/86 self-test checks pass |
-| 13.0.1 | Update Bootstrap and Intake Prompts | ready | implementation | prompts/active/13.0.1-prompt-consolidation.md | 12.0.2 | — | — | 2026-04-06 | — | — | Consolidate all updates to prompts 00 + 01 |
+| 13.0.1 | Update Bootstrap and Intake Prompts | done | implementation | prompts/active/13.0.1-prompt-consolidation.md | 12.0.2 | — | agents/handoffs/S-2026-04-06-012-prompt-consolidation.md | 2026-04-06 | 2026-04-06 | — | Prompts 00+01 consolidated, 88/88 self-test, project complete |
 
 ## Archived Projects
 

@@ -27,7 +27,13 @@ Your goals in order:
 2. Create foundational markdown files for roles, workflows, standards, templates, and shared context.
 3. Create a prompt-builder standard that the Master Agent will use for future project execution.
 4. Create default starter context documents and empty placeholders where appropriate.
-5. Create a README that explains how a single human sponsor should operate the system.
+5. Scaffold the following context files in `agents/context/` using their corresponding templates (leave fields empty — they are populated during project intake):
+   - `conventions.md` (from `agents/templates/conventions-template.md`)
+   - `memory.md` (from `agents/templates/memory-template.md`)
+   - `skills.md` (from `agents/templates/skills-template.md`)
+   - `integrations.md` (from `agents/templates/integrations-template.md`)
+   - `team.md` (from `agents/templates/team-template.md`)
+6. Create a README that explains how a single human sponsor should operate the system.
 
 Required top-level areas:
 - `.github/` (including `copilot-instructions.md` — repo-wide agent behavioral rules)
@@ -40,6 +46,8 @@ Required top-level areas:
 - `agents/prompts/`
 - `agents/handoffs/`
 - `agents/reviews/`
+- `scripts/` (including `validate-boilerplate.sh` — structural integrity checker)
+- `tests/smoke/` (sample project idea for intake pipeline validation)
 - `docs/`
 
 Role categories to create:
@@ -107,6 +115,11 @@ Create templates for:
 - risk register
 - decision log
 - release readiness checklist
+- conventions (`agents/templates/conventions-template.md`)
+- memory (`agents/templates/memory-template.md`)
+- skills (`agents/templates/skills-template.md`)
+- integrations (`agents/templates/integrations-template.md`)
+- team (`agents/templates/team-template.md`)
 
 Important working rules:
 - Prefer highly structured markdown over conversational prose.

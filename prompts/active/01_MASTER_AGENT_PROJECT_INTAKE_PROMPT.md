@@ -38,6 +38,7 @@ Required reading:
 - agents/context/skills.md
 - agents/context/integrations.md
 - agents/context/team.md
+- agents/context/memory.md
 - docs/agentic-ai-team-factory-blueprint.md
 
 Conventions interview — ask the sponsor:
@@ -73,6 +74,7 @@ Team composition interview — ask the sponsor:
 - What is each person's domain expertise and authority scope? (technical, product, business, security)
 - Who approves what? (architecture decisions, product scope, security sign-off, release readiness)
 - Are there availability constraints? (timezone, working hours, field time)
+Populate `agents/context/team.md` from the answers using the template at `agents/templates/team-template.md`.
 
 Your outputs:
 1. update or create the project charter
