@@ -12,8 +12,8 @@ Boilerplate Process Upgrade v2
 - Epics: 1 (Process Upgrade)
 - Stories: 9 (one per accepted recommendation) + 1 review gate + 1 consolidation
 - Technical Tasks: 30 (across 11 prompts)
-- Prompts: 11 (3 ready, 8 done)
-- Prompts Completed: 8
+- Prompts: 11 (2 ready, 9 done)
+- Prompts Completed: 9
 
 ## Active Work Packets
 - 3.0.1 Self-Test Script — **DONE** (65/65 checks pass, smoke fixture created)
@@ -24,9 +24,10 @@ Boilerplate Process Upgrade v2
 - 8.0.1 Integrations Map — **DONE** (integrations template + context file + intake updated, 74/74)
 - 9.0.1 Env & Secrets — **DONE** (env-secrets standard + bootstrap + DevSecOps role, 76/76)
 - 10.0.1 Team Mapping — **DONE** (team template + context file + intake + review-signoff, 78/78)
+- 11.0.1 Complexity Scoring — **DONE** (complexity in templates + standard, 79/79)
 
 ## Awaiting Review
 (None)
 
 ## Next Suggested Action
-Execute prompt 11.0.1 — Complexity Scoring in Prompts (Rec 6)
+Execute prompt 12.0.1 — Upgrade Review Gate (session-isolated review of all 9 recs)

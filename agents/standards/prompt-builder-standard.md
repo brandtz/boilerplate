@@ -54,6 +54,20 @@ Implementation prompts should require:
 - handoff note requirements
 - `agents/context/conventions.md` in required reading (for stack-aware implementation)
 
+## Complexity scoring
+Every generated prompt MUST include a `complexity` field in its frontmatter.
+
+| Score | Files Touched | Characteristics |
+|---|---|---|
+| **S** | 1–2 | Single-layer, straightforward |
+| **M** | 3–5 | May span 2 layers, moderate decisions |
+| **L** | 6–8 | Cross-layer, significant decisions |
+| **XL** | 9+ | Fundamental cross-cutting changes |
+
+- The Standards Guardian flags prompts without complexity scores
+- XL prompts should include an advisory note about splitting consideration (not mandatory)
+- Complexity is informational — it is not a gate or blocker
+
 ## Anti-patterns
 Avoid prompts that:
 - ask for many phases at once

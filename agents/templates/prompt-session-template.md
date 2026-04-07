@@ -9,6 +9,7 @@ epic_id: ""
 story_id: ""
 task_ids: []
 owner_role: ""
+complexity: "M"  # S | M | L | XL
 prerequisites: []
 required_reading: []
 downstream_prompts: []

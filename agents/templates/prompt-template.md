@@ -1,5 +1,9 @@
 # Prompt: <TITLE>
 
+```yaml
+complexity: "M"  # S | M | L | XL
+```
+
 ## Sequence Position
 
 ## Phase
