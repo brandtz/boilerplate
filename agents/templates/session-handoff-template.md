@@ -46,6 +46,11 @@ summary: ""
 
 <!-- For EACH item below, state the action: "created prompt N.0.2" or "added to prompt X.0.1 scope" or "N/A" -->
 
+## Memory Candidates
+<!-- List items the Repo Knowledge Curator should extract into agents/context/memory.md.
+     Categorise each as: resolved ambiguity | pattern (worked/failed) | technical discovery | sponsor preference | cross-cutting concern.
+     If none, write "None this session". -->
+
 ## Close-Out Checklist
 <!-- Complete ALL items before committing. Any 'NO' or gap must produce a follow-up prompt or scope edit. -->
 - [ ] Scope audit: all prompt scope items and ACs addressed

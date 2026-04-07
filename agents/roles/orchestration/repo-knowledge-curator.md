@@ -10,6 +10,8 @@ Preserve shared project memory so agent sessions can remain coherent over time.
 - surface stale or contradictory documentation
 - keep file references current
 - summarize repo state for incoming agents
+- **memory consolidation**: after each phase, extract memory-worthy items from handoffs into `agents/context/memory.md` (resolved ambiguities, patterns, discoveries, sponsor preferences, cross-cutting concerns)
+- keep `agents/context/memory.md` under 200 lines — summarise older entries when approaching the limit
 
 ## Scope
 - context curation

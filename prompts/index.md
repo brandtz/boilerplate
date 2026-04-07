@@ -17,7 +17,7 @@ These prompts ship with the boilerplate and are reused for every new project.
 
 > 11 prompts across 2 phases (implementation + review). Execution order per sponsor decision: Rec 10 first, then Recs 1→2→4→3→5→7→8→6, review gate, then prompt consolidation.
 >
-> **Summary:** ready 7 | done 4 | total 11
+> **Summary:** ready 6 | done 5 | total 11
 
 | prompt_id | title | status | phase | location | prerequisites | downstream_prompts | session_handoff | created_at | completed_at | archived_at | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -25,7 +25,7 @@ These prompts ship with the boilerplate and are reused for every new project.
 | 4.0.1 | Stack Conventions Context Layer | done | implementation | prompts/active/4.0.1-conventions-layer.md | 3.0.1 | 5.0.1 | agents/handoffs/S-2026-04-06-002-conventions-layer.md | 2026-04-06 | 2026-04-06 | — | Rec 1 — conventions template + context file + intake/standards updated |
 | 5.0.1 | AGENTS.md and Copilot Instructions | done | implementation | prompts/active/5.0.1-agents-md.md | 4.0.1 | 6.0.1 | agents/handoffs/S-2026-04-06-003-agents-md.md | 2026-04-06 | 2026-04-06 | — | Rec 2 — AGENTS.md + copilot-instructions.md + template + bootstrap updated |
 | 6.0.1 | Skills and Capabilities Registry | done | implementation | prompts/active/6.0.1-skills-registry.md | 5.0.1 | 7.0.1 | agents/handoffs/S-2026-04-06-004-skills-registry.md | 2026-04-06 | 2026-04-06 | — | Rec 4 — skills template + context file + intake updated, 70/70 |
-| 7.0.1 | Persistent Memory System | ready | implementation | prompts/active/7.0.1-memory-system.md | 6.0.1 | 8.0.1 | — | 2026-04-06 | — | — | Rec 3 — memory.md + handoff template update |
+| 7.0.1 | Persistent Memory System | done | implementation | prompts/active/7.0.1-memory-system.md | 6.0.1 | 8.0.1 | agents/handoffs/S-2026-04-06-005-memory-system.md | 2026-04-06 | 2026-04-06 | — | Rec 3 — memory template + context file + handoff standard/template + curator role, 72/72 |
 | 8.0.1 | Third-Party Integrations Map | ready | implementation | prompts/active/8.0.1-integrations-map.md | 7.0.1 | 9.0.1 | — | 2026-04-06 | — | — | Rec 5 — integrations.md + template |
 | 9.0.1 | Environment and Secrets Standard | ready | implementation | prompts/active/9.0.1-env-secrets.md | 8.0.1 | 10.0.1 | — | 2026-04-06 | — | — | Rec 7 — environment-secrets-standard.md |
 | 10.0.1 | Human Team Mapping | ready | implementation | prompts/active/10.0.1-team-mapping.md | 9.0.1 | 11.0.1 | — | 2026-04-06 | — | — | Rec 8 — team.md + review-signoff update |

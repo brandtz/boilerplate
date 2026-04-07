@@ -72,5 +72,10 @@ or edit to the next downstream prompt). Untracked findings are a defect.
    names from the template: `session_id`, `prompt_id`, `role`, `status_outcome`,
    `completion_percent`, `started_at`, `ended_at`.  Use `---` delimiters.
 
+## Memory candidates
+- Every handoff MUST include a `## Memory Candidates` section listing items the Repo Knowledge Curator should extract into `agents/context/memory.md`
+- Items should be categorised as: resolved ambiguity, pattern (worked/failed), technical discovery, sponsor preference, or cross-cutting concern
+- If no memory-worthy items exist, the section must state "None this session"
+
 ## Handoff quality test
 The next agent should be able to start with minimal ambiguity after reading the handoff and required files.
