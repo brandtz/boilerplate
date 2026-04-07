@@ -34,6 +34,7 @@ Required reading:
 - agents/context/risk-register.md
 - agents/context/conventions.md
 - agents/context/skills.md
+- agents/context/integrations.md
 - docs/agentic-ai-team-factory-blueprint.md
 
 Conventions interview — ask the sponsor:
@@ -57,14 +58,22 @@ Skills and capabilities interview — ask the sponsor:
 - Are there environment constraints? (no Docker, static export only, network restrictions)
 Populate `agents/context/skills.md` from the answers using the template at `agents/templates/skills-template.md`.
 
+Integrations interview — ask the sponsor:
+- What external services or third-party APIs will this project depend on? (auth, payments, email, storage, monitoring, etc.)
+- For each service: what tier/plan, and are there existing accounts or credentials?
+- Are there preferred SDKs or client libraries?
+Not all integrations will be known at intake — the Solution Architect populates the rest during architecture review.
+Populate `agents/context/integrations.md` from the answers using the template at `agents/templates/integrations-template.md`.
+
 Your outputs:
 1. update or create the project charter
 2. update assumptions, constraints, and risk register
 3. populate `agents/context/conventions.md` with stack decisions
 4. populate `agents/context/skills.md` with available tooling and capabilities
-5. define the recommended phases for this project
-6. identify which specialist roles must be involved
-7. generate the first batch of sequential prompts for those roles
+5. populate `agents/context/integrations.md` with known external service dependencies
+6. define the recommended phases for this project
+7. identify which specialist roles must be involved
+8. generate the first batch of sequential prompts for those roles
 
 Do not begin code implementation. This is an intake and planning phase only.
 
