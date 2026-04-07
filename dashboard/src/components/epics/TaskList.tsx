@@ -41,7 +41,7 @@ export function TaskList({ tasks, taskIndex, onPromptClick }: TaskListProps) {
             </div>
             {promptIds.length > 0 && (
               <div className="flex gap-1 flex-shrink-0">
-                {promptIds.map((pid) => (
+                {promptIds.map((pid: string) => (
                   <button
                     key={pid}
                     onClick={() => onPromptClick(pid)}

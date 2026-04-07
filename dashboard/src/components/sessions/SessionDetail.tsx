@@ -15,7 +15,7 @@ export function SessionDetail({ session, onPromptClick }: SessionDetailProps) {
         <h4 className="font-medium text-gray-700 mb-1">Changed Files</h4>
         {session.changedFiles.length > 0 ? (
           <ul className="list-disc list-inside text-gray-600 space-y-0.5" data-testid="changed-files-list">
-            {session.changedFiles.map((f) => (
+            {session.changedFiles.map((f: string) => (
               <li key={f} className="font-mono text-xs">{f}</li>
             ))}
           </ul>
@@ -29,7 +29,7 @@ export function SessionDetail({ session, onPromptClick }: SessionDetailProps) {
         <div>
           <h4 className="font-medium text-gray-700 mb-1">Blockers</h4>
           <ul className="list-disc list-inside text-gray-600 space-y-0.5">
-            {session.blockers.map((b, i) => (
+            {session.blockers.map((b: string, i: number) => (
               <li key={i}>{b}</li>
             ))}
           </ul>
@@ -41,7 +41,7 @@ export function SessionDetail({ session, onPromptClick }: SessionDetailProps) {
         <div>
           <h4 className="font-medium text-gray-700 mb-1">Next Recommended</h4>
           <div className="flex flex-wrap gap-2">
-            {session.nextRecommendedPrompts.map((pid) => (
+            {session.nextRecommendedPrompts.map((pid: string) => (
               <button
                 key={pid}
                 onClick={() => onPromptClick(pid)}

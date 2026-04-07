@@ -2,6 +2,8 @@ import type {
   ParsedEpic,
   ParsedPrompt,
   ParsedHandoff,
+  ParsedStory,
+  ParsedTask,
   ReverseTaskIndex,
   PromptStatus,
 } from '@/types';
@@ -37,12 +39,12 @@ export function EpicCard({
   onPromptClick,
 }: EpicCardProps) {
   const storyCount = epic.stories.length;
-  const taskCount = epic.stories.reduce((sum, s) => sum + s.tasks.length, 0);
+  const taskCount = epic.stories.reduce((sum: number, s: ParsedStory) => sum + s.tasks.length, 0);
   const epicContentId = `epic-content-${epic.epicId}`;
 
   // Collect all task IDs for update resolution
-  const allTaskIds = epic.stories.flatMap((s) =>
-    s.tasks.map((t) => t.taskId),
+  const allTaskIds = epic.stories.flatMap((s: ParsedStory) =>
+    s.tasks.map((t: ParsedTask) => t.taskId),
   );
   const lastUpdate = resolveLastUpdate(
     epic.epicId,
@@ -124,7 +126,7 @@ export function EpicCard({
             <p className="text-sm text-gray-400">No stories defined</p>
           ) : (
             <div className="space-y-1">
-              {epic.stories.map((story) => (
+              {epic.stories.map((story: ParsedStory) => (
                 <StoryRow
                   key={story.storyId}
                   story={story}

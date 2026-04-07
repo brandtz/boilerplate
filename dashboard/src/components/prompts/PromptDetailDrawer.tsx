@@ -174,7 +174,7 @@ export function PromptDetailDrawer({
                 Required Reading
               </h3>
               <ul className="list-disc list-inside text-sm text-gray-600 space-y-0.5">
-                {prompt.requiredReading.map((r) => (
+                {prompt.requiredReading.map((r: string) => (
                   <li key={r}>{r}</li>
                 ))}
               </ul>
@@ -188,7 +188,7 @@ export function PromptDetailDrawer({
                 Downstream Prompts
               </h3>
               <div className="flex flex-wrap gap-2">
-                {prompt.downstreamPrompts.map((dp) => (
+                {prompt.downstreamPrompts.map((dp: string) => (
                   <button
                     key={dp}
                     onClick={() => onPromptNavigate(dp)}
@@ -239,7 +239,7 @@ export function PromptDetailDrawer({
                       <span className="text-gray-500">Changed files ({handoff.changedFiles.length}):</span>
                       {handoff.changedFiles.length > 0 ? (
                         <ul className="mt-1 list-disc list-inside text-xs text-gray-600 font-mono" data-testid={`changed-files-${handoff.sessionId}`}>
-                          {handoff.changedFiles.map((f) => (
+                          {handoff.changedFiles.map((f: string) => (
                             <li key={f}>{f}</li>
                           ))}
                         </ul>
