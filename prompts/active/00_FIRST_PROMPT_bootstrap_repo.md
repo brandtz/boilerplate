@@ -1,5 +1,7 @@
 # First Prompt: Bootstrap the Boilerplate Repo
 
+<!-- complexity: XL -->
+
 Use this as the first major prompt in a fresh repo to have a Master Agent scaffold the entire AI operating system.
 
 ```md

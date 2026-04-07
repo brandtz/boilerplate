@@ -1,5 +1,7 @@
 # Master Agent Prompt Builder Prompt
 
+<!-- complexity: M -->
+
 Use this when you want the Master Agent to generate a batch of specialist prompts for the next phase.
 
 ```md

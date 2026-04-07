@@ -20,7 +20,7 @@
 ## Coding Standards
 - Follow conventions in `agents/context/conventions.md`.
 - Follow `agents/standards/coding-documentation-testing-standard.md`.
-- Never hardcode secrets — use environment variables per `agents/standards/environment-secrets-standard.md` (when it exists).
+- Never hardcode secrets — use environment variables per `agents/standards/environment-secrets-standard.md`.
 
 ## When Uncertain
 - Check `agents/context/decision-log.md` for prior decisions.

@@ -1,5 +1,7 @@
 # Master Agent Project Intake Prompt
 
+<!-- complexity: L -->
+
 Use this after the boilerplate repo exists and you want to start a new project.
 
 ```md

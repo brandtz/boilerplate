@@ -33,7 +33,7 @@ See `agents/context/status-dashboard.md` for live status.
 | Roles | `agents/roles/` | Agent persona definitions (10 categories) |
 | Standards | `agents/standards/` | Process rules and expectations |
 | Templates | `agents/templates/` | Artifact templates for all document types |
-| Context | `agents/context/` | Shared project state (charter, risks, conventions, etc.) |
+| Context | `agents/context/` | Shared project state (charter, assumptions, constraints, risks, conventions, memory, skills, integrations, team, etc.) |
 | Workflows | `agents/workflows/` | Phase sequencing and operating model |
 | Handoffs | `agents/handoffs/` | Session-to-session continuity records |
 | Prompts | `prompts/active/` | Current prompt files ready for execution |

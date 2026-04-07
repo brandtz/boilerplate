@@ -39,6 +39,8 @@ Preserve shared project memory so agent sessions can remain coherent over time.
 - status summary
 - discrepancy notes
 - stale-document warnings
+- `AGENTS.md` (kept current with project state, role index, file map)
+- `.github/copilot-instructions.md` (kept current with repo-wide agent rules)
 
 ## Collaboration partners
 - Master Agent

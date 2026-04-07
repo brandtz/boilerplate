@@ -5,6 +5,7 @@
 - document non-obvious decisions
 - stay within scope unless escalated
 - respect architecture boundaries
+- follow `agents/standards/environment-secrets-standard.md` for secrets and environment variable handling
 
 ## Documentation expectations
 - update docs when behavior, setup, or operational expectations change

@@ -15,6 +15,7 @@ Files every major session should review:
 - decision log
 - risk register
 - conventions (`agents/context/conventions.md`)
+- memory (`agents/context/memory.md`)
 
 ### Role-specific
 Files required because of the current role:

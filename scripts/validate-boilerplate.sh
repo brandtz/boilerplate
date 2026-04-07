@@ -56,7 +56,12 @@ check_context_files() {
     risk-register.md \
     decision-log.md \
     status-dashboard.md \
-    product-brief.md
+    product-brief.md \
+    conventions.md \
+    memory.md \
+    skills.md \
+    integrations.md \
+    team.md
   do
     if [ -f "agents/context/$file" ]; then
       pass "Context file exists: $file"
